@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz.js</title>
+    <style>
+        body {
+            margin: 1rem auto;
+            padding: 3rem;
+            font-family: sans-serif;
+        }
+        header {
+            width: 50%;
+            margin: 1em auto;
+        }
+        main {
+            min-width: 25rem;
+            max-width: 50%;
+            margin: 0px auto;
+            display:flex; 
+            flex-direction: column;
+        }
+        #statement {
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            box-shadow: 5px 5px 5px gray;
+            padding: 1rem;
+            font-size: x-large;
+            text-align: center;
+            margin: 1rem 0px;
+            min-height: 2em;
+        }
+        #explanation, #score {
+            padding: 1rem;
+            text-align: center;
+        }
+        #options {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            padding: 0.5rem;
+            font-size: medium;
+            border-radius: 5px;
+        }
+        .correct {
+            background-color: lightgreen;
+        }
+        .incorrect {
+            background-color: lightpink;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+    <h1>Quiz.js</h1>
+    <p>Do you know JS? Find out!</p>
+    <div id="score">
+        Score: <span id="correct">0</span> / <span id="completed">0</span>
+    </div>
+    </header>
+
+    <main>
+    <div id="statement">
+        
+    </div>
+    <div id="options">
+        <button name="true" value="true" >true</button>
+        <button name="false" value="false" >false</button>
+    </div>
+    <div id="explanation" class="hidden">
+
+    </div>
+    <button class="hidden" id="next-question" name="next-question" >Next Question</button>
+
+    </main>
+
+  </body>
+
+  <script type="text/javascript" src="jsfacts.js"></script>
+
+  <script type="text/javascript">
+
+
+    function shuffleArray(array) {
+        // randomly shuffles elements in an array in-place
+        return array.sort((a,b) => Math.random() - 0.5);
+    }
+
+    shuffleArray(facts);
+
+    let correct = 0;
+    let completed = 0;
+    
+    let fact;
+
+
+    const options = document.getElementById("options").children;
+    const explanation =  document.getElementById("explanation");
+    const nextButton = document.getElementById("next-question");
+
+    function getNextFact() {
+        fact = facts.shift(); // get the next fact in our array (shortening the array)
+
+        // set the question text & clear any previous explanation
+        document.getElementById("statement").innerText = fact.statement;
+        document.getElementById("explanation").classList.add("hidden");
+
+        for (let option of document.getElementById("options").children) {
+            // clear any previous classes
+            option.classList.remove("correct");
+            option.classList.remove("incorrect");
+            // make sure buttons are enabled
+            option.removeAttribute("disabled");
+        }
+
+        // disable & hide next-question button
+        nextButton.setAttribute("disabled", "");
+        nextButton.classList.add("hidden");
+        
+    }
+
+    nextButton.addEventListener("click", getNextFact);
+
+    for (let option of options) {
+        option.addEventListener("click", e => {
+            // When this option is clicked...
+            // disable all other option buttons
+            for (let button of options) {
+                button.setAttribute("disabled", ""); 
+            }
+
+            // enable the 'next question' button, if we still have facts left
+            nextButton.classList.remove("hidden");
+            if (facts.length > 0) {
+                nextButton.removeAttribute("disabled");
+            } else {
+                nextButton.innerText = "No more questions!"
+            }
+
+            const guess = e.target.value;
+            if (guess === fact.value) {
+                // correct answer!
+                e.target.classList.add("correct");
+                correct += 1;
+            } else {
+                // wrong answer!
+                e.target.classList.add("incorrect");
+            }
+
+            explanation.innerText = fact.explanation;
+            explanation.classList.remove("hidden");
+            
+            completed += 1;
+            document.getElementById("correct").innerText = correct;
+            document.getElementById("completed").innerText = completed;
+
+        })
+    }
+
+    getNextFact();
+
+  </script>
+</html>

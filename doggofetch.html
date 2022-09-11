@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Doggo Guesso</title>
+    <style>
+        body {
+            margin: 1rem auto;
+            padding: 3rem;
+            font-family: sans-serif;
+        }
+        header {
+            width: 70%;
+            margin: 1em auto;
+        }
+        main {
+            max-width: 70%;
+            margin: 0px auto;
+            display:flex; 
+            flex-direction: column;
+        }
+        img {
+            max-width: 100%;
+        }
+        #image-frame {
+            font-size: x-large;
+            text-align: center;
+            margin: 1rem auto;
+        }
+        #explanation, #score {
+            padding: 1rem;
+            text-align: center;
+        }
+        #options {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            padding: 0.5rem;
+            font-size: medium;
+            border-radius: 5px;
+        }
+        .correct {
+            background-color: lightgreen;
+        }
+        .incorrect {
+            background-color: lightpink;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+    <h1>Guess the Doggo</h1>
+    <p>What breed is the dog in this image?</p>
+
+    </header>
+
+    <main>
+    <div id="image-frame" >
+        Fetching doggo...
+    </div>
+    <div id="options">
+    </div>
+
+    </main>
+
+  </body>
+
+  <script type="module">
+
+    const breedsEndpoint = "https://dog.ceo/api/breeds/list/all";
+    const randomImgEndpoint = "https://dog.ceo/api/breeds/image/random";
+
+
+    async function fetchMessage(url) {
+        // Fetch the resource at the given URL, parse & return the "message" property of its body
+        // TODO error handling
+        const response = await fetch(url);
+        const json = await response.json();
+        const {message} = json;
+        return message;
+    }
+
+    function generateBreedList(breedsObject) {
+        // Transform the nested Object from the API into a more usable array of strings
+        // e.g. { "terrier": ["scottish", "westhighland"]} becomes ["scottish terrier", "westhighland terrier"]
+        const breedList = []
+        for (let breed in breedsObject) {
+            const subtypes = breedsObject[breed];
+            if (subtypes.length > 0) {
+                let breedTypes = subtypes.map(sub => `${sub} ${breed}`);
+                breedList.push(...breedTypes);
+            } else {
+                breedList.push(breed);
+            }
+        }
+        return breedList;
+    }
+
+
+    function getBreedFromURL(url) {
+        // Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
+        // return the breed name string as formatted in the breed list, e.g. "standard poodle"
+        const path = url.replace("https://images.dog.ceo/breeds/", "");
+        const breedID = path.split("/")[0];
+        const [breed, subtype] = breedID.split("-");
+        return `${subtype ? subtype + " " : ""}${breed}`;
+    }
+
+    
+    function getRandomElement(array) {
+        const i = Math.floor(Math.random() * array.length);
+        return array[i];
+    }
+
+    function shuffleArray(array) {
+        // randomly shuffles elements in an array in-place
+        return array.sort((a,b) => Math.random() - 0.5);
+    }
+
+    function getChoices(n, correctAnswer, array) {
+        // Generate a list of n choices including the correct answer and others from the array
+        const choices = [correctAnswer];
+        while (choices.length < n) {
+            let candidate = getRandomElement(array);
+            if (choices.indexOf(candidate) < 0) { // check if this is already in the array
+                choices.push(candidate); // if not, add it
+            }
+        }
+        return shuffleArray(choices);
+    }
+
+
+    function renderButtons(breedChoices, correctBreed) {
+        const options = document.getElementById("options");
+
+        function buttonHandler(e) {
+            if (e.target.value === correctBreed) {
+                e.target.classList.add("correct");
+            } else {
+                e.target.classList.add("incorrect");
+                document.querySelector(`button[value="${correctBreed}"]`).classList.add("correct");
+            }
+        }
+
+        breedChoices.map(breed => {
+            let button = document.createElement("button");
+            button.value = breed;
+            button.name = breed;
+            button.innerText = breed;
+            button.addEventListener("click", buttonHandler);
+            options.appendChild(button);
+        })
+    }
+
+    function renderQuiz(imgURL, correctBreed, breedChoices) {
+        const image = document.createElement("img");
+        image.setAttribute("src", randomImg);
+        const frame = document.getElementById("image-frame");
+
+        image.addEventListener("load", () => {
+            // Wait until the image has finished loading before trying to add elements to the page
+            frame.replaceChildren(image);
+            renderButtons(breedChoices, thisBreed);
+        })
+        
+    }
+
+    async function loadQuizData(breedsEndpoint, randomImgEndpoint, nChoices) {
+        const breeds = generateBreedList(await fetchMessage(breedsEndpoint));
+
+        const randomImg = await fetchMessage(randomImgEndpoint);
+        console.log(randomImg);
+
+        const thisBreed = getBreedFromURL(randomImg);
+        console.log(thisBreed, breeds.indexOf(thisBreed));
+
+        const breedChoices = getChoices(nChoices, thisBreed, breeds);
+        console.log(breedChoices);
+
+        return [randomImg, thisBreed, breedChoices];
+    }
+
+    
+    const [randomImg, thisBreed, breedChoices] = await loadQuizData(breedsEndpoint, randomImgEndpoint, 3);
+    renderQuiz(randomImg, thisBreed, breedChoices);
+    
+
+
+  </script>
+</html>

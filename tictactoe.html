@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScripTacToe</title>
+    <style>
+        body {
+            margin: 1rem auto;
+            padding: 3rem;
+            font-family: sans-serif;
+        }
+        header {
+            width: 50%;
+            margin: 1em auto;
+        }
+        #board {
+            width: 50%;
+            margin: 0px auto;
+            display:grid; 
+            grid-template-columns: 1fr 1fr 1fr; 
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 1rem;
+            background-color: teal;
+        }
+        #board div {
+            height: 5rem;
+            background-color: white;
+            font-size: 5rem;
+            font-family: monospace;
+            color: black;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+    <h1>Tic Tac Toe</h1>
+    <p>A game you know</p>
+
+
+    <div id="players">
+        <p id="p1">Player <span id="p1-symbol">X</span>: <span id="p1-name">Anjana</span></p>
+        <p id="p2">Player <span id="p2-symbol">O</span>: <span id="p2-name">Notanjana</span></p>
+    </div>
+    </header>
+
+
+    <div id="board">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+  </body>
+</html>
