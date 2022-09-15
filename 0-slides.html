@@ -367,7 +367,7 @@
 
 					### What are these?
 
-					`"Anjana"`
+					`"Tic Tac Toe"`
 
 					`9`
 					
@@ -386,7 +386,7 @@
 
 					## text data
 
-					e.g. `"Anjana"` or `"#board"`
+					e.g. `"Tic Tac Toe"` or `"#board"`
 
 					<p class="fragment">aka...</p>
 
@@ -459,7 +459,7 @@
 					- `string`
 					- `number`
 					- `boolean`
-					- `undefined` 
+					- `undefined`
 					- `null`
 					- A couple [others](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values) we don't need yet
 
@@ -467,19 +467,169 @@
 
 					## booleans
 
+
+					<div style="display:flex">
+						<img src="https://media0.giphy.com/media/dXFKDUolyLLi8gq6Cl/giphy.gif?cid=790b7611e65175eaf20e344bed912deb1bbe1510918127b6&rid=giphy.gif&ct=g" />
+						<img src="https://media3.giphy.com/media/98maV70oAqIZtEYqB4/giphy.gif?cid=790b76119164770fd461651da0b494e09dd0e62870f30c3a&rid=giphy.gif&ct=g" />
+					</div>
+
 					--
 
+					## `undefined` & `null`
+
+					<img src="https://media4.giphy.com/media/RkN1YEwSP4GBvv5bDC/giphy.gif?cid=790b7611f7bab2fa354705ec00978abc19a34b9b64e56d94&rid=giphy.gif&ct=g" alt="Gif of woman gesturing and saying 'blank void of nothingness', from Now Apocalypse on Starz"/>
+					<!-- <img src="https://media1.giphy.com/media/3orifhno3HkPnntpxS/giphy.gif?cid=790b76110920ef3b8174376bee492e1b38774329e8cd7507&rid=giphy.gif&ct=g" alt="Gif from the Simpsons of Lisa and Bart seated in a meadow, Lisa says 'Embrace nothingness.' and Bart replies 'You got it.'" /> -->
+
+					--
+<!-- 
 					## `undefined`
 
-					--
+					<!-- <img src="https://media3.giphy.com/media/10VJ2YDMoNEBl6/giphy.gif?cid=ecf05e47pyqflcglyz30eqv3x8gnht8raz4vhzzxffk3uxnv&rid=giphy.gif&ct=g" alt="Gif from Clueless of Cher saying 'My bad' while driving a Jeep" /> -->
+					<!-- <img src="http://campusriot.com/wp-content/uploads/2013/06/I-Want-It-That-Way-Backstreet-Boys-Gif.gif" alt="Gif of Backstreet Boys singing 'Tell my why, Ain't nothin but a mistake...'" />
+
+					accidental nothing
 
 					## `null`
+
+					<img src="https://c.tenor.com/AzSrhbW1nYcAAAAC/tenor.gif" alt="Gif of Backstreet Boys singing 'I want it that way'" />
+
+					deliberate nothing
+					-- -->
+
+					<div style="display:flex;">
+						<div style="display:flex; flex-direction:column;">
+							<code>undefined</code>
+							<img height=250 src="http://campusriot.com/wp-content/uploads/2013/06/I-Want-It-That-Way-Backstreet-Boys-Gif.gif" alt="Gif of Backstreet Boys singing 'Tell my why, Ain't nothin but a mistake...'" />
+							accidental nothing
+						</div>
+						<div style="display:flex; flex-direction:column;">
+							<code>null</code>
+							<img height=250  src="https://c.tenor.com/AzSrhbW1nYcAAAAC/tenor.gif" alt="Gif of Backstreet Boys singing 'I want it that way'" />
+							deliberate nothing
+						</div>
+					</div>
+
+					-- 
+
+					### Exercise
+
+					Which data type is each of these values? 
+					- `false`
+					- `"true"`
+					- `document.title`
+					- `document.getElementById("board").children.length`
+					- `null`
+					
+					(guess first, then use `typeof` to check!)
 
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Working with Strings
+					
+
+					<img width=500 src="https://i0.wp.com/www.muffinchanel.com/wp-content/uploads/2020/09/how-to-make-letter-bead-word-alphabet-bead-bracelets-inspired-by-pura-vida-bracelets-muffinchanel-diy-step-by-step-10.png?w=632&ssl=1" alt="Image of unfinished beaded bracelet spelling 'ALOHA' with text 'Step 13' in corner, via MuffinChanel " />
+					
+					--
+
+					 What are strings made of?
+
+					![](https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/61PIxWCLaFL._AC_SY450_.jpg)
+				
+					<h4 class="fragment">characters</h4>
+
+					--
+
+					How many characters are in this string?
+
+					<code>"supercalifragilisticexpialidocious"<span class="fragment">.length</span></code>
+
+					--
+
+					Characters are in a specific order
+					
+					Each gets a number, starting at `0`
+
+					<img width=700 height=190 style="object-fit: cover; object-position: 0 -510px;" src="https://i0.wp.com/www.muffinchanel.com/wp-content/uploads/2020/09/how-to-make-letter-bead-word-alphabet-bead-bracelets-inspired-by-pura-vida-bracelets-muffinchanel-diy-step-by-step-7.png?w=631&ssl=1" />
+
+					<p class="fragment">aka an "index"</p>
+				
+					--
+
+					What's the first character in the string? 
+
+					`"ALOHA"[0]`
+
+					--
+
+
+					What's the third character in the string?
+
+					`"ALOHA"[2]`
+
+					--
+
+					What's the index of a specific character? 
+
+					<code class="fragment">"ALOHA".indexOf("L")</code>
+					<code class="fragment">"ALOHA".indexOf("A")</code>
+					<code class="fragment">"ALOHA".indexOf("Q")</code>
+
+					--
+
+					Does this string contain some other string?
+
+					<code class="fragment">"ALOHA".includes("HA")</code>
+					<code class="fragment">"ALOHA".includes("LOL")</code>
+
+					--
+
+					At what index does this substring begin? 
+
+
+					<code class="fragment">"ALOHA".indexOf("HA")</code>
+					<code class="fragment">"ALOHA".indexOf("LOL")</code>
+
+					--
+
+					Connecting strings together
+
+					`"ALOHA" + "!"`
+
+					--
+
+					<div style="display:flex;">
+						<img src="https://media0.giphy.com/media/3ohhwr2FHK5u2TZFcI/giphy.gif?cid=790b7611b3d751c8682486f8a5140f1fa2d7c44ba387cfb7&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of Alexis looking offended asking 'Why are you yelling at me?!'" />
+						<img src="https://media2.giphy.com/media/UtuJHoRbWW2eb9K8LQ/giphy.gif?cid=ecf05e47hmqd6amklrxj0i3nfbpqlwwpvy7smtfmkqvtzcjw&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of Moira looking offended saying 'There's no need to raise your voice'" />
+					</div>
+
+					`"ALOHA".toLowerCase()`
+
+					--
+
+					### Exercise
+
+					Use our new string superpowers to:
+					- Add your last name in the players listing
+					- Retrieve the first "T" in the page title
+					- Answer whether the page title contains the string "JavaScript"
+					- Capitalize the heading "Tic Tac Toe"
+
+					--
+
+					There is a lot more we can do with strings... 
+
+					<img src="https://media2.giphy.com/media/THrVdFFbwhwxNPxfGi/giphy.gif?cid=ecf05e47hxna43czb0oedyxy295x2ywq34xdo4yjvydqhqcr&rid=giphy.gif&ct=g" alt="Gif of Michaela Coel saying 'Sometimes it gets a bit much'" />
+
+					--
+
+					Remember ✨MDN✨ is your friend!
+
+					[JavaScript > Standard built-in objects > String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+
+
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
@@ -507,13 +657,6 @@
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## Strings
-
-
-					</textarea>
-				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
 					## Variables
 
 
@@ -521,7 +664,7 @@
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## Statements vs. Expressions
+					## Statements
 
 
 					</textarea>
@@ -606,6 +749,13 @@
 					<textarea data-template>
 					# DAY 3
 
+
+					--
+
+					Today's project: Adapt yesterday's project for a new app 
+
+					<img src="https://media4.giphy.com/media/3o6wrdHsBoJKGaHjQk/giphy.gif?cid=790b76115baa58b80e31c3667efa5279bf10929f247d7752&rid=giphy.gif&ct=g" alt="Gif from Clueless of Cher saying excitedly 'Let's do a makeover!' with Dionne smiling excitedly in the background" />
+
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
@@ -655,6 +805,8 @@
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Debugging
+
+					<img src="http://static.brit.co.s3.amazonaws.com/wp-content/uploads/2012/07/tumblr_m7cbztPztz1qdf43eo1_500.gif" alt="Gif from Clueless of Cher standing in front of a chalkboard saying 'I was like totally buggin'" />
 
 					</textarea>
 				</section>
