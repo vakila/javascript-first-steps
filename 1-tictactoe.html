@@ -14,7 +14,7 @@
             margin: 1em auto;
         }
         #board {
-            width: 50%;
+            max-width: 40%;
             margin: 0px auto;
             display:grid; 
             grid-template-columns: 1fr 1fr 1fr; 
@@ -22,8 +22,8 @@
             grid-gap: 1rem;
             background-color: teal;
         }
-        #board div {
-            height: 5rem;
+        .square {
+            padding-top: 100%;
             background-color: white;
             font-size: 5rem;
             font-family: monospace;
@@ -34,27 +34,28 @@
   <body>
     <header>
     <h1>Tic Tac Toe</h1>
-    <p>A game you know</p>
+    <h2>A game you know</h2>
 
 
     <div id="players">
-        <p id="p1">Player <span id="p1-symbol">X</span>: <span id="p1-name">Anjana</span></p>
-        <p id="p2">Player <span id="p2-symbol">O</span>: <span id="p2-name">Notanjana</span></p>
+        <p id="p1" class="player">Player <span id="p1-symbol">X</span>: <span id="p1-name">Anjana</span></p>
+        <p id="p2" class="player">Player <span id="p2-symbol">O</span>: <span id="p2-name">Marc</span></p>
     </div>
     </header>
 
 
     <div id="board">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
     </div>
+
 
   </body>
 </html>
