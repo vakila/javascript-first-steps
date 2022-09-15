@@ -9,10 +9,16 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css" integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css" integrity="sha512-ITH3NSfntO7uI5n+BnxGNXpzDUoOsmAXuG37UDONLxNYIdc0EBBOOQ1xyc+t9ag9ETSuBXFApx+Rod0uURfDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/night.min.css" integrity="sha512-bfCyfT+5Js2CKjpiF7yCtTcNlNTtcdAIHV8DfGLCQuTfTEHTU9uEvhQ/Ty4zv3IRtkFQu8DKeM2MHGka+K/cxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
+		
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/a11y-dark.min.css" integrity="sha512-Vj6gPCk8EZlqnoveEyuGyYaWZ1+jyjMPg8g4shwyyNlRQl6d3L9At02ZHQr5K6s5duZl/+YKMnM3/8pDhoUphg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<style>
+			.reveal code {
+				color: var(--r-link-color-hover);
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -108,110 +114,439 @@
 
 					--
 
-					### Why do we need it? 
+					```js
+					let js = {
+						name: "JavaScript",
+						abbreviation: "JS",
+						isAwesome: true,
+						officialSpec: "ECMAScript",
+						DOB: 1995,
+						creator: "Brendan Eich"
+					};
+
+					if (js.isAwesome) {
+						shout("hell yes JS!");
+					}
+					```
 
 					--
+
+
+					### Why do we need JS? 
+
+					--
+
+					## HTML & CSS & JS: BFFs!
+
+					--
+
+
+					<img src="https://media4.giphy.com/media/3o6gE8sp8lYiUBgx8Y/giphy.gif?cid=ecf05e47qgttnhw10sv7okbd6osgrjh1kb2pubtrdazuwtoi&rid=giphy.gif&ct=g" alt="Hamilton GIF by Tony Awards via Giphy" width=700 />
+					<!-- <span style="font-size: small">"Hamilton" at the Tony Awards via Giphy</span> -->
+
+
+					--
+
+					<!-- <iframe height="500" style="width: 100%;" scrolling="no" title="Exciting" src="https://codepen.io/vakila/embed/VwxmmeY?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+						See the Pen <a href="https://codepen.io/vakila/pen/VwxmmeY">
+						Exciting</a> by Anjana Sofia Vakil (<a href="https://codepen.io/vakila">@vakila</a>)
+						on <a href="https://codepen.io">CodePen</a>.
+					</iframe> -->
+
+					--
+
+
 
 					### How do we write JS? 
 
 					--
 
-					### ~~How~~ Where do we write JS?
+
+
+					<img src="https://media1.tenor.com/images/bbb7a06768e4f3c507632383b73eb9a1/tenor.gif?itemid=9213220" alt="Gif of girls performing 'light as a feather, stiff as a board' ritual in 'The Craft'" /> 
+
+					<!-- <span style="font-size: small">"The Craft" via Tenor</span> -->
 
 					--
 
-					## The JS console
 
-					*The call is coming from inside the browser!*
+					<img src="http://1.bp.blogspot.com/-mULfDILNkLQ/Uecl0_H_6hI/AAAAAAAAJiI/vR4dwnwrphs/s1600/the-craft-the-craft-20560404-1842-1219.jpg" alt="Still of girls performing summoning ritual in a circle of candles on the beach, from 'The Craft'" />
+
+					<!-- <span style="font-size: small">"The Craft" via A Horror Diary</span> -->
+
+
+					--
+
+
+					### ~~How~~ *Where* do we write JS?
+
+					--
+
+					- Local text file in editor, e.g. TextEdit, [VS Code](https://code.visualstudio.com/)
+					- Online playground e.g. [CodePen](https://codepen.io), [CodeSandbox](https://codesandbox.io)
+					- **The browser's JS `console`**
+
+
+
+					<!-- *The call is coming from inside the browser!*
+
+					<img width=700 src="https://epigram.org.uk/content/images/2019/10/scream.jpg" alt="Still from movie Scream of Drew Barrymore screaming" /> -->
+					
+					--
+
+					## Let's do it!
+
+					1. Open [1-tictactoe.html](./1-tictactoe.html) in your browser<br>(`File` > `Open file...`)
+					1. Inspect the page to open DevTools<br>(Right click > `Inspect`)
+					1. Click on `Console` tab
+
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n" data-auto-animate>
 					<textarea data-template>
 					## The DOM
 
 					### Document Object Model 
+					
 
-					</textarea>
-				</section>
-				<section data-markdown >
-					<textarea data-template>
-					## Data types
+					--
+					
+					### A simple `document`
+					
+					```html [ 2-8 | 3 | 4-7 | 5-6]
+					<!DOCTYPE html>
+					<html lang="en-US">
+						<head>...</head>
+						<body>
+							<header>...</header>
+							<div id="board">...</div> 
+						</body>
+					</html>
+					```
+
+					Let's draw the DOM tree! 
 
 					--
 
-					JS has two types of data: 
-					- Primitive types
-					- Objects
+					### Reading the DOM with JS
+
+					Let's dig into this `document`!
+
+					--
+
+					### `document`
+
+					<p class="fragment">the entire HTML document</p>
+
+					--
+
+					### `document.title`
+
+					<p class="fragment">the page (document) title</p>
+
+					--
+
+					### `document.body`
+
+					<p class="fragment">the <code>body</code> element</p>
+
+					--
+
+					### `document.body.children`
+
+					<p class="fragment">all the elements within the <code>body</code></p>
+
+				
+
+					--
+
+					#### `document.getElementById("board")`
+
+					<h4 class="fragment" data-fragment-index="2"> <code>document.querySelector("#board")</code></h4>
+
+					<p class="fragment" data-fragment-index="1">the (first) element with <code>id="board"</code></p>
+
+					--
+
+					#### `document.getElementsByTagName("h1")`
+
+					<h4 class="fragment" data-fragment-index="2"> <code>document.querySelectorAll("h1")</code></h4>
+
+					<p class="fragment" data-fragment-index="1">all the <code>h1</code> elements</p>
+
+					--
+
+					#### `document.getElementsByClassName("player")`
+
+					<h4 class="fragment" data-fragment-index="2"> <code>document.querySelectorAll(<span class="fragment">".player"</span>)</code></h4>
+
+					<p class="fragment" data-fragment-index="1">all the elements with <code>class="player"</code> </p>
+					
+					--
+
+					<h4 class="r-fit-text"><code>document.getElementsByClassName("player").length</code></h4>
+
+					<h4 class="r-fit-text" > <code>document.querySelectorAll(".player").length</code></h4>
+
+					<p class="fragment" >the number of elements with <code>class="player"</code> </p>
+					
+					--
+
+					<code class="r-fit-text">document.getElementById("p1-name").textContent</code>
+
+					<p class="fragment">the text inside the element with <code>id="p1-name"</code></p>
+
+
+					--
+
+					### *Do you expect me to remember all this!?!??!*
+
+					<img src="https://gifimage.net/wp-content/uploads/2017/08/overwhelmed-gif-6.gif" alt="Gif of Steve Urkel looking overwhelmed" />
+
+					--
+
+					The three most important letters in web development:
+
+					# ✨MDN✨
+
+					[developer.mozilla.org](https://developer.mozilla.org)
+
+					--
+
+					## Exercise
+
+					Type commands in the console to retrieve: 
+					1. all the `p` elements 
+					1. the text "X"
+					1. the number of squares in the board
+					1. the text "A game you know"
+
+
+					--
+
+
+					### Editing the DOM with JS
+
+					--
+
+					#### `document.title = "My Page"`
+
+					<p class="fragment">change the page title</p>
+					<p class="fragment" style="font-style:italic;">note the double-quotes</p>
+
+					--
+					
+					<code class="r-fit-text">document.getElementById("p1-name").textContent = "Sofia"</code>
+
+					<p class="fragment">replace the text of the <code>#p1-name</code> element</p>
+
+
+					--
+
+					<code class="r-fit-text">document.getElementById("p1-name").append(" & friends")</code>
+
+					<p class="fragment">add to the end of the element's current text</p>
+
+					--
+
+					## Exercise
+
+					1. Change the player names to you & neighbor
+					1. Swap the player symbols
+					1. Change subtitle to "A game you know and love"
+
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Values & Data Types
+
+					--
+
+					### What are these?
+
+					`"Anjana"`
+
+					`9`
+					
+					`"#board"`
+
+					--
+
+					# Values
+
+					<p class="fragment">chunks of information we want to work with</p>
+
+					<p class="fragment">that information (data) can be of different types</p>
+
+
+					--
+
+					## text data
+
+					e.g. `"Anjana"` or `"#board"`
+
+					<p class="fragment">aka...</p>
+
+					--
+
+					## strings
+
+
+					<!-- <img src="https://i0.wp.com/www.muffinchanel.com/wp-content/uploads/2020/09/muffinchanel-bracelet-inspiration-pura-vida-inspired-alphabet-bead-bracelets-wax-string-letter-friendship-bracelets-with-seed-beads-3.png?resize=768%2C765&ssl=1" alt="Image of beaded bracelets with letter beads spelling out 'ALOHA', '❤️', 'MERMAID', 'VIRGO'" /> -->
+
+					<img src="https://i0.wp.com/www.muffinchanel.com/wp-content/uploads/2020/09/muffinchanel-bracelet-inspiration-pura-vida-inspired-alphabet-bead-bracelets-wax-string-letter-friendship-bracelets-with-seed-beads-4.png?resize=768%2C756&ssl=1" alt="Image of beaded bracelets with letter beads spelling out '❤️', 'LOVE', 'CE❤️', 'ILYSM', 'SASHA', 'BLM', 'HELLO❤️', '❤️PIZZA'" width=500 />
+
+					--
+
+
+					All of these are strings:
+					- `"Hello!"`
+					- `'I like single-quotes'`
+					- <code>\`I ❤️ backticks\`</code>
+					- `'867-5309'`
+					- `"42"`
+
+					--
+
+					## `"42"` vs. `42`
+
+					*are these the same thing?*
+
+					--
+
+					## `typeof`
+
+					special JS "spell" (keyword) 
+					
+					that tells you the type of a value
+
+					--
+
+					Try it!
+					- `typeof "42"`
+					- `typeof 42`
+
+					--
+
+					## numbers
+
+					<img src="https://media3.giphy.com/media/OxeCmRsZsXSCI/giphy.gif?cid=790b7611df6245385829b15db4d7ebd2948ea669e07b5fbb&rid=giphy.gif&ct=g" alt="Gif of Count von Count and the Sesame Street muppets dancing and presenting the number 2" />
+
+					--
+
+
+					All of these are numbers:
+
+					- `9`
+					- `525600`
+					- `-3.45`
+					- `1.21e9`
+					- `Infinity`
+
+					--
+
+					### JS has two kinds of data: 
+					- Primitive types (e.g. strings, numbers)
+					- Objects (e.g. `document` & friends)
 
 					--
 
 					## Primitive data types
 
-					- Numbers
-					- Strings (text)
-					- Booleans (true/false)
-					- `undefined` & `null`
-					- A couple [others](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values)
+					- `string`
+					- `number`
+					- `boolean`
+					- `undefined` 
+					- `null`
+					- A couple [others](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values) we don't need yet
+
+					--
+
+					## booleans
+
+					--
+
+					## `undefined`
+
+					--
+
+					## `null`
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Working with Strings
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Operators
 
 
+					--
+
+					## Exercise
+
+					Use arithmetic operators to compute:
+					- The total number of siblings of your parents
+					- The average number of hours you slept this week
+					- The number of dogs you'd pet in a week if you pet 1 dog per hour while awake
+
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Expressions
 
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Strings
 
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Variables
 
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Statements vs. Expressions
 
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Objects
 
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Arrays
 
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					# DAY 2
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Pop Quiz!
 
@@ -219,7 +554,7 @@
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Writing JS outside of the console
 					
@@ -227,19 +562,19 @@
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Functions
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Scope
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Events & Handlers
 
@@ -247,19 +582,19 @@
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Conditionals
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Loops
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Loops over arrays
 
@@ -267,19 +602,19 @@
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					# DAY 3
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Fetching data
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					### Synchronous vs. Asynchronous
 
@@ -287,49 +622,49 @@
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Promises
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## `async` & `await`
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Destructuring
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Spread (`...`)
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## `ERROR` !!
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Debugging
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## `try` & `catch`
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Modules
 
@@ -337,13 +672,13 @@
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## `import` && `export`
 
 					</textarea>
 				</section>
-				<section data-markdown >
+				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					# RECAP
 
@@ -353,6 +688,10 @@
 					<textarea data-template>
 					## Next steps
 
+					- Dig deeper with more FrontendMasters courses
+					- Refine your mental model with [Just JavaScript]() by Dan Abramov and Maggie Appleton
+					- Explore & investigate on [MDN](developer.mozilla.org)
+					- Keep tinkering!
 					</textarea>
 				</section>
 				<section data-markdown >
