@@ -419,9 +419,7 @@
 
 					## `typeof`
 
-					special JS "spell" (keyword) 
-					
-					that tells you the type of a value
+					tells you the type of a value
 
 					--
 
@@ -509,7 +507,7 @@
 						</div>
 					</div>
 
-					-- 
+					--
 
 					### Exercise
 
@@ -636,6 +634,43 @@
 					<textarea data-template>
 					## Operators
 
+					<img src="https://media4.giphy.com/media/YX6YQZfuRN0nC/giphy.gif?cid=ecf05e47qz4szu7ek9s2zbxa7i4e86beyggj5nwytiq27pr4&rid=giphy.gif&ct=g" alt="Gif of Sade singing 'Smooth'" />
+
+					--
+
+					We've already seen a couple of operators: 
+
+					- `"ALOHA" + "!"`
+					- `typeof "value"`
+
+					--
+
+					`+` is an operator with several different uses:
+
+					<ul>
+						<li class="fragment">What does it do when operating on strings?</li>
+						<li class="fragment">Any guess what else it can operate on? </li>
+						<li class="fragment">How many values does it operate on at a time?</li>
+					</ul>
+
+					--
+
+					### Arithmetic operators
+
+					- `+` add
+					- `-` subtract
+					- `*` multiply
+					- `/` divide
+
+					--
+
+					### Order of operations
+
+					`4 + 1 * 2 * 4 + 2`
+
+					same as in math, use `()` to group
+
+					`((4 + 1) * 2 * 4) + 2`
 
 					--
 
@@ -646,6 +681,61 @@
 					- The average number of hours you slept this week
 					- The number of dogs you'd pet in a week if you pet 1 dog per hour while awake
 
+					--
+
+					### Comparison operators 
+
+					- `&gt;` greater than
+					- `&lt;` less than
+					- `&gt;=` greater than or equal to
+					- `&lt;=` less than or equal to
+
+					--
+
+					`5 &gt; 4`
+
+					What type of value will this return?
+
+					--
+
+					### Equality operators
+
+
+					strict | loosey-<br>goosey | meaning
+					--- | --- | ---
+					`===` | `==` | equals
+					`!==` | `!=` | does not equal
+
+					--
+
+
+					Do these differ? How? 
+
+
+					strict | vs. | loosey-goosey
+					--- | --- | ---
+					`1 === 1` | vs. | `1 == 1`
+					`"1" === "1"` | vs. | `"1" == "1"`
+					`1 === "1"` | vs. | `1 == "1"`
+
+					<p class="fragment">You should almost always use the <b>strict</b> version</p>
+
+					--
+
+					### JS has lots of operators!
+
+					<p class="fragment">Any guesses what else is out there?</p>
+
+					<p class="fragment">Where can you find them all?</p>
+
+					--
+
+					✨MDN✨
+
+					[JavaScript > Expressions & Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
+
+
+
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
@@ -653,13 +743,148 @@
 					## Expressions
 
 
+					<img src="https://media.tenor.com/images/6bbe631a75e9da8d1c316bf89ed460cc/tenor.gif" alt="Gif of Madonna dancing & singing 'Express Yourself'" />
+
+
+					--
+
+					Are these values? 
+
+					- `4 / 2 * 10`
+					- `"Frontend" + "Masters"`
+					- `5 &gt; 4 !== 3 &gt; 4`
+
+					--
+
+					an expression *evaluates* (aka *resolves*) to a value
+
+					--
+
+					<img src="https://occ-0-1722-1723.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABVQNgd4IpL64y3okatJlrMQUv0RmPmsyFalQ2aNV5G8SLFI4ghuVYMTV-VTLbHA2G9HQ7Gv1x5RIF7zhGf4Ion3IKDP8.jpg?r=4d2" alt="Image from film 'New York Minute' with Mary Kate and Ashley Olsen looking at each other seated in a cab, with title overlay" />
+
+					--
+
+					✨MDN✨
+
+					[JavaScript > JS Guide > Expressions & Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
+
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Variables
 
+					<img src="https://www.surlyhorns.com/board/uploads/monthly_2020_08/iu-2.gif.dff1f3975b6ad925cbb783079c18422b.gif" alt="Gif of Sarah McLachlan singing 'I will remember you'" />
 
+					--
+
+					Variables let us **remember** values 
+
+					```
+					let remember = "Sept. 21";
+					```
+
+					What do you notice about the line of code above?
+
+					--
+
+
+					### Declaring a variable 
+
+					```
+					let myDeclaredVariable;
+					```
+
+					What do you think is the value of `myDeclaredVariable` now?
+
+					--
+
+					### Assigning a variable
+
+					```
+					myDeclaredVariable = "so variable, much wow";
+					```
+
+					--
+
+					### Declaring & assigning at once
+
+					```
+					let myAssignedVariable = "such efficient, amaze";
+					```
+
+					--
+
+					### Using a variable
+
+					`answerToLife - 10` 
+
+					`myDeclaredVariable.toUpperCase()`
+
+					--
+
+					### Variable names 
+
+					- `validVariable`
+					- `also_valid_but_less_common`
+					- `Oddbut_Technicallyfine2`
+					- ~`0chanceThisWillWork!`~
+
+					--
+
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/CamelCase_new.svg/640px-CamelCase_new.svg.png" alt="Illustration of a camel with the word 'camelCase' positioned so that the captial C is the camel's hump" />
+						
+					--
+
+					## Exercise
+
+					Declare & assign variables to remember: 
+					- Your name
+					- The combined age of your parents
+					- The `#board` element on the page
+
+					--
+
+					What really **are** variables though??
+
+					--
+
+					variables *contain* values?
+
+					--
+
+					variables ~contain~ *point to* values
+
+					--
+
+					<img src="https://media2.giphy.com/media/3orieSlpoJxbN34HBK/giphy.gif?cid=790b76110319b1d53fe86c88f59f9ebc32b250b97736c438&rid=giphy.gif&ct=g" alt="Gif from the Simpsons of someone pressing the speed dial button on a phone, captioned '(Dialing)'" />
+
+					--
+
+					<img src="https://www.akruto.com/images/how-to-save-and-share-iphone-contacts/add-to-contacts-large.png" alt="Screenshot of an iPhone messaging the number '555-555-5555' with the options to 'Call (555) 555-5555', 'FaceTime Audio', 'Send Message', 'Add to Contacts' highlighted in a red box, 'Copy', 'Cancel'" />
+
+					
+					
+					--
+
+					What happens when this code runs? 
+
+					```
+					let answerToLife = ((4 + 1) * 2 * 4) + 2;
+					```
+
+					
+					--
+
+					What happens when this code runs?
+
+					```js
+					let scrub = "guy that thinks he's fly";
+					let busta = scrub;
+					scrub = "guy that can't get no love from me";
+					```
+
+					
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
@@ -671,15 +896,66 @@
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## Objects
+					## Arrays
 
 
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## Arrays
+					## Objects
 
+
+
+					--
+
+					Built in objects
+
+					document
+
+					console
+
+					Math
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Mutating data
+
+					Xmen 
+
+					--
+
+					primitive vs. object
+
+					string vs. array
+
+					--
+
+					let vs const 
+
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Let's play Tic Tac Toe!
+
+					1. Set up the players
+						- Create a `players` array containing 2 objects, one representing each player
+						- Each object should store the player's `name`, `symbol` (X or O), and `score` (0 initially)
+						- Display each player's name in the appropriate element in the page
+
+					--
+
+					2. Play!
+						- Take turns placing symbols in the board
+						- On each turn: 
+							- Retrieve the square you want to play in
+							- Set the square's text to your player's symbol
+						- When a player has won, add 1 to their score
+
+					
 
 					</textarea>
 				</section>
@@ -728,6 +1004,12 @@
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Conditionals
+
+					--
+
+					Boolean operators
+
+					Truth tables
 
 					</textarea>
 				</section>
