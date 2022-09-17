@@ -791,18 +791,21 @@
 
 					### Declaring a variable 
 
+					<img src="https://memeguy.com/photos/images/mrw-i-open-my-credit-card-statement-109160.gif" alt="Gif from 'The Office' of Michael Scott yelling 'I declare... bankruptcy!'" />
+
 					```
-					let myDeclaredVariable;
+					let bankruptcy;
 					```
 
-					What do you think is the value of `myDeclaredVariable` now?
+					What do you think is the value of `bankruptcy`?
 
 					--
 
 					### Assigning a variable
 
 					```
-					myDeclaredVariable = "so variable, much wow";
+					let myDeclaredVariable;
+					myDeclaredVariable = "so value, much wow";
 					```
 
 					--
@@ -812,6 +815,21 @@
 					```
 					let myAssignedVariable = "such efficient, amaze";
 					```
+
+					--
+
+					### Declaring & assigning forever
+
+					`const` declares & assigns a "constant" 
+					
+					aka a variable that can't be changed
+
+					```
+					const myUnchangeableVariable = "Never gonna give you up";
+					```
+					
+					*we'll talk more about this later*
+
 
 					--
 
@@ -889,8 +907,52 @@
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## Statements
+					## Statements vs. Expressions
 
+					<img src="https://media4.giphy.com/media/55GrSbPv8p4pp5E3vC/giphy.gif?cid=790b7611f3e548491596af24d8df5e50a8b3f5baca55fb77&rid=giphy.gif&ct=g" alt="Gif from HBO's 'Euphoria' of Colman Domingo saying 'I can't tell if that's a statement or a question'" />
+
+					--
+
+					An expression "asks" JS for a value
+
+					```
+					myAssignedVariable
+					6 + 4
+					document.getElementById("board")
+					```
+
+					--
+
+					A statement "tells" JS to do something
+
+					(e.g. declare/assign a variable)
+
+					```
+					let ten = 6 + 4;
+					myDeclaredVariable = "new value";
+					let board = document.getElementById("board");
+					```
+
+					--
+
+					<p class="r-fit-text">We'll see more kinds of statements later in the course</p>
+
+					```js
+					function add(x, y) {
+						return x + y;
+					}
+
+					let biggest;
+					if (5 > 4) {
+						biggest = 5;
+					} else {
+						biggest = 4;
+					}
+
+					for (let character of "string") {
+						console.log(character);
+					}
+					```
 
 					</textarea>
 				</section>
@@ -898,6 +960,170 @@
 					<textarea data-template>
 					## Arrays
 
+					<img src="https://media1.giphy.com/media/KMCapxEUpxTMxhnarh/giphy.gif?cid=ecf05e47gqpnohggvkpijhvkurlz3dkeuxvr28gmxvff0es1&rid=giphy.gif&ct=g" alt="Gif from 'Star Trek Discovery' of Michelle Yeoh saying 'You deserve... many things'" />
+
+
+					--
+
+					Arrays let us keep multiple values together in a single collection
+
+					```
+					let synonyms = ["plethora", "array", "cornucopia"];
+					```
+
+					<img src="https://media1.giphy.com/media/QfGYYVrbay6kssMrYn/giphy.gif?cid=790b7611dba71cb23b707b58277a0e27b04c0f48f848072c&rid=giphy.gif&ct=g" alt="Gif of Quinta Brunson gesturing and saying 'Plethora, Array, Cornucopia'" />
+
+					--
+
+					Like strings, arrays have a `length`
+					
+					```js
+					synonyms.length
+					```
+
+
+					And each value has an index
+
+					```js
+					synonyms[1]
+					synonyms.indexOf("cornucopia")
+					```
+
+					--
+
+					Also like strings, we can check if an array contains a certain value
+
+					```js
+					synonyms.includes("plethora")
+					synonyms.includes("variety")
+					```
+
+					--
+
+					Unlike strings, we can modify arrays
+
+					```js
+					synonyms[1] = "variety";
+					let lastItem = synonyms.pop();
+					synonyms.push("multitude");
+					```
+
+					What does each of these lines do? Try it out!
+
+					After this code runs, what is `synonyms`? `lastItem`?
+
+					--
+
+					Arrays can be empty, or hold a single item
+
+					```js
+					let emptyArray = [];
+					let oneItemArray = ["lonely"];
+					```
+
+					Arrays can hold any type of items, or mix and match! 
+
+					```js
+					let mixedArray = ["pop", 6, "squish", false, document];
+					```
+
+					--
+
+					Arrays can do lots of useful tricks!
+
+					What do you think each of these does? (Try it!)
+					
+					`["c", "a", "d", "b"].sort()`
+					
+					<code class="r-fit-text">["lions", "tigers", "bears oh my!"].join(" & ")</code>
+					
+					`[1, 2, 3].concat([4, 5, 6])`
+					
+					--
+
+					
+					Remember ✨MDN✨ is your friend!
+
+					[JavaScript > Standard built-in objects > Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Mutating data
+
+					<img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2017/01/X-Men-Animated-Series.jpg" alt="Image of characters from the animated series 'X-Men' featuring Gambit, Jean Grey, Storm, Wolverine, Cyclops, and Rogue" /> 
+
+					--
+
+					Do these do the same thing? 
+
+					```js
+					let abcArray = ["a", "b", "c"];
+					abcArray[1] = "d";
+					```
+
+					```js
+					let abcString = "abc";
+					abcString[1] = "d";
+					```
+
+					--
+
+					### mutable vs. immutable
+
+					"Mutable" data can be edited (e.g. Arrays)
+
+					"Immutable" data always stays the same (e.g. strings & other primitives)
+
+					--
+
+					Do these do the same thing? 
+
+					```js
+					let numbers1 = [1, 2, 3];
+					let result1 = numbers1.push(4);
+					```
+
+					```js
+					let numbers2 = [1, 2, 3];
+					let result2 = numbers2.concat([4]);
+					```
+
+					--
+
+					Some actions "mutate" an array (e.g. `oldArray.push(newValue)`)
+
+					...aka change the array *in-place*
+
+					Other actions do *not* mutate the original array, but instead create a new copy (e.g. `oldArray.concat(otherArray)`)
+
+					(you can always use MDN to check which is which!)
+
+					--
+
+					Variables can also be (im)mutable 
+
+					What happens in each case? (Try it!)
+
+					```js
+					let letVariable = "original value";
+					letVariable = "new value";
+					```
+
+					```js
+					const constVariable = "original value";
+					constVariable = "new Value";
+
+					--
+
+					If you have the choice...
+
+					#### Using *immutable* data & variables is usually best
+
+					Why might that be? 
 
 					</textarea>
 				</section>
@@ -905,6 +1131,13 @@
 					<textarea data-template>
 					## Objects
 
+					let spiceGirls = [
+						{name: "Emma", nickname: "Baby", outfit: pinkMiniskirt},
+						{name: "Geri", nickname: "Ginger", outfit: unionJackDress},
+						{name: "Mel B", nickname: "Scary", outfit: leopardJumpsuit},
+						{name: "Mel C", nickname: "Sporty", outfit: tracksuit},
+						{name: "Victoria", nickname: "Posh", outfit: littleGucciDress}
+					];
 
 
 					--
@@ -916,25 +1149,6 @@
 					console
 
 					Math
-					</textarea>
-				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
-					## Mutating data
-
-					Xmen 
-
-					--
-
-					primitive vs. object
-
-					string vs. array
-
-					--
-
-					let vs const 
-
-
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
@@ -978,6 +1192,8 @@
 					## Writing JS outside of the console
 					
 					Working with a code editor
+
+					code comments
 
 					</textarea>
 				</section>
