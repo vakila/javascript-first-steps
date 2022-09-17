@@ -120,7 +120,7 @@
 						abbreviation: "JS",
 						isAwesome: true,
 						officialSpec: "ECMAScript",
-						DOB: 1995,
+						birthYear: 1995,
 						creator: "Brendan Eich"
 					};
 
@@ -580,6 +580,14 @@
 
 					<code class="fragment">"ALOHA".includes("HA")</code>
 					<code class="fragment">"ALOHA".includes("LOL")</code>
+
+					--
+
+					Does this string start with some other string?
+
+					<code class="fragment">"ALOHA".startsWith("AL")</code>
+					<code class="fragment">"ALOHA".startsWith("HA")</code>
+
 
 					--
 
@@ -1104,7 +1112,7 @@
 
 					--
 
-					Variables can also be (im)mutable 
+					Variables themselves can also be (im)mutable 
 
 					What happens in each case? (Try it!)
 
@@ -1117,6 +1125,21 @@
 					const constVariable = "original value";
 					constVariable = "new Value";
 
+
+					--
+
+					### immutable *variable* with mutable *value*
+
+					What happens when we use `const` with a mutable value like an array?
+
+					```js [1-2|4-5]
+					const operands = [4, 6];
+					const sum = operands[0] + operands[1];
+
+					operands[0] = 5;
+					const newSum = operands[0] + operands[1];
+					```
+
 					--
 
 					If you have the choice...
@@ -1125,30 +1148,209 @@
 
 					Why might that be? 
 
+
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Objects
 
-					let spiceGirls = [
-						{name: "Emma", nickname: "Baby", outfit: pinkMiniskirt},
-						{name: "Geri", nickname: "Ginger", outfit: unionJackDress},
-						{name: "Mel B", nickname: "Scary", outfit: leopardJumpsuit},
-						{name: "Mel C", nickname: "Sporty", outfit: tracksuit},
-						{name: "Victoria", nickname: "Posh", outfit: littleGucciDress}
-					];
+					We saw an object earlier today:
+
+					```js
+					const js = {
+						name: "JavaScript",
+						abbreviation: "JS",
+						isAwesome: true,
+						officialSpec: "ECMAScript",
+						birthYear: 1995,
+						creator: "Brendan Eich"
+					};
+					```
+
+					--
+
+					Objects collect multiple values together to describe more complex data
+
+					Similar to how we can *point at* different values using *variables* in our code,
+
+					objects let us *point at* related values using *properties* in the object.
 
 
 					--
 
-					Built in objects
+					### Getting property values
 
-					document
+					`js.name`
 
-					console
+					`js.isAwesome`
 
-					Math
+					--
+
+					### Using property values
+
+					`js.name.startsWith("Java")`
+
+					`let age = 2022 - js.birthYear;`
+
+					--
+
+					### Setting property values
+
+					```js 
+					const indecisive = {
+						lunch: "sandwich"
+					};
+
+					indecisive.lunch = "tacos";
+					indecisive.snack = "chips";
+					```
+
+					---
+
+					### Exercise
+
+					Create an object representing you! 
+
+					Add properties for facts important to you, e.g.: 
+
+					```js
+					const anjana = {
+						name: "Anjana",
+						home: "San Francisco",
+						languages: ["English", "German", "French"],
+						pet: null,
+						vehicle: "Vespa",
+						hobbies: ["travel", "climbing", "gaming", "lindy hop"]
+					};
+					```
+
+					---
+
+					### Nested objects
+
+					```js
+					const menu = {
+						lunch: {
+							appetizer: "salad",
+							main: "spaghetti",
+							dessert: "tiramisu"
+						},
+						dinner: {
+							appetizer: "samosa",
+							main: "saag paneer",
+							dessert: "gulab jamun"
+						}
+					};
+
+					const tiramisu = menu.lunch.dessert;
+					```
+
+					--
+
+					### Objects in Arrays & Objects
+
+					```js
+					const spices = [
+						{name: "Emma", nickname: "Baby"},
+						{name: "Geri", nickname: "Ginger"},
+						{name: "Mel B", nickname: "Scary"},
+						{name: "Mel C", nickname: "Sporty"},
+						{name: "Victoria", nickname: "Posh"}
+					];
+
+					const spiceGirls = {
+						albums: ["Spice", "Spiceworld", "Forever"],
+						motto: "Girl Power",
+						members: spices
+					};
+					```
+
+					--
+
+					### Exercise
+
+					From the `spiceGirls` object, how can we retrieve: 
+					- `"Girl Power"`
+					- The object representing Ginger Spice
+					- `"Spiceworld"`
+					- `"Victoria"`
+
+					--
+
+					### Built in objects
+
+					Have we worked with any complex objects already today?
+
+					--
+
+					### `document`
+
+					```js
+					document.title = "Tic Tac Toe";
+					document.querySelector("h2").append(" and love");				
+					```
+
+					What other properties does `document` have? 
+
+					How can you find out? 
+
+					<a class="fragment" href="https://developer.mozilla.org/en-US/docs/Web/API/Document">✨MDN✨ Web APIs > Document</a>
+
+
+					--
+
+					### `console`
+
+					```js [1-2|4-5|7]
+					console.log("hello coder!");
+					console.log(document.querySelector("h1").textContent);
+
+					console.warn("something seems iffy");
+					console.error("oh no, it broke!");
+
+					console.clear();
+					```
+
+					<a class="fragment" href="https://developer.mozilla.org/en-US/docs/Web/API/Console">✨MDN✨ Web APIs > console</a>
+
+
+					--
+
+					### `Math`
+
+					```js
+					let randomNumber = Math.random();
+					const pi = Math.PI;
+					const five = Math.abs(-5);
+					```
+
+					<a class="fragment" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">✨MDN✨ JS > Standard built-in objects > Math</a>
+
+					--
+
+					### strings? 
+
+					Strings are *primitive values* (not objects) 
+
+					but JS automatically wraps them in `String` objects 
+
+					```js
+					const hello = "hello";
+					console.log(hello.length);
+					const yello = hello.toUpperCase();
+					```
+					[✨MDN✨ JS > Standard built-in objects > String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+					--
+
+					### ...and many more!
+
+					Remember ✨MDN✨ is your friend!
+
+					[JavaScript > Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+
+					
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
