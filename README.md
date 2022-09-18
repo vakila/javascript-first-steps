@@ -1,17 +1,16 @@
-# javascript-first-steps
-Companion site &amp; code exercises for the Frontend Masters course "JavaScript First Steps"
+# JavaScript First Steps
+Companion site &amp; code exercises for the [Frontend Masters course "JavaScript First Steps"](https://frontendmasters.com/workshops/javascript-first-steps/)
 
 Contents:
 - Day 1: 
   - [Slides](./1-slides.html)
   - [Tic Tac Toe](./1-tictactoe.html)
-- Day 2: 
-  - [Slides](./2-slides.html)
-  - [JS Quiz](./2-jsquiz.html)
-- Day 3: 
-  - [Slides](./3-slides.html)
-  - [Doggo Fetch](./3-doggofetch.html)
-
+- Day 2: *No spoilers!*
+  - Slides
+  - JS Quiz
+- Day 3: *No spoilers!*
+  - Slides
+  - Doggo Fetch
 ---
 
 
@@ -55,7 +54,7 @@ Prerequisites:
   - 1130: Working with Strings
   - 1200: Lunch
   - 1300: Operators & Expressions
-  - 1330: Variables & Statements
+  - 1330: Variables
   - 1400: Working with Objects & Arrays
   - 1530: Day 1 project review
   - 1600: End of Day 1
