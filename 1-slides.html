@@ -10,6 +10,10 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css" integrity="sha512-ITH3NSfntO7uI5n+BnxGNXpzDUoOsmAXuG37UDONLxNYIdc0EBBOOQ1xyc+t9ag9ETSuBXFApx+Rod0uURfDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/night.min.css" integrity="sha512-bfCyfT+5Js2CKjpiF7yCtTcNlNTtcdAIHV8DfGLCQuTfTEHTU9uEvhQ/Ty4zv3IRtkFQu8DKeM2MHGka+K/cxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		
+
+		<!-- Interactive code samples via Klipse -->
+		<!-- <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> -->
+
 		<!-- Theme used for syntax highlighted code -->
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/a11y-dark.min.css" integrity="sha512-Vj6gPCk8EZlqnoveEyuGyYaWZ1+jyjMPg8g4shwyyNlRQl6d3L9At02ZHQr5K6s5duZl/+YKMnM3/8pDhoUphg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -539,9 +543,15 @@
 
 					--
 
-					How many characters are in this string?
+					How many characters are in this string?				
+					
+					<pre class="js">
+						<code>"supercalifragilisticexpialidocious".length</code>
+					</pre>
 
-					<code>"supercalifragilisticexpialidocious"<span class="fragment">.length</span></code>
+					```js
+					"super".length
+					```
 
 					--
 
@@ -557,36 +567,40 @@
 
 					What's the first character in the string? 
 
-					`"ALOHA"[0]`
+					```js
+					"ALOHA"[0]
+					```
 
 					--
 
 
 					What's the third character in the string?
 
-					`"ALOHA"[2]`
+					```js
+					"ALOHA"[2]
+					```
 
 					--
 
 					What's the index of a specific character? 
 
-					<code class="fragment">"ALOHA".indexOf("L")</code>
-					<code class="fragment">"ALOHA".indexOf("A")</code>
-					<code class="fragment">"ALOHA".indexOf("Q")</code>
+					<pre class="fragment"><code>"ALOHA".indexOf("L")</code></pre>
+					<pre class="fragment"><code>"ALOHA".indexOf("A")</code></pre>
+					<pre class="fragment"><code>"ALOHA".indexOf("Q")</code></pre>
 
 					--
 
 					Does this string contain some other string?
 
-					<code class="fragment">"ALOHA".includes("HA")</code>
-					<code class="fragment">"ALOHA".includes("LOL")</code>
+					<pre class="fragment"><code>"ALOHA".includes("HA")</code></pre>
+					<pre class="fragment"><code>"ALOHA".includes("LOL")</code></pre>
 
 					--
 
 					Does this string start with some other string?
 
-					<code class="fragment">"ALOHA".startsWith("AL")</code>
-					<code class="fragment">"ALOHA".startsWith("HA")</code>
+					<pre class="fragment"><code>"ALOHA".startsWith("AL")</code></pre>
+					<pre class="fragment"><code>"ALOHA".startsWith("HA")</code></pre>
 
 
 					--
@@ -594,14 +608,16 @@
 					At what index does this substring begin? 
 
 
-					<code class="fragment">"ALOHA".indexOf("HA")</code>
-					<code class="fragment">"ALOHA".indexOf("LOL")</code>
+					<pre class="fragment"><code>"ALOHA".indexOf("HA")</code></pre>
+					<pre class="fragment"><code>"ALOHA".indexOf("LOL")</code></pre>
 
 					--
 
 					Connecting strings together
 
-					`"ALOHA" + "!"`
+					```js
+					"ALOHA" + "!"
+					```
 
 					--
 
@@ -610,7 +626,9 @@
 						<img src="https://media2.giphy.com/media/UtuJHoRbWW2eb9K8LQ/giphy.gif?cid=ecf05e47hmqd6amklrxj0i3nfbpqlwwpvy7smtfmkqvtzcjw&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of Moira looking offended saying 'There's no need to raise your voice'" />
 					</div>
 
-					`"ALOHA".toLowerCase()`
+					```js
+					"ALOHA".toLowerCase()
+					```
 
 					--
 
@@ -1384,19 +1402,31 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js" integrity="sha512-QAU7Ux8iEB53koLKFCtddfFp0D1+uQWoX3ROnRDLeiE98XHOkMciaup0Spc014jQAuJaqz8VjUZdBqriheI4Lg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js" integrity="sha512-U3fPDUX5bMrn1wnYqjaK44MFA9E6MKS+zPAg9WPAGF5XhReBeDj3FGaA831CjueG+YJxYA3WaO/m33kMIoOs/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+		<!-- CopyCode plugin for copy button on code samples -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-copycode@1.0.4/plugin/copycode/copycode.js"></script>
 		
 		<script>
 			// Slides powered by revealjs.com
-
+			
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, CopyCode ]
 			});
+		
+			
+			
+			// // Set selector for Klipse interactive snippets
+			// window.klipse_settings = {
+			// 	selector_eval_js: '.eval-js', // css selector for the html elements you want to klipsify
+			// };
 		</script>
+		<!-- <script src="https://storage.googleapis.com/app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script> -->
+
 	</body>
 </html>
