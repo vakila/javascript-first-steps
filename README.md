@@ -24,7 +24,7 @@ This three day workshop will lead you through your first steps with the JavaScri
 
 ### Course description
 
-In this course, we'll start from square one to take our first steps into the wide world of JavaScript, and we'll walk away with the core skills we need to become productive JavaScript programmers. Through a series of hands-on projects, we'll learn how to write our own JS code to manipulate and add interactivity to our websites, in cooperation with our friends HTML & CSS. We'll wrap our heads around the building blocks of JS programs, including data types, objects, arrays, and functions, and how to work with them using core language features like operators, variables, loops, and branching logic. We'll even encounter modern JS features & syntax such as arrow functions, destructuring, promises and async/await. After this course we'll be ready to dive deeper into topics like advanced JS, functional programming, frontend frameworks like React, or backend programming with Node.
+In this course, we'll start from square one to take our first steps into the wide world of JavaScript, and we'll walk away with the core skills we need 0to become productive JavaScript programmers. Through a series of hands-on projects, we'll learn how to write our own JS code to manipulate and add interactivity to our websites, in cooperation with our friends HTML & CSS. We'll wrap our heads around the building blocks of JS programs, including data types, objects, arrays, and functions, and how to work with them using core language features like operators, variables, loops, and branching logic. We'll even encounter modern JS features & syntax such as arrow functions, destructuring, promises and async/await. After this course we'll be ready to dive deeper into topics like advanced JS, functional programming, frontend frameworks like React, or backend programming with Node.
 
 ### Audience
 
@@ -42,7 +42,8 @@ Prerequisites:
 - Participants will only need a laptop with a web browser (Firefox or Chrome recommended)
 
 ### Course outline
-- 0930: Day 1 Intro & course overview
+- Day 1
+    0930: Day 1 Intro & course overview
     1000: JavaScript: What? Why? How?
     1015: Working with the DOM (HTML)
     1115: Data Types
@@ -53,21 +54,23 @@ Prerequisites:
     1400: Working with Objects & Arrays
     1530: Day 1 project review
     1600: End of Day 1
-- 0930: Day 2 Intro & project overview
-    1000: Functions & Scope
-    1100: Event Handlers
+- Day 2
+    0930: Day 2 Intro & project overview
+    1000: Working with a code editor
+    1030: Functions & Scope
+    1130: Event Handlers
     1200: Lunch
     1300: Conditionals
     1330: Loops
     1430: Map & Filter
     1530: Day 2 project review
     1600: End of Day 2
-- 0930: Day 3 Intro & project overview
+- Day 3
+    0930: Day 3 Intro & project overview
     1000: Fetch, Promises, Async/Await
     1130: Destructuring & spread syntax
     1200: Lunch
     1300: Debugging & error handling
-    1400: Working with a code editor
     1430: Modules, import & export
     1500: Day 3 project review
     1530: Course review & next steps
