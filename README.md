@@ -2,10 +2,15 @@
 Companion site &amp; code exercises for the Frontend Masters course "JavaScript First Steps"
 
 Contents:
-- [Slides](./0-slides.html)
-- Project 1: [Tic Tac Toe](./1-tictactoe.html)
-- Project 2: [JS Quiz](./2-jsquiz.html)
-- Project 3: [Doggo Fetch](./3-doggofetch.html)
+- Day 1: 
+  - [Slides](./1-slides.html)
+  - [Tic Tac Toe](./1-tictactoe.html)
+- Day 2: 
+  - [Slides](./2-slides.html)
+  - [JS Quiz](./2-jsquiz.html)
+- Day 3: 
+  - [Slides](./3-slides.html)
+  - [Doggo Fetch](./3-doggofetch.html)
 
 ---
 
@@ -43,35 +48,35 @@ Prerequisites:
 
 ### Course outline
 - Day 1
-    0930: Day 1 Intro & course overview
-    1000: JavaScript: What? Why? How?
-    1015: Working with the DOM (HTML)
-    1115: Data Types
-    1130: Working with Strings
-    1200: Lunch
-    1300: Operators & Expressions
-    1330: Variables & Statements
-    1400: Working with Objects & Arrays
-    1530: Day 1 project review
-    1600: End of Day 1
+  - 0930: Day 1 Intro & course overview
+  - 1000: JavaScript: What? Why? How?
+  - 1015: Working with the DOM (HTML)
+  - 1115: Data Types
+  - 1130: Working with Strings
+  - 1200: Lunch
+  - 1300: Operators & Expressions
+  - 1330: Variables & Statements
+  - 1400: Working with Objects & Arrays
+  - 1530: Day 1 project review
+  - 1600: End of Day 1
 - Day 2
-    0930: Day 2 Intro & project overview
-    1000: Working with a code editor
-    1030: Functions & Scope
-    1130: Event Handlers
-    1200: Lunch
-    1300: Conditionals
-    1330: Loops
-    1430: Map & Filter
-    1530: Day 2 project review
-    1600: End of Day 2
+  - 0930: Day 2 Intro & project overview
+  - 1000: Working with a code editor
+  - 1030: Functions & Scope
+  - 1130: Event Handlers
+  - 1200: Lunch
+  - 1300: Conditionals
+  - 1330: Loops
+  - 1430: Map & Filter
+  - 1530: Day 2 project review
+  - 1600: End of Day 2
 - Day 3
-    0930: Day 3 Intro & project overview
-    1000: Fetch, Promises, Async/Await
-    1130: Destructuring & spread syntax
-    1200: Lunch
-    1300: Debugging & error handling
-    1430: Modules, import & export
-    1500: Day 3 project review
-    1530: Course review & next steps
-    1600: End of Day 3
+  - 0930: Day 3 Intro & project overview
+  - 1000: Fetch, Promises, Async/Await
+  - 1130: Destructuring & spread syntax
+  - 1200: Lunch
+  - 1300: Debugging & error handling
+  - 1430: Modules, import & export
+  - 1500: Day 3 project review
+  - 1530: Course review & next steps
+  - 1600: End of Day 3
