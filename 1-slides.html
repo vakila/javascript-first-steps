@@ -236,25 +236,33 @@
 
 					--
 
-					### `document`
+					```js
+					document
+					```
 
 					<p class="fragment">the entire HTML document</p>
 
 					--
 
-					### `document.title`
+					```js
+					document.title
+					```
 
 					<p class="fragment">the page (document) title</p>
 
 					--
 
-					### `document.body`
+					```js
+					document.body
+					```
 
 					<p class="fragment">the <code>body</code> element</p>
 
 					--
 
-					### `document.body.children`
+					```js
+					document.body.children
+					```
 
 					<p class="fragment">all the elements within the <code>body</code></p>
 
@@ -262,39 +270,45 @@
 
 					--
 
-					#### `document.getElementById("board")`
+					```js
+					document.getElementById("board")
+					```
 
-					<h4 class="fragment" data-fragment-index="2"> <code>document.querySelector("#board")</code></h4>
+					<div class="fragment" data-fragment-index="2"><pre class="js hljs"><code>document.querySelector("#board")</code></pre></div>
 
 					<p class="fragment" data-fragment-index="1">the (first) element with <code>id="board"</code></p>
 
 					--
 
-					#### `document.getElementsByTagName("h1")`
+					```js
+					document.getElementsByTagName("h1")
+					```
 
-					<h4 class="fragment" data-fragment-index="2"> <code>document.querySelectorAll("h1")</code></h4>
+					<div class="fragment" data-fragment-index="2"><pre class="js hljs"> <code>document.querySelectorAll("h1")</code></pre></div>
 
 					<p class="fragment" data-fragment-index="1">all the <code>h1</code> elements</p>
 
 					--
 
-					#### `document.getElementsByClassName("player")`
+					```js
+					document.getElementsByClassName("player")
+					```
 
-					<h4 class="fragment" data-fragment-index="2"> <code>document.querySelectorAll(<span class="fragment">".player"</span>)</code></h4>
+					<div class="fragment" data-fragment-index="2"><pre class="js hljs"><code>document.querySelectorAll(".player")</code></pre></div>
 
 					<p class="fragment" data-fragment-index="1">all the elements with <code>class="player"</code> </p>
 					
 					--
 
-					<h4 class="r-fit-text"><code>document.getElementsByClassName("player").length</code></h4>
+					<pre class="r-fit-text js hljs"><code>document.getElementsByClassName("player").length</code></pre>
 
-					<h4 class="r-fit-text" > <code>document.querySelectorAll(".player").length</code></h4>
+					<pre class="r-fit-text js hljs"> <code>document.querySelectorAll(".player").length</code></pre>
 
 					<p class="fragment" >the number of elements with <code>class="player"</code> </p>
 					
 					--
 
-					<code class="r-fit-text">document.getElementById("p1-name").textContent</code>
+					<pre class="r-fit-text js hljs"><code>document.getElementById("p1-name").textContent</code></pre>
 
 					<p class="fragment">the text inside the element with <code>id="p1-name"</code></p>
 
@@ -331,21 +345,23 @@
 
 					--
 
-					#### `document.title = "My Page"`
+					```js
+					document.title = "My Page"
+					```
 
 					<p class="fragment">change the page title</p>
 					<p class="fragment" style="font-style:italic;">note the double-quotes</p>
 
 					--
 					
-					<code class="r-fit-text">document.getElementById("p1-name").textContent = "Sofia"</code>
+					<pre class="r-fit-text js hljs"><code>document.getElementById("p1-name").textContent = "Sofia"</code></pre>
 
 					<p class="fragment">replace the text of the <code>#p1-name</code> element</p>
 
 
 					--
 
-					<code class="r-fit-text">document.getElementById("p1-name").append(" & friends")</code>
+					<pre class="r-fit-text js hljs"><code>document.getElementById("p1-name").append(" & friends")</code></pre>
 
 					<p class="fragment">add to the end of the element's current text</p>
 
@@ -425,8 +441,14 @@
 					--
 
 					Try it!
-					- `typeof "42"`
-					- `typeof 42`
+
+					```js
+					typeof "42"
+					```
+
+					```js
+					typeof 42
+					```
 
 					--
 
@@ -803,7 +825,7 @@
 
 					Variables let us **remember** values 
 
-					```
+					```js
 					let remember = "Sept. 21";
 					```
 
@@ -816,7 +838,7 @@
 
 					<img src="https://memeguy.com/photos/images/mrw-i-open-my-credit-card-statement-109160.gif" alt="Gif from 'The Office' of Michael Scott yelling 'I declare... bankruptcy!'" />
 
-					```
+					```js
 					let bankruptcy;
 					```
 
@@ -826,7 +848,7 @@
 
 					### Assigning a variable
 
-					```
+					```js
 					let myDeclaredVariable;
 					myDeclaredVariable = "so value, much wow";
 					```
@@ -835,7 +857,7 @@
 
 					### Declaring & assigning at once
 
-					```
+					```js
 					let myAssignedVariable = "such efficient, amaze";
 					```
 
@@ -847,7 +869,7 @@
 					
 					aka a variable that can't be changed
 
-					```
+					```js
 					const myUnchangeableVariable = "Never gonna give you up";
 					```
 					
@@ -910,7 +932,7 @@
 
 					What happens when this code runs? 
 
-					```
+					```js
 					let answerToLife = ((4 + 1) * 2 * 4) + 2;
 					```
 
@@ -990,7 +1012,7 @@
 
 					Arrays let us keep multiple values together in a single collection
 
-					```
+					```js
 					let synonyms = ["plethora", "array", "cornucopia"];
 					```
 
@@ -1056,11 +1078,15 @@
 
 					What do you think each of these does? (Try it!)
 					
-					`["c", "a", "d", "b"].sort()`
+					```js
+					["c", "a", "d", "b"].sort()
+					```
 					
-					<code class="r-fit-text">["lions", "tigers", "bears oh my!"].join(" & ")</code>
+					<pre class="r-fit-text js hljs"><code>["lions", "tigers", "bears oh my!"].join(" & ")</code></pre>
 					
-					`[1, 2, 3].concat([4, 5, 6])`
+					```js
+					[1, 2, 3].concat([4, 5, 6])
+					```
 					
 					--
 
@@ -1086,11 +1112,13 @@
 					```js
 					let abcArray = ["a", "b", "c"];
 					abcArray[1] = "d";
+					abcArray;
 					```
 
 					```js
 					let abcString = "abc";
 					abcString[1] = "d";
+					abcString;
 					```
 
 					--
@@ -1108,11 +1136,13 @@
 					```js
 					let numbers1 = [1, 2, 3];
 					let result1 = numbers1.push(4);
+					numbers1;
 					```
 
 					```js
 					let numbers2 = [1, 2, 3];
 					let result2 = numbers2.concat([4]);
+					numbers2;
 					```
 
 					--
@@ -1139,7 +1169,7 @@
 					```js
 					const constVariable = "original value";
 					constVariable = "new Value";
-
+					```
 
 					--
 
@@ -1196,17 +1226,27 @@
 
 					### Getting property values
 
-					`js.name`
+					```js
+					js.name
+					```
 
-					`js.isAwesome`
+
+					```js
+					js.isAwesome
+					```
+
 
 					--
 
 					### Using property values
 
-					`js.name.startsWith("Java")`
+					```js
+					js.name.startsWith("Java")
+					```
 
-					`let age = 2022 - js.birthYear;`
+					```js
+					let age = 2022 - js.birthYear;
+					```
 
 					--
 
@@ -1221,7 +1261,7 @@
 					indecisive.snack = "chips";
 					```
 
-					---
+					--
 
 					### Exercise
 
@@ -1240,7 +1280,7 @@
 					};
 					```
 
-					---
+					--
 
 					### Nested objects
 
@@ -1355,6 +1395,7 @@
 					console.log(hello.length);
 					const yello = hello.toUpperCase();
 					```
+
 					[✨MDN✨ JS > Standard built-in objects > String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 					--
