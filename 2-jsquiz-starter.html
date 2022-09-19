@@ -83,49 +83,30 @@
 
   <script type="text/javascript">
 
-    const facts = [
-        {
-            "statement": "JavaScript was invented in 1995",
-            "answer": "true",
-            "explanation": "Brendan Eich created JS at Netscape in 1995. The initial version of the language was written in just10 days."
-        },
-        {
-            "statement": "Strings in JS are editable values",
-            "answer": "false",
-            "explanation": "In JavaScript strings are immutable values, meaning they cannot be edited; however, they can replaced with new, different strings."
-        },
-        {
-            "statement": "1 + 1 === 2",
-            "answer": "true",
-            "explanation": "The plus operator gives the sum of two numbers."
-        },
-        {
-            "statement": "'1' + '1' === '2'",
-            "answer": "false",
-            "explanation": "The plus operator concatenates (joins together) strings, so '1' + '1' === '11'."
-        },
-        {
-            "statement": "typeof ['J', 'S'] === 'array'",
-            "answer": "false",
-            "explanation": "Arrays have the type 'object'. In JS, everything is either a primitive data type (e.g. 'string', 'number') or an object. Arrays are a kind of object with some special properties.  "
-        }
-    ];
+
+    const facts = []; // TODO: array of fact objects, each with a statement, true/false answer, and explanation 
+
+
+    // TODO: variables pointing to the corresponding element(s)
+    const explanation = null; // TODO
+    const nextButton = null; // TODO
+    const optionButtons = []; // TODO
+
+
 
     function hide(element) {
-        element.classList.add("hidden");
+        // TODO: function to add the 'hidden' class to an element
     }
 
     function show(element) {
-        element.classList.remove("hidden");
+        // TODO: function to remove the 'hidden' class from an element
     }
 
-    function disable(button) {
-        button.setAttribute("disabled", "");
-    } 
+    // TODO: 'disable' function to disable a given button
 
-    function enable(button) {
-        button.removeAttribute("disabled");
-    }
+
+    // TODO: 'enable' function to enable a given button
+
 
 
     let correct = 0;
@@ -134,18 +115,12 @@
     let fact;
 
 
-    const explanation =  document.getElementById("explanation");
-    const nextButton = document.getElementById("next-question");
-    const optionButtons = document.getElementById("options").children;
-
     function getNextFact() {
         fact = facts.shift(); // get the first fact in our array (shortening the array)
 
-        // set the question text to the current fact's statement
-        document.getElementById("statement").textContent = fact.statement;
+        // TODO set the question text to the current fact's statement
 
-        // hide any previous explanation
-        hide(explanation);
+        // TODO hide any previous explanation
 
         for (let option of optionButtons) {
             // clear any previous classes
@@ -155,42 +130,36 @@
             enable(option);
         }
 
-        // disable next-question button
-        disable(nextButton);
+        // TODO disable next-question button
+        
         
     }
 
-    nextButton.addEventListener("click", getNextFact);
+    // TODO add an event handler calling getNextFact whenever the next-question button is clicked
+
 
     for (let option of optionButtons) {
         option.addEventListener("click", e => {
             // When this option is clicked...
 
-            // disable all the option buttons
-            for (let button of optionButtons) {
-                disable(button); 
-            }
+            // TODO disable all the option buttons
 
-            // enable the 'next question' button, if we still have facts left
-            if (facts.length > 0) {
-                enable(nextButton);
-            } else {
-                nextButton.textContent = "No more questions!"
-            }
 
-            const guess = e.target.value;
-            if (guess === fact.answer) {
-                // correct answer!
-                e.target.classList.add("correct");
-                correct += 1;
-            } else {
-                // wrong answer!
-                e.target.classList.add("incorrect");
-            }
+            // TODO enable the 'next question' button, if we still have facts left
+            // TODO otherwise, update the button's text to say "No more questions!"
 
-            // display the explanation
-            explanation.textContent = fact.explanation;
-            show(explanation);
+
+            // TODO variable pointing to the element that was clicked
+            //const guess = // TODO
+
+
+            // TODO compare the guess to the correct answer
+            // if they match, add the 'correct' class to the clicked option and add 1 to the total correct answers
+            // otherwise, add the 'incorrect' class to the clicked option
+
+
+            // TODO update & display the explanation text
+
             
             // update the score
             completed += 1;

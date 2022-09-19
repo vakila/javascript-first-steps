@@ -63,7 +63,7 @@ Prerequisites:
 - Day 2
   - 0930: Day 2 Intro & project overview
   - 1000: Working with a code editor
-  - 1030: Functions & Scope
+  - 1015: Functions & Scope
   - 1130: Event Handlers
   - 1200: Lunch
   - 1300: Conditionals
