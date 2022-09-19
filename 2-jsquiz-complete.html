@@ -81,20 +81,18 @@
 
   </body>
 
-  <script type="text/javascript" src="jsfacts.js"></script>
-
   <script type="text/javascript">
 
     const facts = [
         {
             "statement": "JavaScript was invented in 1995",
             "answer": "true",
-            "explanation": "Brendan Eich created JS at Netscape in 1995."
+            "explanation": "Brendan Eich created JS at Netscape in 1995. The initial version of the language was written in just10 days."
         },
         {
-            "statement": "JavaScript is a variant of the Java programming language",
+            "statement": "Strings in JS are editable values",
             "answer": "false",
-            "explanation": "As a programming language, JS is unrelated to Java. Its name however was an attempt to capitalize on the popularity of Java in the mid-90's."
+            "explanation": "In JavaScript strings are immutable values, meaning they cannot be edited; however, they can replaced with new, different strings."
         },
         {
             "statement": "1 + 1 === 2",
@@ -107,19 +105,28 @@
             "explanation": "The plus operator concatenates (joins together) strings, so '1' + '1' === '11'."
         },
         {
-            "statement": "JavaScript only runs inside of web browsers.",
+            "statement": "typeof ['J', 'S'] === 'array'",
             "answer": "false",
-            "explanation": "JavaScript can run in many environments, including web browsers, web servers, and smart devices."
+            "explanation": "Arrays have the type 'object'. In JS, everything is either a primitive data type (e.g. 'string', 'number') or an object. Arrays are a kind of object with some special properties.  "
         }
     ];
 
-
-    function shuffleArray(array) {
-        // randomly shuffles elements in an array in-place
-        return array.sort((a,b) => Math.random() - 0.5);
+    function hide(element) {
+        element.classList.add("hidden");
     }
 
-    shuffleArray(facts);
+    function show(element) {
+        element.classList.remove("hidden");
+    }
+
+    function disable(button) {
+        button.setAttribute("disabled", "");
+    } 
+
+    function enable(button) {
+        button.removeAttribute("disabled");
+    }
+
 
     let correct = 0;
     let completed = 0;
@@ -127,7 +134,7 @@
     let fact;
 
 
-    const options = document.getElementById("options").children;
+    const optionButtons = document.getElementById("options").children;
     const explanation =  document.getElementById("explanation");
     const nextButton = document.getElementById("next-question");
 
@@ -135,39 +142,39 @@
         fact = facts.shift(); // get the next fact in our array (shortening the array)
 
         // set the question text & clear any previous explanation
-        document.getElementById("statement").innerText = fact.statement;
-        document.getElementById("explanation").classList.add("hidden");
+        document.getElementById("statement").textContent = fact.statement;
+        hide(document.getElementById("explanation"));
 
-        for (let option of document.getElementById("options").children) {
+        for (let option of optionButtons) {
             // clear any previous classes
             option.classList.remove("correct");
             option.classList.remove("incorrect");
             // make sure buttons are enabled
-            option.removeAttribute("disabled");
+            enable(option);
         }
 
         // disable & hide next-question button
-        nextButton.setAttribute("disabled", "");
-        nextButton.classList.add("hidden");
+        disable(nextButton);
+        hide(nextButton);
         
     }
 
     nextButton.addEventListener("click", getNextFact);
 
-    for (let option of options) {
+    for (let option of optionButtons) {
         option.addEventListener("click", e => {
             // When this option is clicked...
             // disable all other option buttons
-            for (let button of options) {
-                button.setAttribute("disabled", ""); 
+            for (let button of optionButtons) {
+                disable(button); 
             }
 
             // enable the 'next question' button, if we still have facts left
-            nextButton.classList.remove("hidden");
+            show(nextButton);
             if (facts.length > 0) {
-                nextButton.removeAttribute("disabled");
+                enable(nextButton);
             } else {
-                nextButton.innerText = "No more questions!"
+                nextButton.textContent = "No more questions!"
             }
 
             const guess = e.target.value;
@@ -180,12 +187,14 @@
                 e.target.classList.add("incorrect");
             }
 
-            explanation.innerText = fact.explanation;
-            explanation.classList.remove("hidden");
+            // display the explanation
+            explanation.textContent = fact.explanation;
+            show(explanation);
             
+            // update the score
             completed += 1;
-            document.getElementById("correct").innerText = correct;
-            document.getElementById("completed").innerText = completed;
+            document.getElementById("correct").textContent = correct;
+            document.getElementById("completed").textContent = completed;
 
         })
     }
