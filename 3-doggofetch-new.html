@@ -70,9 +70,6 @@
 
   </body>
 
-  <!-- Loading the utilities script does not work locally due to CORS -->
-  <script type="module" src="./3-utilities.js" ></script>
-
 
   <script type="module">
 
@@ -137,6 +134,7 @@
 
 
 
+    // Function to add the multiple-choice buttons to the page
     function renderButtons(choicesArray, correctAnswer) {
         // TODO 6
         // Given the event object of a "click" event,
@@ -153,8 +151,7 @@
             }
         }
 
-        // Container for the multiple-choice buttons
-        const options = document.getElementById("options");
+        const options = document.getElementById("options"); // Container for the multiple-choice buttons
 
         // TODO 8
         // For each of the choices in choicesArray,
@@ -172,6 +169,7 @@
     }
 
 
+    // Function to add the quiz content to the page
     function renderQuiz(imgUrl, correctAnswer, choices) {
         const image = document.createElement("img");
         image.setAttribute("src", imgUrl);
@@ -189,6 +187,7 @@
         
     }
 
+    // Function to load the data needed to display the quiz
     async function loadQuizData() {
         const doggoImgUrl = await fetchMessage(RANDOM_IMG_ENDPOINT);
         const correctBreed = getBreedFromURL(doggoImgUrl);
