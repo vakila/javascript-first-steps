@@ -312,6 +312,31 @@
 
 					--
 
+					### Methods
+
+					Properties can point to functions too 
+
+					We call function-properties "methods" on objects
+
+					```js
+					const dog = {
+						name: "Ein",
+						breed: "Corgi",
+						speak: function () {
+							console.log("woof woof");
+						}
+					}
+
+					dog.speak();
+					```
+
+					--
+
+					What methods have we seen already?
+
+
+					--
+
 					### Nested objects
 
 					```js
@@ -365,7 +390,7 @@
 
 					### Built in objects
 
-					Have we worked with any complex objects already today?
+					Have we worked with any complex objects already?
 
 					--
 
@@ -954,7 +979,34 @@
 
 					--
 
+					<img src="https://media4.giphy.com/media/W697Pbn9a0i9qhgE8v/giphy.gif?cid=ecf05e47ljpmw4010cdaaok2nvgf7k1tc8pxmowy3htm6zai&rid=giphy.gif&ct=g" alt="Gif of Janelle Monae saying 'You need to handle it'" />
 
+					--
+
+					We can detect events with JS using an *event listener*
+
+					The `.addEventListener()` method lets us listen for events on a DOM element
+
+					```js
+					document.addEventListener("click", () => {
+						console.log("clicked")
+					});
+					```
+
+					--
+
+					`.addEventListener()` takes 2 parameters: 
+					
+					- The name of the event to listen to (e.g. `"click"`)
+					- A *handler* function that JS calls when that event is fired on this element
+
+					--
+
+					<img src="https://media0.giphy.com/media/3ofT5PzM67qEoeihmo/giphy.gif?cid=790b7611c943e9ecab6d1f151c11c47a8cbb42b8952d8c3e&rid=giphy.gif&ct=g" alt="Gif from Twin Peaks of Kyle MacLachlan saying 'I can handle that'" />
+					
+					--
+
+					We can do basically whatever we want in the handler function
 
 					<iframe height="400" style="width: 100%;" scrolling="no" title="Exciting" src="https://codepen.io/vakila/embed/VwxmmeY?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
 						See the Pen <a href="https://codepen.io/vakila/pen/VwxmmeY">
@@ -962,16 +1014,69 @@
 						on <a href="https://codepen.io">CodePen</a>.
 					  </iframe>
 
-					</textarea>
 
 					--
 
 
+					JS passes an `event` object to the handler function with information about the event 
 
+					If we accept this as a parameter, we can use it to get details
+
+
+					```js
+					document.addEventListener("click", (event) => {
+						console.log(event);
+					});
+					```
+
+					
+					--
+
+					`event.target` is the element the event fired on 
+
+					(in this case, which element was clicked)
+
+					```js
+					document.addEventListener("click", (event) => {
+						console.log(event.target);
+					});
+					```
+					--
+
+					["click"](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) isn't the only type of event we can handle
+
+					- ["dblclick"](https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event)
+					- ["mouseover"](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event)
+					- ["mouseout"](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseout_event)
+
+					...and *lots* [more](https://developer.mozilla.org/en-US/docs/Web/Events)!
+
+					--
+
+					### Exercise 
+
+					In the console, on our quiz add event listeners to: 
+					- Capitalize the text of the "true" button when it is clicked 
+					- Change the `h1` text to "hovering" when the mouse moves into the element
+					- Change the `h1` text to "Quiz.js" when the mouse moves out of the element
+
+					--
+
+					<img src="https://media2.giphy.com/media/mEnING9BFDAzgHo5L4/giphy.gif?cid=ecf05e47vq2sb8v2m5ukm0a7o1ephsjgrxu7a7u0ti3i0zur&rid=giphy.gif&ct=g" alt="Gif from Scandal of Kerry Washington saying 'It's handled'" />
+
+
+
+					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Conditionals
+
+
+
+					--
+
+					if else if 
 
 					--
 
