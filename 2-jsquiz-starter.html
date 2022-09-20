@@ -30,7 +30,7 @@
             margin: 1rem 0px;
             min-height: 2em;
         }
-        #explanation, #score {
+        #explanation {
             padding: 1rem;
             text-align: center;
         }
@@ -50,32 +50,27 @@
         .incorrect {
             background-color: lightpink;
         }
-        .hidden {
-            display: none;
-        }
     </style>
   </head>
   <body>
     <header>
     <h1>Quiz.js</h1>
     <p>Do you know JS? Find out!</p>
-    <div id="score">
-        Score: <span id="correct">0</span> / <span id="completed">0</span>
-    </div>
     </header>
 
     <main>
     <div id="statement">
         
     </div>
+
     <div id="options">
         <button name="true" value="true" >true</button>
         <button name="false" value="false" >false</button>
     </div>
-    <div id="explanation" class="hidden">
+
+    <div id="explanation">
 
     </div>
-    <button id="next-question" name="next-question" >Next Question</button>
 
     </main>
 
@@ -84,92 +79,46 @@
   <script type="text/javascript">
 
 
-    const facts = []; // TODO: array of fact objects, each with a statement, true/false answer, and explanation 
+    // TODO 1: Declare & assign variables pointing to the corresponding element(s)
+    // statement should be the "statement" div
+    // optionButtons should be all the elements within the "options" div
+    // explanation should be the "explanation" div
 
 
-    // TODO: variables pointing to the corresponding element(s)
-    const explanation = null; // TODO
-    const nextButton = null; // TODO
-    const optionButtons = []; // TODO
-
-
-
-    function hide(element) {
-        // TODO: function to add the 'hidden' class to an element
-    }
-
-    function show(element) {
-        // TODO: function to remove the 'hidden' class from an element
-    }
-
-    // TODO: 'disable' function to disable a given button
-
-
-    // TODO: 'enable' function to enable a given button
-
-
-
-    let correct = 0;
-    let completed = 0;
+    // TODO 2: Declare & assign a variable called fact
+    // Its value should be an object with a statement, true/false answer, and explanation 
     
-    let fact;
 
+    
+    // TODO 3: Set the text of the statement element to the fact's statement
 
-    function getNextFact() {
-        fact = facts.shift(); // get the first fact in our array (shortening the array)
-
-        // TODO set the question text to the current fact's statement
-
-        // TODO hide any previous explanation
-
-        for (let option of optionButtons) {
-            // clear any previous classes
-            option.classList.remove("correct");
-            option.classList.remove("incorrect");
-            // make sure buttons are enabled
-            enable(option);
-        }
-
-        // TODO disable next-question button
         
-        
-    }
 
-    // TODO add an event handler calling getNextFact whenever the next-question button is clicked
-
-
-    for (let option of optionButtons) {
-        option.addEventListener("click", e => {
-            // When this option is clicked...
-
-            // TODO disable all the option buttons
+    // TODO 4: Declare disable & enable functions to set or remove the "disabled" attribute from a given button element
+    // disable(button) should set the button element's attribute "disabled" to the value ""
+    // enable(button) should remove the attribute "disabled" from the button element
 
 
-            // TODO enable the 'next question' button, if we still have facts left
-            // TODO otherwise, update the button's text to say "No more questions!"
+
+    // TODO 5: Declare an isCorrect function that compares a guess to the right answer
+    // isCorrect(guess) should return true if the guess matches the fact's answer
+    
 
 
-            // TODO variable pointing to the element that was clicked
-            //const guess = // TODO
+    // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
+            // TODO 6B: Within the event listener function, display the fact's explanation by setting the text of the explanation element
 
 
-            // TODO compare the guess to the correct answer
-            // if they match, add the 'correct' class to the clicked option and add 1 to the total correct answers
-            // otherwise, add the 'incorrect' class to the clicked option
+            // TODO 7: Within the event listener function, 
+            // Use a for loop to disable all the option buttons
 
 
-            // TODO update & display the explanation text
+            // TODO 8: Within the event listener function,
+            // Get the guessed value from the clicked button
+            // Use a conditional to compare the guess to the fact's answer
+            // and add the "correct"/"incorrect" class as appropriate
 
-            
-            // update the score
-            completed += 1;
-            document.getElementById("correct").textContent = correct;
-            document.getElementById("completed").textContent = completed;
-
-        })
-    }
-
-    getNextFact();
+    
 
   </script>
 </html>
