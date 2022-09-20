@@ -32,6 +32,34 @@
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
+					# DAY 2
+
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+					### Today's goals
+
+					- Work with Arrays & Objects
+					- Write JS in an HTML file
+					- Use functions to perform actions
+					- Handle events to react to user behavior
+					- Use conditionals to decide what to do when
+					- Use loops to repeat actions multiple times
+					- Make our own quiz game! 
+
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+					### Ready?
+
+					# Let's go!
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
 					## Arrays
 
 					<img src="https://media1.giphy.com/media/KMCapxEUpxTMxhnarh/giphy.gif?cid=ecf05e47gqpnohggvkpijhvkurlz3dkeuxvr28gmxvff0es1&rid=giphy.gif&ct=g" alt="Gif from 'Star Trek Discovery' of Michelle Yeoh saying 'You deserve... many things'" />
@@ -230,7 +258,7 @@
 					<textarea data-template>
 					## Objects
 
-					We saw an object earlier today:
+					We saw an object earlier:
 
 					```js
 					const js = {
@@ -330,9 +358,28 @@
 					dog.speak();
 					```
 
+					
 					--
 
-					What methods have we seen already?
+					`this` in a method lets us reference other properties on the object
+
+					```js
+					anjana.speak = function () {
+						console.log("Hi my name is", this.name);
+					}
+
+					anjana.speak();
+					```
+
+					--
+
+					But be careful with `this`! 
+
+					<img src="https://c.tenor.com/7tgvcDTOfMQAAAAC/tenor.gif" alt="Gif from Friends of Rachel & Phoebe jumping out and yelling 'Danger!' to scare Ross" />
+
+					Its behavior is complicated & can be tricky
+
+					MDN: [JS > Operators > `this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 
 					--
@@ -391,6 +438,9 @@
 					### Built in objects
 
 					Have we worked with any complex objects already?
+
+					What properties & methods have we used already?
+
 
 					--
 
@@ -485,43 +535,18 @@
 
 					</textarea>
 				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
-					# DAY 2
-
-					</textarea>
-				</section>
+				
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Pop Quiz!
 
 					Let's put our knowledge so far to the test!
 
-					[JS Quiz](./2-jsquiz-complete.html)
+					[JS Quiz](./2-jsquiz-fancy.html)
 
 					</textarea>
 				</section>
-				<section data-markdown>
-					<textarea data-template>
-					### Today's goals
-
-					- Write JS in an HTML file
-					- Use functions to perform actions
-					- Handle events to react to user behavior
-					- Use conditionals to decide what to do when
-					- Use loops to repeat actions multiple times
-					- Make our own quiz game! 
-
-					</textarea>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-					### Ready?
-
-					# Let's go!
-
-					</textarea>
-				</section>
+				
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Writing JS in HTML
@@ -736,6 +761,8 @@
 					```js
 					const hm = sayHello("Marc");
 					```
+
+					<code class="fragment">undefined</code>
 
 					--
 
@@ -1179,7 +1206,7 @@
 
 					*Logical operators* let us make two boolean values become one
 
-					<img src="https://d4q8jbdc3dbnf.cloudfront.net/release/l/331c003f30bd4cdfda4aa3efc9b3ec53.jpg" alt="Cover image of Spice Girls single '2 become 1'" />
+					<img width=400 src="https://d4q8jbdc3dbnf.cloudfront.net/release/l/331c003f30bd4cdfda4aa3efc9b3ec53.jpg" alt="Cover image of Spice Girls single '2 become 1'" />
 
 					--
 
