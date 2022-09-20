@@ -1105,6 +1105,7 @@
 					`if` statements let us execute code under a certain *condition*
 
 					```js
+					const you = {wannaBeMyLover: true};
 					if (you.wannaBeMyLover) {
 						you.gottaGetWithMyFriends = true;
 					}
@@ -1117,10 +1118,10 @@
 					we can use `else` to run other code if `(condition)` is false
 
 					```js
-					if (you.reallyBug(me)) {
-						me.say("Goodbye");
+					if (you.reallyBugMe) {
+						console.log("Goodbye");
 					} else {
-						me.say("Hello");
+						console.log("Hello");
 					}
 					```
 
@@ -1193,6 +1194,19 @@
 					--
 
 					### Boolean (logical) operators
+
+					Sometimes we care about the opposite of a value
+
+					```js
+					let someoneIsAroundYou = false; 
+					if (!someoneIsAroundYou) {
+						console.log("baby I love you");
+					}
+					```
+
+					The `!` operator negates a boolean (gives its opposite)
+
+					--
 
 					Sometimes we care about the truthiness of more than one value
 
