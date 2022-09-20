@@ -362,6 +362,28 @@
 
 					What methods have we seen already?
 
+					--
+
+					`this` in a method lets us reference other properties on the object
+
+					```js
+					anjana.speak = function () {
+						console.log("Hi my name is", this.name);
+					}
+
+					anjana.speak();
+					```
+
+					--
+
+					But be careful with `this`! 
+
+					<img src="https://c.tenor.com/7tgvcDTOfMQAAAAC/tenor.gif" alt="Gif from Friends of Rachel & Phoebe jumping out and yelling 'Danger!' to scare Ross" />
+
+					Its behavior is complicated & can be tricky
+
+					MDN: [JS > Operators > `this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+
 
 					--
 
