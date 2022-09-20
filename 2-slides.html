@@ -32,6 +32,436 @@
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
+					## Arrays
+
+					<img src="https://media1.giphy.com/media/KMCapxEUpxTMxhnarh/giphy.gif?cid=ecf05e47gqpnohggvkpijhvkurlz3dkeuxvr28gmxvff0es1&rid=giphy.gif&ct=g" alt="Gif from 'Star Trek Discovery' of Michelle Yeoh saying 'You deserve... many things'" />
+
+
+					--
+
+					Arrays let us keep multiple values together in a single collection
+
+					```js
+					let synonyms = ["plethora", "array", "cornucopia"];
+					```
+
+					<img src="https://media1.giphy.com/media/QfGYYVrbay6kssMrYn/giphy.gif?cid=790b7611dba71cb23b707b58277a0e27b04c0f48f848072c&rid=giphy.gif&ct=g" alt="Gif of Quinta Brunson gesturing and saying 'Plethora, Array, Cornucopia'" />
+
+					--
+
+					Like strings, arrays have a `length`
+					
+					```js
+					synonyms.length
+					```
+
+
+					And each value has an index
+
+					```js
+					synonyms[1]
+					synonyms.indexOf("cornucopia")
+					```
+
+					--
+
+					Also like strings, we can check if an array contains a certain value
+
+					```js
+					synonyms.includes("plethora")
+					synonyms.includes("variety")
+					```
+
+					--
+
+					Unlike strings, we can modify arrays
+
+					```js
+					synonyms[1] = "variety";
+					let lastItem = synonyms.pop();
+					synonyms.push("multitude");
+					```
+
+					What does each of these lines do? Try it out!
+
+					After this code runs, what is `synonyms`? `lastItem`?
+
+					--
+
+					Arrays can be empty, or hold a single item
+
+					```js
+					let emptyArray = [];
+					let oneItemArray = ["lonely"];
+					```
+
+					Arrays can hold any type of items, or mix and match! 
+
+					```js
+					let mixedArray = ["pop", 6, "squish", false, document];
+					```
+
+					--
+
+					Arrays can do lots of useful tricks!
+
+					What do you think each of these does? (Try it!)
+					
+					```js
+					["c", "a", "d", "b"].sort()
+					```
+					
+					<pre class="r-fit-text js hljs"><code>["lions", "tigers", "bears oh my!"].join(" & ")</code></pre>
+					
+					```js
+					[1, 2, 3].concat([4, 5, 6])
+					```
+					
+					--
+
+					
+					Remember ✨MDN✨ is your friend!
+
+					[JavaScript > Standard built-in objects > Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Mutating data
+
+					<img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2017/01/X-Men-Animated-Series.jpg" alt="Image of characters from the animated series 'X-Men' featuring Gambit, Jean Grey, Storm, Wolverine, Cyclops, and Rogue" /> 
+
+					--
+
+					Do these do the same thing? 
+
+					```js
+					let abcArray = ["a", "b", "c"];
+					abcArray[1] = "d";
+					abcArray;
+					```
+
+					```js
+					let abcString = "abc";
+					abcString[1] = "d";
+					abcString;
+					```
+
+					--
+
+					### mutable vs. immutable
+
+					"Mutable" data can be edited (e.g. Arrays)
+
+					"Immutable" data always stays the same (e.g. strings & other primitives)
+
+					--
+
+					Do these do the same thing? 
+
+					```js
+					let numbers1 = [1, 2, 3];
+					let result1 = numbers1.push(4);
+					numbers1;
+					```
+
+					```js
+					let numbers2 = [1, 2, 3];
+					let result2 = numbers2.concat([4]);
+					numbers2;
+					```
+
+					--
+
+					Some actions "mutate" an array (e.g. `oldArray.push(newValue)`)
+
+					...aka change the array *in-place*
+
+					Other actions do *not* mutate the original array, but instead create a new copy (e.g. `oldArray.concat(otherArray)`)
+
+					(you can always use MDN to check which is which!)
+
+					--
+
+					Variables themselves can also be (im)mutable 
+
+					What happens in each case? (Try it!)
+
+					```js
+					let letVariable = "original value";
+					letVariable = "new value";
+					```
+
+					```js
+					const constVariable = "original value";
+					constVariable = "new Value";
+					```
+
+					--
+
+					### immutable *variable* with mutable *value*
+
+					What happens when we use `const` with a mutable value like an array?
+
+					```js [1-2|4-5]
+					const operands = [4, 6];
+					const sum = operands[0] + operands[1];
+
+					operands[0] = 5;
+					const newSum = operands[0] + operands[1];
+					```
+
+					--
+
+					If you have the choice...
+
+					#### Using *immutable* data & variables is usually best
+
+					Why might that be? 
+
+
+					</textarea>
+				</section>
+				
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Objects
+
+					We saw an object earlier today:
+
+					```js
+					const js = {
+						name: "JavaScript",
+						abbreviation: "JS",
+						isAwesome: true,
+						officialSpec: "ECMAScript",
+						birthYear: 1995,
+						creator: "Brendan Eich"
+					};
+					```
+
+					--
+
+					Objects collect multiple values together to describe more complex data
+
+					Similar to how we can *point at* different values using *variables* in our code,
+
+					objects let us *point at* related values using *properties* in the object.
+
+
+					--
+
+					### Getting property values
+
+					```js
+					js.name
+					```
+
+
+					```js
+					js.isAwesome
+					```
+
+
+					--
+
+					### Using property values
+
+					```js
+					js.name.startsWith("Java")
+					```
+
+					```js
+					let age = 2022 - js.birthYear;
+					```
+
+					--
+
+					### Setting property values
+
+					```js 
+					const indecisive = {
+						lunch: "sandwich"
+					};
+
+					indecisive.lunch = "tacos";
+					indecisive.snack = "chips";
+					```
+
+					--
+
+					### Exercise
+
+					Create an object representing you! 
+
+					Add properties for facts important to you, e.g.: 
+
+					```js
+					const anjana = {
+						name: "Anjana",
+						home: "San Francisco",
+						languages: ["English", "German", "French"],
+						pet: null,
+						vehicle: "Vespa",
+						hobbies: ["travel", "climbing", "gaming", "lindy hop"]
+					};
+					```
+
+					--
+
+					### Nested objects
+
+					```js
+					const menu = {
+						lunch: {
+							appetizer: "salad",
+							main: "spaghetti",
+							dessert: "tiramisu"
+						},
+						dinner: {
+							appetizer: "samosa",
+							main: "saag paneer",
+							dessert: "gulab jamun"
+						}
+					};
+
+					const tiramisu = menu.lunch.dessert;
+					```
+
+					--
+
+					### Objects in Arrays & Objects
+
+					```js
+					const spices = [
+						{name: "Emma", nickname: "Baby"},
+						{name: "Geri", nickname: "Ginger"},
+						{name: "Mel B", nickname: "Scary"},
+						{name: "Mel C", nickname: "Sporty"},
+						{name: "Victoria", nickname: "Posh"}
+					];
+
+					const spiceGirls = {
+						albums: ["Spice", "Spiceworld", "Forever"],
+						motto: "Girl Power",
+						members: spices
+					};
+					```
+
+					--
+
+					### Exercise
+
+					From the `spiceGirls` object, how can we retrieve: 
+					- `"Girl Power"`
+					- The object representing Ginger Spice
+					- `"Spiceworld"`
+					- `"Victoria"`
+
+					--
+
+					### Built in objects
+
+					Have we worked with any complex objects already today?
+
+					--
+
+					### `document`
+
+					```js
+					document.title = "Tic Tac Toe";
+					document.querySelector("h2").append(" and love");				
+					```
+
+					What other properties does `document` have? 
+
+					How can you find out? 
+
+					<a class="fragment" href="https://developer.mozilla.org/en-US/docs/Web/API/Document">✨MDN✨ Web APIs > Document</a>
+
+
+					--
+
+					### `console`
+
+					```js [1-2|4-5|7]
+					console.log("hello coder!");
+					console.log(document.querySelector("h1").textContent);
+
+					console.warn("something seems iffy");
+					console.error("oh no, it broke!");
+
+					console.clear();
+					```
+
+					<a class="fragment" href="https://developer.mozilla.org/en-US/docs/Web/API/Console">✨MDN✨ Web APIs > console</a>
+
+
+					--
+
+					### `Math`
+
+					```js
+					let randomNumber = Math.random();
+					const pi = Math.PI;
+					const five = Math.abs(-5);
+					```
+
+					<a class="fragment" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">✨MDN✨ JS > Standard built-in objects > Math</a>
+
+					--
+
+					### strings? 
+
+					Strings are *primitive values* (not objects) 
+
+					but JS automatically wraps them in `String` objects 
+
+					```js
+					const hello = "hello";
+					console.log(hello.length);
+					const yello = hello.toUpperCase();
+					```
+
+					[✨MDN✨ JS > Standard built-in objects > String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+					--
+
+					### ...and many more!
+
+					Remember ✨MDN✨ is your friend!
+
+					[JavaScript > Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+
+					
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Let's play Tic Tac Toe!
+
+					1. Set up the players
+						- Create a `players` array containing 2 objects, one representing each player
+						- Each object should store the player's `name` and `symbol` (X or O)
+						- Display each player's name in the appropriate element in the page
+
+					--
+
+					2. Play!
+						- Take turns placing symbols in the board
+						- On each turn: 
+							- Retrieve the square you want to play in
+							- Set the square's text to your player's symbol
+
+					
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
 					# DAY 2
 
 					</textarea>
@@ -236,7 +666,7 @@
 
 					--
 
-					JS feels pretty "meh" about missing/extra arguments
+					JS is pretty "loosey-goosey" about missing/extra arguments
 
 					<img src="https://media1.giphy.com/media/xT5LMrKFVsJgFUOYQE/giphy.gif?cid=ecf05e47s46qeptt34w3cy6vrnlz7nul0i1hxjios4dhmszr&rid=giphy.gif&ct=g" alt="Gif of Bart Simpson saying 'No arguments here'" />
 
@@ -291,14 +721,14 @@
 					In the console, declare the following functions: 
 					- `multiply`: given 2 numbers, return their product
 					- `yell`: given a lowercase string, log it in all caps to the console
-					- `longerThan`: given 2 arrays, compute whether the first is longer than the second
+					- `longerThan`: given 2 arrays, return whether the first is longer than the second
 
 					--
 
 					### Exercise
 
 					In the JSQuiz starter, follow the next TODOs to: 
-					- Complete the `hide` and `show` functions
+					- Fill in the `hide` and `show` functions
 					- Declare the functions called `disable` and `enable`
 
 					</textarea>
@@ -309,6 +739,105 @@
 
 
 					<img src="https://media1.giphy.com/media/fXtGlVSI2ZB2E1JO0b/giphy.gif?cid=790b7611315f7df8f7217d5e72891ab188485e8bde837cec&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of David saying 'There are so many variables still in play'" />
+
+					--
+
+					In JS it doesn't just matter *what* variables we declare
+
+					It also matters *where* we declare them
+
+					*Scope* determines where variables are "in play"
+
+					--
+
+
+
+					```js
+
+					function declareBankruptcy() {
+						let bankruptcy = true;
+					}
+
+					declareBankruptcy();
+					console.log(bankruptcy);
+
+					```
+					--
+
+					Scopes are *nested* within the program
+
+					The widest scope is the **global** scope
+
+					Each function gets its own new scope within the scope where it was declared
+
+					
+
+					--
+
+
+					```js
+
+					let planet = "Jupiter";
+					
+					function scopeOut() {
+						let planet = "Mars";
+						console.log("Inner planet:", planet);
+					}
+
+					scopeOut();
+					console.log("Outer planet:", planet);
+
+					```
+
+
+					
+					--
+
+					Within each scope, you can access variables declared in a *wider* scope (e.g. global scope)
+
+					But not those declared in a *narrower* scope (e.g. function scope)
+
+
+					--
+
+					```js
+
+					let globalVariable = "I live in global scope"; 
+
+					function narrowerScope() {
+						console.log(globalVariable);
+						let localVariable = "I live in the function scope";
+					}
+
+					narrowerScope();
+					console.log(localVariable);
+
+					```
+
+					
+
+					--
+
+					Variables declared with `let` can be modified from within a narrower scope
+
+					This can be useful, but also dangerous!
+
+					--
+
+					```js
+					let feeling = "free";
+
+					function trap() {
+						feeling = "boxedIn";
+					}
+
+					trap();
+					console.log(feeling);
+
+					```
+
+
+					
 
 					</textarea>
 				</section>
@@ -327,6 +856,11 @@
 					  </iframe>
 
 					</textarea>
+
+					--
+
+
+
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
