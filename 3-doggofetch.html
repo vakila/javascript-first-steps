@@ -79,6 +79,17 @@
     const breedsEndpoint = "https://dog.ceo/api/breeds/list/all";
     const randomImgEndpoint = "https://dog.ceo/api/breeds/image/random";
 
+     
+    function getRandomElement(array) {
+        const i = Math.floor(Math.random() * array.length);
+        return array[i];
+    }
+
+    function shuffleArray(array) {
+        // randomly shuffles elements in an array in-place
+        return array.sort((a,b) => Math.random() - 0.5);
+    }
+
 
     async function fetchMessage(url) {
         // Fetch the resource at the given URL, parse & return the "message" property of its body
@@ -115,17 +126,7 @@
         return `${subtype ? subtype + " " : ""}${breed}`;
     }
 
-    
-    function getRandomElement(array) {
-        const i = Math.floor(Math.random() * array.length);
-        return array[i];
-    }
-
-    function shuffleArray(array) {
-        // randomly shuffles elements in an array in-place
-        return array.sort((a,b) => Math.random() - 0.5);
-    }
-
+   
     function getChoices(n, correctAnswer, array) {
         // Generate a list of n choices including the correct answer and others from the array
         const choices = [correctAnswer];
