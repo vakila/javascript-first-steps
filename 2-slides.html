@@ -553,9 +553,10 @@
 
 					### Exercise
 
-					Follow the first 2 `TODO` comments to: 
-					- create a `facts` array of objects representing facts you've learned about JS
-					- assign the `explanation`, `nextButton`, and `optionButtons` variables to their corresponding element(s)
+					Follow the first 3 `TODO` comments to review skills we've covered so far: 
+					- declare `statement`, `optionButtons`, and `explanation` variables with their corresponding element(s)
+					- create a `facts` object representing one true/false fact you've learned about JS
+					- use the `statement` element to display your fact
 
 					</textarea>
 				</section>
@@ -725,11 +726,103 @@
 
 					--
 
+					## Arrow functions
+
+					<img src="https://media0.giphy.com/media/12M3HgyA9ge4z6/giphy.gif?cid=ecf05e47bpbror0fcrdiai9hsxvkafhj5juk0fhtq55x1eqh&rid=giphy.gif&ct=g" alt="Gif of Katniss Everdeen drawing a bow" />
+
+					--
+
+					The `=>` "fat arrow" lets us create an unnamed function without much code
+
+					```js
+					(x, y) => x + y
+					```
+
+					aka an *arrow function*
+
+					--
+
+					Since arrow functions are expressions, we can assign them to a variable
+
+					```js
+					const add = (x, y) => x + y;
+					```
+
+					is equivalent to
+
+					```js
+					function add(x, y) {
+						return x + y;
+					}
+					```
+
+					--
+
+					Arrow functions are great when we just want to return a value
+
+					```js
+					function square(x) {
+						return x*x;
+					}
+					```
+
+					vs.
+
+					```js
+					const square = (x) => x*x; 
+					```
+
+					--
+
+					For one-parameter functions, parentheses are optional 
+
+					```js
+					x => x*x
+					```
+					```js
+					(x) => x*x
+					```
+					--
+
+					For multiple parameters, parentheses are required 
+
+					```js 
+					(firstName, lastName) => firstName + " " + lastName
+					```
+
+					--
+
+					If we need to do more than just return a value, 
+					
+					we can use curly braces for a "normal" function body
+
+					In that case, we still need a `return`
+
+					```js
+					const addAndLog = (x, y) => {
+						let sum = x + y; 
+						console.log('The sum is', sum);
+						return sum;
+					}
+					```
+
+					--
+
 					### Exercise
 
-					In the JSQuiz starter, follow the next TODOs to: 
-					- Fill in the `hide` and `show` functions
-					- Declare the functions called `disable` and `enable`
+					In the console, declare the following functions *using arrow functions*:
+					- `divide`: given 2 numbers, return the first divided by the second
+					- `whisper`: given an uppercase string, log it in all lowercase to the console
+					- `shorterThan`: given 2 arrays, return whether the first is shorter than the second
+
+
+					--
+
+					### Exercise
+
+					In the JSQuiz starter, follow TODOs 4 & 5 to 
+					- declare functions to disable or enable a button
+					- declare `isCorrect(guess)` function that compares a guess string to your fact's answer string
 
 					</textarea>
 				</section>
@@ -849,6 +942,20 @@
 
 					--
 
+					Our page right now...
+
+					<img src="https://media1.giphy.com/media/ZDhPlli6gMh44/giphy.gif?cid=ecf05e478swcfzov8jtvntlzmxlve3eorzddk5dsawtt6zw0&rid=giphy.gif&ct=g" alt="Gif of MC Hammer dancing with text 'cant touch this'" />
+
+					--
+
+					The web browser fires *events* when certain things happen on the page
+
+					For example, when the user clicks somewhere on the page, a `click` event is fired
+
+					--
+
+
+
 					<iframe height="400" style="width: 100%;" scrolling="no" title="Exciting" src="https://codepen.io/vakila/embed/VwxmmeY?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
 						See the Pen <a href="https://codepen.io/vakila/pen/VwxmmeY">
 						Exciting</a> by Anjana Sofia Vakil (<a href="https://codepen.io/vakila">@vakila</a>)
@@ -880,14 +987,7 @@
 
 					</textarea>
 				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
-					## Loops over arrays
-
-					`.map()` & `.filter()`
-
-					</textarea>
-				</section>
+				
 				
 			</div>
 		</div>
