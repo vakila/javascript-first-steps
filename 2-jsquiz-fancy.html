@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz.js</title>
+    <style>
+        body {
+            margin: 1rem auto;
+            padding: 3rem;
+            font-family: sans-serif;
+        }
+        header {
+            width: 50%;
+            margin: 1em auto;
+        }
+        main {
+            min-width: 25rem;
+            max-width: 50%;
+            margin: 0px auto;
+            display:flex; 
+            flex-direction: column;
+        }
+        #statement {
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            box-shadow: 5px 5px 5px gray;
+            padding: 1rem;
+            font-size: x-large;
+            text-align: center;
+            margin: 1rem 0px;
+            min-height: 2em;
+        }
+        #explanation, #score {
+            padding: 1rem;
+            text-align: center;
+        }
+        #options {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            padding: 0.5rem;
+            font-size: medium;
+            border-radius: 5px;
+        }
+        .correct {
+            background-color: lightgreen;
+        }
+        .incorrect {
+            background-color: lightpink;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+    <h1>Quiz.js</h1>
+    <p>Do you know JS? Find out!</p>
+    <div id="score">
+        Score: <span id="correct">0</span> / <span id="completed">0</span>
+    </div>
+    </header>
+
+    <main>
+    <div id="statement">
+        
+    </div>
+    <div id="options">
+        <button name="true" value="true" >true</button>
+        <button name="false" value="false" >false</button>
+    </div>
+    <div id="explanation" class="hidden">
+
+    </div>
+    <button id="next-question" name="next-question" >Next Question</button>
+
+    </main>
+
+  </body>
+
+  <script type="text/javascript">
+
+    const facts = [
+        {
+            "statement": "JavaScript was invented in 1995",
+            "answer": "true",
+            "explanation": "Brendan Eich created JS at Netscape in 1995. The initial version of the language was written in just 10 days."
+        },
+        {
+            "statement": "Strings in JS are editable values",
+            "answer": "false",
+            "explanation": "In JavaScript strings are immutable values, meaning they cannot be edited; however, they can replaced with new, different strings."
+        },
+        {
+            "statement": "1 + 1 === 2",
+            "answer": "true",
+            "explanation": "The plus operator gives the sum of two numbers."
+        },
+        {
+            "statement": "'1' + '1' === '2'",
+            "answer": "false",
+            "explanation": "The plus operator concatenates (joins together) strings, so '1' + '1' === '11'."
+        },
+        {
+            "statement": "typeof ['J', 'S'] === 'array'",
+            "answer": "false",
+            "explanation": "Arrays have the type 'object'. In JS, everything is either a primitive data type (e.g. 'string', 'number') or an object. Arrays are a kind of object with some special properties.  "
+        }
+    ];
+
+    function hide(element) {
+        element.classList.add("hidden");
+    }
+
+    function show(element) {
+        element.classList.remove("hidden");
+    }
+
+    function disable(button) {
+        button.setAttribute("disabled", "");
+    } 
+
+    function enable(button) {
+        button.removeAttribute("disabled");
+    }
+
+
+    let correct = 0;
+    let completed = 0;
+    
+    let fact;
+
+
+    const explanation =  document.getElementById("explanation");
+    const nextButton = document.getElementById("next-question");
+    const optionButtons = document.getElementById("options").children;
+
+    function getNextFact() {
+        fact = facts.shift(); // get the first fact in our array (shortening the array)
+
+        // set the question text to the current fact's statement
+        document.getElementById("statement").textContent = fact.statement;
+
+        // hide any previous explanation
+        hide(explanation);
+
+        for (let option of optionButtons) {
+            // clear any previous classes
+            option.classList.remove("correct");
+            option.classList.remove("incorrect");
+            // make sure buttons are enabled
+            enable(option);
+        }
+
+        // disable next-question button
+        disable(nextButton);
+        
+    }
+
+    nextButton.addEventListener("click", getNextFact);
+
+    for (let option of optionButtons) {
+        option.addEventListener("click", e => {
+            // When this option is clicked...
+
+            // disable all the option buttons
+            for (let button of optionButtons) {
+                disable(button); 
+            }
+
+            // enable the 'next question' button, if we still have facts left
+            if (facts.length > 0) {
+                enable(nextButton);
+            } else {
+                nextButton.textContent = "No more questions!"
+            }
+
+            const guess = e.target.value;
+            if (guess === fact.answer) {
+                // correct answer!
+                e.target.classList.add("correct");
+                correct += 1;
+            } else {
+                // wrong answer!
+                e.target.classList.add("incorrect");
+            }
+
+            // display the explanation
+            explanation.textContent = fact.explanation;
+            show(explanation);
+            
+            // update the score
+            completed += 1;
+            document.getElementById("correct").textContent = correct;
+            document.getElementById("completed").textContent = completed;
+
+        })
+    }
+
+    getNextFact();
+
+  </script>
+</html>
