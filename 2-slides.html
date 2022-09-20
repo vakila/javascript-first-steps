@@ -615,10 +615,7 @@
 					const one = half(2);
 					```
 
-					--
-
-					<img src="https://d4q8jbdc3dbnf.cloudfront.net/release/l/331c003f30bd4cdfda4aa3efc9b3ec53.jpg" alt="Cover image of Spice Girls single '2 become 1'" />
-
+					
 					--
 
 					### Parameters & Arguments
@@ -1073,16 +1070,178 @@
 					## Conditionals
 
 
+					<img src="https://media1.giphy.com/media/XsRTNACoT5BaU/giphy.gif?cid=790b7611cabc3a3590355172e163ce60e6ec5654f7be492b&rid=giphy.gif&ct=g" alt="Gif of the Spice Girls singing 'If you wannabe my lover you gotta get with my friends" />
+
+
+					--
+					
+					`if` statements let us execute code under a certain *condition*
+
+					```js
+					if (you.wannaBeMyLover) {
+						you.gottaGetWithMyFriends = true;
+					}
+					```
+					code in the `if` block only runs if the `(condition)` is true 
 
 					--
 
-					if else if 
+
+					we can use `else` to run other code if `(condition)` is false
+
+					```js
+					if (you.reallyBug(me)) {
+						me.say("Goodbye");
+					} else {
+						me.say("Hello");
+					}
+					```
 
 					--
 
-					Boolean operators
+					What will happen when this code runs? 
 
-					Truth tables
+					```js
+					if (5 > 4) {
+						console.log("greater than");
+					} else {
+						console.log("less than");
+					}
+					```
+
+					--
+
+					We can chain `else` and `if` blocks to account for multiple conditions 
+					
+					```js
+					function compare(x, y) {
+						if (x > y) {
+							console.log(x, "is greater than", y);
+						} else if (x < y) {
+							console.log(x, "is less than", y);
+						} else {
+							console.log(x, "is equal to", y);
+						}
+					}
+					```
+
+					--
+
+					The `(condition)` is usually an expression that evaluates to a boolean 
+
+					```js
+					if (forecast === "rain") {
+						console.log("bring an umbrella");
+					}
+					```
+					--
+
+					If it's given some other value, JS will convert it to a boolean
+
+					and decide based on its "truthiness"
+
+					```js
+					if ("nonempty strings are truthy") {
+						console.log("this line will run");
+					}
+					```
+					--
+
+					```js
+					if (0) {
+						console.log("zero is truthy");
+					} else {
+						console.log("zero is falsy");
+					}
+					```
+				
+					--
+
+					### Exercise
+
+					- Write a conditional that logs a message saying whether your first name or last name is longer
+					- Write a function `isEmpty(array)` that returns whether a given array is empty or not
+					- Is an empty array truthy or falsy? Write a conditional to find out
+
+					--
+
+					### Boolean (logical) operators
+
+					Sometimes we care about the truthiness of more than one value
+
+					```js 
+					if (you.happy && you.knowIt) {
+						you.clapHands();
+					}
+					```
+
+					--
+
+					*Logical operators* let us make two boolean values become one
+
+					<img src="https://d4q8jbdc3dbnf.cloudfront.net/release/l/331c003f30bd4cdfda4aa3efc9b3ec53.jpg" alt="Cover image of Spice Girls single '2 become 1'" />
+
+					--
+
+					Logical "and" (`&&`) requires both values to be truthy
+
+
+					`A` | `B` | `A && B`
+					-- | -- | -- 
+					`true` | `true` | `true`
+					`true` | `false` | `false`
+					`false` | `true` | `false`
+					`false` | `false` | `false`
+
+					--
+
+					Logical "or" (`||`) requires only one value to be truthy
+
+
+					`A` | `B` | `A \|\| B`
+					-- | -- | -- 
+					`true` | `true` | `true`
+					`true` | `false` | `true`
+					`false` | `true` | `true`
+					`false` | `false` | `false`
+
+					--
+
+					## Conditional ternary operator
+
+					JS also has a "shortcut" operator for writing quick conditionals
+
+					it needs 3 values to work: 
+
+					```js
+					condition ? valueIfTrue : valueIfFalse;
+					```
+
+					--
+
+					```js
+					let mood = forecast === "sunny" ? "happy" : "sad";
+					```
+					
+					is equivalent to 
+
+					```js
+					let mood;
+					if (forecast === "sunny") {
+						mood = "happy";
+					} else {
+						mood = "sad";
+					}
+					```
+
+					--
+
+					### Exercise
+
+					In the console: 
+					- Assign two variables `iLikeDogs` and `iLikeCats` to describe your feelings about them
+					- Use a logical operator to assign a variable `iLikeBoth` based on the values of the first 2
+					- Use a ternary operator to assign a variable `bark` whose value is either `"woof"` if you like dogs, or `"shh"` if you don't
 
 					</textarea>
 				</section>
@@ -1090,9 +1249,162 @@
 					<textarea data-template>
 					## Loops
 
+					<img src="https://media0.giphy.com/media/URkVaXX4cubqCxLYma/giphy.gif?cid=ecf05e47mckio5pnqpbq2q8lkvxtqfmcqe62tu7ago8mvunb&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of Alexis saying 'I've done it before and I can do it again'" />
+
+					--
+
+					*Loops* let us run the same chunk of code multiple times 
+
+					```js
+					for (let rep = 0; rep < 10; rep += 1) {
+						console.log("now doing rep", rep);
+					}
+					console.log("do you even lift bro");
+					```
+
+					this is called *iteration*
+
+					--
+
+					`for` loops require us to:
+					- declare & initialize a loop counter
+					- give a condition for the loop to keep running
+					- describe how to change (usually increment) the counter each time
+					
+					```js
+					for (let count = 0; count <= 100; count += 10) {
+						console.log(count);
+					}
+					```
+
+					--
+
+					`for ... of` loops let us more easily iterate over items in a collection 
+
+					```js
+					const numbers = [1,2,3];
+
+					for (let i = 0; i < numbers.length; i++) {
+						console.log(numbers[i]);
+					}
+
+					for (let n of numbers) {
+						console.log(n);
+					}
+					```
+					--
+
+
+					We can use `for...of` to iterate over characters in a string
+
+					```js
+					for (let char of "ALOHA") {
+						console.log(char);
+					}
+					``` 
+
+					or items in an array 
+
+					```js
+					for (let item of ["pop", 6, "squish"]) {
+						console.log(typeof item);
+					}
+					```
+
+					--
+
+					This can be useful for performing the same action on multiple items 
+
+					```js
+					const paragraphs = document.getElementsByTagName("p");
+					for (let paragraph of paragraphs) {
+						paragraph.textContent += " [edited]";
+					}
+					```
+
+					--
+
+					Or for performing actions that depend on multiple values
+
+					```js
+					let biggest = 0;
+					for (let number of [6, 13, 0.2]) {
+						if (number > biggest) {
+							biggest = number;
+						}
+					} 
+					console.log(biggest);
+					```
+
+
+					--
+
+					### Exercise
+
+					Use `for` loops to: 
+					- create a function `total` which takes an array of numbers and returns their total sum
+					- add the word 'button' to every `button` element on a page 
+				
+
+					--
+
+					### `while` loops
+
+					let us run a chunk of code over & over if a `(condition)` is true
+
+					```js
+					let randomNumbers = [];
+					while (randomNumbers.length < 5) {
+						randomNumbers.push(Math.random());
+					}
+					```
+
+
+					--
+					Don't use `while (true)` unless you want to see your computer burn!
+
+					```js
+					while (true) {
+						console.log("I am wasting resources infinitely");
+					}
+					``` 
+
+					<img src="https://media2.giphy.com/media/yr7n0u3qzO9nG/giphy.gif?cid=ecf05e47n1a4v027fr8jlxwjoyhkxbrje74z19nphtvf63n2&rid=giphy.gif&ct=g" alt="Gif of Elmo with firey background" />
+
+					--
+
+					Keep getting in the loop on MDN! 
+
+					[JS Guide > Loops and Iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+
+
 					</textarea>
 				</section>
-				
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Putting it all together 
+
+					Let's finish up the remaining TODOs in our quiz game!
+
+					--
+
+					TODO 6:
+					- Use a `for...of` loop to attach an event listener to each button
+					- Within the event handler, populate the `explanation` text in the given element
+
+					--
+
+					TODO 7:
+					- Use another `for...of` loop to disable all the buttons
+
+					--
+
+					TODO 8:
+					- Use a conditional to compare the guessed value to the real answer and add the appropriate class to the clicked button
+				  
+					 
+					</textarea>
+				</section>
 				
 			</div>
 		</div>
