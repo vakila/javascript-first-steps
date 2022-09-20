@@ -5,9 +5,9 @@ Contents:
 - Day 1: 
   - [Slides](./1-slides.html)
   - [Tic Tac Toe](./1-tictactoe.html)
-- Day 2: *No spoilers!*
-  - Slides
-  - JS Quiz
+- Day 2:
+  - [Slides](./2-slides.html)
+  - JS Quiz ([starter](./2-jsquiz-starter.html), [finished](./2-jsquiz-finished.html), [fancy](./2-jsquiz-fancy))
 - Day 3: *No spoilers!*
   - Slides
   - Doggo Fetch
@@ -53,27 +53,26 @@ Prerequisites:
   - 1000: JavaScript: What? Why? How?
   - 1015: Working with the DOM (HTML)
   - 1115: Data Types
-  - 1130: Working with Strings
   - 1200: Lunch
-  - 1300: Operators & Expressions
-  - 1330: Variables
-  - 1400: Working with Objects & Arrays
-  - 1530: Day 1 project review
+  - 1300: Working with Strings
+  - 1330: Operators & Expressions
+  - 1500: Variables 
   - 1600: End of Day 1
 - Day 2
-  - 0930: Day 2 Intro & project overview
-  - 1000: Working with a code editor
-  - 1015: Functions & Scope
-  - 1130: Event Handlers
+  - 0930: Working with Objects & Arrays
+  - 1100: Day 1 project review
+  - 1130: Day 2 project overview
+  - 1145: Working with a code editor
   - 1200: Lunch
-  - 1300: Conditionals
-  - 1330: Loops
-  - 1430: Map & Filter
-  - 1530: Day 2 project review
+  - 1300: Functions & Scope
+  - 1415: Event Handlers
+  - 1500: Conditionals
+  - 1530: Loops
   - 1600: End of Day 2
 - Day 3
   - 0930: Day 3 Intro & project overview
   - 1000: Fetch, Promises, Async/Await
+  - 1100: Map & Filter
   - 1130: Destructuring & spread syntax
   - 1200: Lunch
   - 1300: Debugging & error handling
