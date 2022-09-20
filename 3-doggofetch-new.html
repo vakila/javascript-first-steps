@@ -61,7 +61,6 @@
 
     <main>
     <div id="image-frame" >
-        Fetching doggo...
     </div>
     <div id="options">
     </div>
@@ -125,7 +124,6 @@
     // then parse the response as a JSON object,
     // finally return the "message" property of its body
     async function fetchMessage(url) {
-        // TODO error handling
         const response = await fetch(url);  // Fetch the resource at the given URL
         const json = await response.json(); // Parse the response as JSON
         const {message} = json;  // Extract the value of the "message" property
@@ -136,12 +134,9 @@
 
     // Function to add the multiple-choice buttons to the page
     function renderButtons(choicesArray, correctAnswer) {
-        // TODO 6
-        // Given the event object of a "click" event,
-        // Check the value of the event's target and compare it to the correctAnswer
-        // If the clicked answer is correct, add "correct" to the target's classList
-        // Otherwise, add "incorrect" to the target's classList, 
-        // then add "correct" to the classList of the button whose value is the correctAnswer
+
+        // Event handler function to compare the clicked button's value to correctAnswer
+        // and add "correct"/"incorrect" classes to the buttons as appropriate
         function buttonHandler(e) {
             if (e.target.value === correctAnswer) {
                 e.target.classList.add("correct");
@@ -153,16 +148,14 @@
 
         const options = document.getElementById("options"); // Container for the multiple-choice buttons
 
-        // TODO 8
+        // TODO 6
         // For each of the choices in choicesArray,
-        // Create a button element whose name, value, and innerText properties are the value of that choice,
+        // Create a button element whose name, value, and textContent properties are the value of that choice,
         // attach a "click" event listener with the buttonHandler function,
         // and append the button as a child of the options element
         choicesArray.map(choice => {
             let button = document.createElement("button");
-            button.value = choice;
-            button.name = choice;
-            button.innerText = choice;
+            button.value = button.name = button.textContent = choice;
             button.addEventListener("click", buttonHandler);
             options.appendChild(button);
         })
@@ -175,7 +168,7 @@
         image.setAttribute("src", imgUrl);
         const frame = document.getElementById("image-frame");
 
-        // TODO 9
+        // TODO 7
         // Attach an event listener to the "load" event on the image element, and in the handler function, 
         // replace any existing children elements of the frame element with the image element,
         // then call renderButtons() with the choices and correctAnswer
@@ -189,6 +182,8 @@
 
     // Function to load the data needed to display the quiz
     async function loadQuizData() {
+        document.getElementById("image-frame").textContent = "Fetching doggo...";
+        
         const doggoImgUrl = await fetchMessage(RANDOM_IMG_ENDPOINT);
         const correctBreed = getBreedFromURL(doggoImgUrl);
         const breedChoices = getMultipleChoices(3, correctBreed, BREEDS);
@@ -196,7 +191,7 @@
         return [doggoImgUrl, correctBreed, breedChoices];
     }
 
-    // TODO 10
+    // TODO 8
     // Asynchronously call the loadQuizData() function,     
     // Then call renderQuiz() the imageUrl, correctAnswer, and choices it returns
     renderQuiz(...(await loadQuizData()));
