@@ -8,9 +8,9 @@ Contents:
 - Day 2:
   - [Slides](./2-slides.html)
   - JS Quiz ([starter](./2-jsquiz-starter.html), [finished](./2-jsquiz-finished.html), [fancy](./2-jsquiz-fancy))
-- Day 3: *No spoilers!*
-  - Slides
-  - Doggo Fetch
+- Day 3:
+  - [Slides](./3-slides.html)
+  - Doggo Fetch ([starter](./3-doggofetch-starter.html), [finished](./3-doggofetch-finished.html))
 
 
 ---

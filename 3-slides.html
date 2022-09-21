@@ -1,0 +1,766 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>JavaScript First Steps</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css" integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css" integrity="sha512-ITH3NSfntO7uI5n+BnxGNXpzDUoOsmAXuG37UDONLxNYIdc0EBBOOQ1xyc+t9ag9ETSuBXFApx+Rod0uURfDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/night.min.css" integrity="sha512-bfCyfT+5Js2CKjpiF7yCtTcNlNTtcdAIHV8DfGLCQuTfTEHTU9uEvhQ/Ty4zv3IRtkFQu8DKeM2MHGka+K/cxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		
+		<!-- Theme used for syntax highlighted code -->
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/night-owl.min.css" integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/a11y-dark.min.css" integrity="sha512-Vj6gPCk8EZlqnoveEyuGyYaWZ1+jyjMPg8g4shwyyNlRQl6d3L9At02ZHQr5K6s5duZl/+YKMnM3/8pDhoUphg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<style>
+			.reveal code {
+				color: var(--r-link-color-hover);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown>
+					<textarea data-template>
+						## JavaScript First Steps
+						### A [FrontendMasters](https://frontendmasters.com) course by [AnjanaVakil](https://twitter.com/AnjanaVakil)
+						[anjana.dev/javascript-first-steps](https://anjana.dev/javascript-first-steps)
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					# PART 3
+
+					--
+
+
+					---
+
+					Next project: Adapt our quiz for something cuter
+
+					<img src="https://media4.giphy.com/media/3o6wrdHsBoJKGaHjQk/giphy.gif?cid=790b76115baa58b80e31c3667efa5279bf10929f247d7752&rid=giphy.gif&ct=g" alt="Gif from Clueless of Cher saying excitedly 'Let's do a makeover!' with Dionne smiling excitedly in the background" />
+
+					--
+
+					[Doggo Fetch](./3-doggofetch-finished.html)
+
+					- Go to [anjana.dev/javascript-first-steps](https://anjana.dev/javascript-first-steps)
+					- In Day 3, go to the [starter](./3-doggofetch-starter.html) file
+					- Save & open in your text editor
+
+					--
+
+					<img src="https://media1.giphy.com/media/l0ErMA0xAS1Urd4e4/giphy.gif?cid=790b761117c3fdff6e37afdfc7134cf3f023217faf11ba6e&rid=giphy.gif&ct=g" alt="Gif from Clueless of Cher excitedly saying 'Project!'" />
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+						## Loops ...continued
+
+						<img src="https://media3.giphy.com/media/dmwNbzYfECjGNRmEAM/giphy.gif?cid=790b761163dd284750f507d2339930b6b6f67478beff5de6&rid=giphy.gif&ct=g" alt="Gif of Cardi B saying 'I have to keep replaying it, replaying it, replaying it'" />	
+
+						--
+						
+						### `while` loops
+
+						let us run a chunk of code over & over if a `(condition)` is true
+	
+						```js
+						let fiveRandomNumbers = [];
+						while (fiveRandomNumbers.length < 5) {
+							fiveRandomNumbers.push(Math.random());
+						}
+						```
+	
+	
+						--
+						Don't use `while (true)` unless you want to see your computer burn!
+	
+						```js
+						while (true) {
+							console.log("I am wasting resources infinitely");
+						}
+						``` 
+	
+						<img src="https://media2.giphy.com/media/yr7n0u3qzO9nG/giphy.gif?cid=ecf05e47n1a4v027fr8jlxwjoyhkxbrje74z19nphtvf63n2&rid=giphy.gif&ct=g" alt="Gif of Elmo with firey background" />
+	
+
+						--
+
+						### Exercise 
+
+						In the Doggo Fetch starter, follow TODO 1 to fill in the `getMultipleChoices` function using a `while` loop 
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+
+					## (A)synchronous code
+
+					<img src="https://64.media.tumblr.com/tumblr_m5q73kYQBy1qhjikro1_500.gif" alt="Gif of Cyndi Lauper singing 'Time after time'" />
+					
+					Time & JS are ...frenemies
+
+					--
+
+					Usually, our JS code does things that are very quick
+
+					```js
+					console.log("This will print in a New York minute");
+					console.log("This will print one New York minute later");
+					```
+
+					So JS can usually run straight through our program "synchronously"
+
+					--
+
+					But when we need to do something that takes a long time
+
+					<img width=400 src="https://img.discogs.com/iY-SmCiof2l7QMiphjeU6Hn9Gj4=/fit-in/600x522/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-798521-1462656116-4395.jpeg.jpg" alt="Cover of Paula Cole's 'I dont wanna wait'" />
+
+					we still want the web browser to keep working
+					
+					--
+
+					JS can only do one task at a time ("single-threaded")
+
+					<img width="400" src="https://chiasuanchong.files.wordpress.com/2012/02/lady_gaga-telephone-coke-cans3.jpg" alt="Image of Lady Gaga from the video Telephone" />
+
+					JS says: *I cannot text you with a drink in my hand, eh*
+					<span style="font-size:small">Metaphor courtesy Daniel Higginbotham</span>
+					
+
+					--
+
+					So when we give JS a task that takes a while, it doesn't stop and wait
+
+					```js
+					console.log("This will print first");
+					setTimeout(() => console.log("This will print third"), 1000);
+					console.log("This will print second");
+					```
+
+					it adds the slow task to a "TODO list" and keeps on running our program
+
+					The task runs some time later, "asynchronously"
+
+					--
+
+					Some things that take time: 
+					- Waiting for user events
+					- Asking a user to pick a file
+					- Getting permission to access the camera/mic
+					- *Loading data from the interwebs*
+
+					--
+
+					Another thing that takes time:
+					- Learning about asynchronous JS
+
+
+					Add it to your TODO list!
+					- [MDN: Introducing Asynchronous JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
+					- [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+
+					</textarea>
+				</section>
+				
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Fetching data
+
+					<img src="https://media3.giphy.com/media/O1xeZ4AgSaNBS/giphy.gif?cid=ecf05e479mwf2ythgo0l5xraq88ps0gk4gx1zk4jsuef7kyt&rid=giphy.gif&ct=g" alt="Gif of dog playing fetch with a robotic ball throwing machine" />
+
+					--
+					URLs point to resources on the web
+
+					`https://images.dog.ceo/breeds/bluetick/n02088632_924.jpg`
+
+					<img src="https://images.dog.ceo/breeds/bluetick/n02088632_924.jpg" alt="Photo of a Bluetick dog" />
+
+					--
+
+					APIs provide URLs that point at data we care about 
+
+					`https://dog.ceo/api/breed/hound/list`
+
+					```json
+					  {
+						"message": [
+						  "afghan",
+						  "basset",
+						  "blood",
+						  "english",
+						  "ibizan",
+						  "plott",
+						  "walker"
+						],
+						"status": "success"
+					  }
+					```
+
+
+					--
+
+					`fetch()` lets us use JS to load data from APIs 
+
+					```js
+					fetch("https://dog.ceo/api/breed/hound/list")
+					```
+
+					But if we run it in the console, we see something weird...
+
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Promises
+
+					--
+
+					It takes time to fetch data from the network
+					
+					```js
+					>> fetch("https://dog.ceo/api/breed/hound/list")
+					Promise { <state>: "pending" }
+					```
+					
+					So JS writes us an "IOU" for the data value it doesn't have yet
+
+					aka a `Promise` of a value
+
+					--
+
+					Promises can be in 3 possible states: 
+					- `pending`: still waiting for the value, hang tight
+					- `fulfilled` (aka "resolved"): finally got the value, all done
+					- `rejected`: sorry couldn't get the value, all done
+
+					It takes time for Promises to resolve, so they are "asynchronous"
+
+					--
+
+					JS adds the task to the TODO list and keeps running our program
+
+					<img src="https://media2.giphy.com/media/Tia13RncGbb05SUPve/giphy.gif?cid=ecf05e47icfvq0cyyvuexqew1vcockzorxi3ackmg5zdayie&rid=giphy.gif&ct=g" alt="Gif from Friends of Joey saying 'I wanna gooooo'" />
+
+					But our program needs the data, we want JS to stop and wait for the Promise to resolve
+
+				
+
+					</textarea>
+				</section>
+
+
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## `await`
+
+					--
+
+					`await` lets us tell JS to stop and wait for an asynchronous operation to finish
+
+					<img src="https://media2.giphy.com/media/VIEy2m9UtWatviq1U6/giphy.gif?cid=ecf05e47b9mwi4ha9k3uli20dpkfod70c0ly17p4gtets8qa&rid=giphy.gif&ct=g" alt="Gif of Spice Girls singing 'Stop'" />
+
+					In the case of a Promise, it waits for it to resolve before continuing with our code
+
+					--
+
+					The Promise we get from `fetch()` resolves to a `Response` object 
+
+					```js
+					let response = await fetch("https://dog.ceo/api/breed/hound/list");
+					console.log(response);
+					```
+
+					--
+
+					It's `body` contains the data we care about
+
+					<img src="https://media3.giphy.com/media/ON5IJj2BmotiM/giphy.gif?cid=ecf05e47wmzome5hh8tc9k2vewizfznw6ne77jacd56c8tr5&rid=giphy.gif&ct=g" alt="Gif of the Spice Girls singing 'Slam your body down'" />
+
+					But we have to read the body somehow
+
+					--
+
+					Calling the `.json()` method on the response parses its body as a JSON object
+
+					```js
+					response.json()
+					```
+
+					But that gives us another Promise!
+
+					--
+
+					This is getting frustrating... 
+
+					<img src="https://media0.giphy.com/media/5G98t8QjqBLK8/giphy.gif?cid=ecf05e47oqia9tg2xoks8h28ycs2r79sxrri4nw7qvec3lvz&rid=giphy.gif&ct=g" alt="Gif from Mean Girls of Regina George saying 'Stop trying to make fetch happen'" />
+
+					But don't give up!
+
+					--
+
+					Let's try again, this time `await`ing the JSON Promise too
+
+					```js
+					let response = await fetch("https://dog.ceo/api/breed/hound/list");
+					let body = await response.json();
+					```
+
+					--
+
+					`success`!!! 
+
+					<img src="https://media3.giphy.com/media/3oKIPkMhoaMlhtarF6/giphy.gif?cid=ecf05e47oe7xk2v5w5dyybq39zzysptnonm2uz4qfqipp3nv&rid=giphy.gif&ct=g" alt="Gif from Mean Girls of Gretchen Wieners saying 'That is so fetch'" />
+					<!-- <img src="https://media3.giphy.com/media/Yq5ns8rzatwPe/giphy.gif?cid=ecf05e4793oqka45n46x6n56g0hmb2kve7ctlcueilz8skab&rid=giphy.gif&ct=g" alt="Gif of Spice Girls accepting an award and cheering" /> -->
+
+					...but now we have to use the data!
+
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Destructuring
+
+					<img src="https://raw.githubusercontent.com/SaraVieira/open-source-stickers/master/stickers/deconstructing-unicorn/unicorn.png" alt="Destructuring an emoji unicorn " />
+					<span style="font-size:small;">Illustration by Sara Vieira</span>
+					--
+
+					Destructuring is a fancy way of declaring multiple variables at once
+
+					By "extracting" values from an object with their property names
+
+					```js
+					let {name, nickname} = spices[0];
+					```
+
+					--
+
+					If we only care about some of the properties, we can omit the others
+
+					```
+					let {nickname} = spices[2];
+					```
+
+					--
+
+					We can also destructure Arrays, assigning variables for their items
+
+					```js
+					const [baby, ginger, scary, sporty, posh] = spices;
+					```
+
+					--
+
+					We can ignore the values in the array we don't need
+
+					```js
+					const [emma, geri] = spices; 
+					```
+
+					We can use commas to "skip" values
+
+					```js
+					const [,,melB] = spices;
+					```
+
+					--
+
+					We can use `...` to collect remaining values
+
+					```js
+					const [babySpice, ...adultSpices] = spices;
+					```
+					
+					--
+
+					### Exercise
+
+					In your Doggo Fetch file, follow TODO 2 to complete the `getBreedFromURL` function with destructuring
+
+					The string method `.split()` will be useful - it returns an array of substrings by splitting a string at a certain character: 
+
+					```js
+					let [first, middle, last] = "Anjana Sofia Vakil".split(" ");
+					```
+
+
+					--
+
+					*Back to our fetched data...*
+
+					Let's destructure the data we fetched so that we can use it!
+
+					
+					```js
+					let { message } = body;
+					```
+
+					We only really care about the `message`
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## `async` functions
+
+					Let's wrap all our async fetching & parsing code up into a function!
+
+					<img src="https://media4.giphy.com/media/3ornkdvPFqHxkC5QE8/giphy.gif?cid=ecf05e47ie2j2c7n436m52eykppvxmoydo7vuhjr7fqqdfm1&rid=giphy.gif&ct=g" alt="Gif of Buster saying 'Wrap it up'" />
+
+					--
+
+					If we try to `await` something in a regular `function`...
+
+					```js
+					function fetchResponse(url) {
+						const response = await fetch(url);
+						return response;
+					}
+					```
+
+					JS doesn't allow it
+
+					--
+
+					We need to make it an `async function` 
+
+					```js
+					async function fetchResponse(url) {
+						const response = await fetch(url);
+						return response;
+					}
+					```
+
+					This tells JS to expect to `await` async operations inside the function
+
+					--
+
+					### Exercise
+
+					In your Doggo Fetch file, follow TODO 3 to fill in the `async function` body 
+
+					Use what we've learned about how to fetch, parse, and extract the data we need!
+					
+					
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Putting our doggos to bed
+
+					Let's finish up the last TODOs, 4 & 5
+
+					They require you to practice skills you've learned so far
+
+					--
+
+					We're up & running with JS!!!
+
+					<img src="https://media3.giphy.com/media/GicdPSmxr5J1C/giphy.gif?cid=ecf05e473qqce70k7alrxq9k2ggus7k4wrwq4cs1ombjpx7h&rid=giphy.gif&ct=g" alt="Gif of dog riding a scooter" />
+
+					Amazing job! 
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+						## JS in the wild
+
+						<img src="https://media4.giphy.com/media/v9bipbbqgOmCSSpPgl/giphy.gif?cid=ecf05e47sa3nms325cej3243cl26ntt6wk6ntrn18zdjyqeb&rid=giphy.gif&ct=g" alt="Gif from The Matrix of Morpheus saying 'Welcome to the real world'" />
+
+						--
+
+						There is *lots* more we could say about JS
+
+						Let's talk about a few other concepts relevant to using JS in real life
+
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Modules
+
+					<img src="https://media0.giphy.com/media/l0JMrPWRQkTeg3jjO/giphy.gif?cid=ecf05e47pagiiw3sbae054ux0xw1q1i81rt4youv25pzuit2&rid=giphy.gif&ct=g" alt="Gif of Lego blocks building infinitely" />
+
+					--
+
+					### Top-level `await`
+
+					At the end of our doggo program we had to use `await` *outside* of a function
+
+					This isn't usually possible in JS... 
+
+					--
+
+					Take a closer look at our `script` tag: 
+
+					```html
+					<script type="module">
+						//...
+					</script>
+					```
+
+					JS *modules* work differently from JS *scripts* 
+					--
+
+					One difference is that we can't use `await` outside of a function in a script
+
+					```html
+					<script>
+						await fetch("https://dog.ceo/api/breed/hound/list");
+					</script>
+					```
+
+					-- 
+
+					### Module scope
+
+					Another difference is that modules create their own scope
+
+					Try loading the page and accessing the `BREEDS` variable we declare in the module
+
+					--
+
+					### `import` && `export`
+					
+					Modules exist to let us split big codebases across multiple files
+
+					`export` lets us expose variables from our module's scope to the outside world
+
+					```js
+					// myModule.js
+					const veryUsefulFunction = () => "I came from a module";
+
+					export { veryUsefulFunction };
+					```
+
+					--
+
+					`import` lets us use an exposed variable from another module
+
+					```js
+					// otherModule.js
+					import { veryUsefulFunction } from './myModule.js'
+
+					veryUsefulFunction();
+					```
+
+					--
+
+					There's lots more to learn about modules!
+
+					[MDN > JS Guide > JS Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Debugging
+
+					<img src="http://static.brit.co.s3.amazonaws.com/wp-content/uploads/2012/07/tumblr_m7cbztPztz1qdf43eo1_500.gif" alt="Gif from Clueless of Cher standing in front of a chalkboard saying 'I was like totally buggin'" />
+
+					--
+
+					A certainty of coding (especially in JS): 
+
+					<img src="https://media1.giphy.com/media/SRqXb3mwF1HCUY1IyE/giphy.gif?cid=ecf05e475h8uzbbhx011p9bkv243j6665g081k1au2ue2mc3&rid=giphy.gif&ct=g" alt="Gif of Rachael Kay Albers saying 'Spectacular failure is part of the game'" />
+
+					Stuff. Will. Go. Wrong! 
+
+					--
+
+					`console.log()` (or `.warn()` or `.error()`) is one way to understand what's happening when your program runs 
+
+					```js
+					function whyIsntThisWorking(input) {
+						console.log("Well at least we got this far");
+						console.log(input);
+						return thingThatDoesntWork(input);
+					}
+					```
+
+					--
+
+					You can also use the browser's debugger to *pause* JS and inspect what's happening
+
+					```js 
+					function whyIsntThisWorking(input) {
+						debugger;
+						return thingThatDoesntWork(input);
+					} 
+					```
+
+					The `debugger` statement creates a *breakpoint* where JS will pause and let you look around
+
+					--
+
+					Different browsers' debuggers work differently
+
+					- [Firefox](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools#the_javascript_debugger)
+					- [Chrome](https://developer.chrome.com/docs/devtools/javascript/)
+					- [Safari](https://support.apple.com/guide/safari-developer/debugging-overview-devd24689f72/mac)
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Error handling 
+
+					Once we've discovered where in our program an error is likely, we can do something about it!
+
+					<img width="400" src="https://media2.giphy.com/media/TgmmI7eMFNJiOlC3gI/giphy.gif?cid=ecf05e47385ccmzt92sm6lcxk1hjnwnzpr6rnmy708aey0dc&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of Alexis saying 'I will handle it'" />
+
+					
+
+					--
+
+					Usually errors will cause JS to stop running our code
+
+					```js
+					thisThrowsAnError();
+					console.log("I'll never get here");
+					```
+
+					--
+
+					Sometimes we want that, other times we can just move on with our (program's) lives
+
+					<img src="https://media0.giphy.com/media/xT9KVeEPWqBlmDLgME/giphy.gif?cid=790b76116463fd70b16cb492bedd196cac5283bbffc344c1&rid=giphy.gif&ct=g" alt="Gif from Clueless of Amber saying 'Whatever'" />
+
+					--
+
+					
+					`try` lets us "watch out" for potential errors
+
+					its friend `catch` lets us manage errors when they occur
+
+					```js
+					try {
+						thisMightThrowAnError();
+					} catch (error) {
+						console.error("Oops, got an Error:", error); 
+						console.log("Whatever, let's press on anyway");
+					}
+					console.log("la dee da, still running the program");
+					```
+
+					--
+
+					Read all about it! 
+
+					[MDN: JS > Statements > try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+
+					</textarea>
+				</section>
+				
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					# RECAP
+
+					--
+
+					Look at all your badass new JS magic powers! 
+
+					<img src="https://media1.giphy.com/media/KXGltmsUaqkVi/giphy.gif?cid=790b7611c63c92a1a12aff6c0b16dc918e318ab8dc4224d7&rid=giphy.gif&ct=g" alt="Gif from American Horror Story of Jessica Lange saying 'Who's the baddest witch in town'" />
+
+					--
+
+					### Values
+
+					### Arrays 
+					
+					### Objects
+
+					--
+
+					### Variables 
+
+					### Functions
+
+					### Scope
+					
+
+					--
+
+					### Events
+
+					### Conditionals
+
+					### Loops 
+
+					--
+
+					### Asynchronous code
+
+					### Fancy syntax
+
+					### Real-world skills
+
+					--
+
+					Amazing job!! 
+
+					<img src="https://media0.giphy.com/media/8xgqLTTgWqHWU/giphy.gif?cid=ecf05e47j4a84p60lj492d131mmsgf4y5inqgmpxa2ds7ld5&rid=giphy.gif&ct=g" alt="Gif of kid at retro computer giving thumbs up and looking satisfied" />
+
+					</textarea>
+				</section>
+				<section data-markdown >
+					<textarea data-template>
+					## Next steps
+
+					- Dig deeper with more FrontendMasters courses
+					- Refine your mental model with [Just JavaScript](https://justjavascript.com/) by Dan Abramov and Maggie Appleton
+					- Explore & investigate on [MDN](developer.mozilla.org) & elsewhere
+					- Keep tinkering!
+					</textarea>
+				</section>
+				<section data-markdown >
+					<textarea data-template>
+					## Thank you!
+
+					Thanks to Marc Grabanski & Daniel Higginbotham for their help in creating this course
+
+					Slides powered by [reveal.js](https://revealjs.com)
+
+
+					</textarea>
+				</section>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js" integrity="sha512-131e3mIrDAyUD075SVzvIjS0g97uDg0+/qAobDHd++h+lgFi4z88DVOpidm06jpb+0PzK4kcm9w79r6EHV0SkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js" integrity="sha512-nLsCkPS/rdxRVOkxiKnld9KhQ24V/5kRChzSZ3MoFODykbWyBlQRsHLrbpN3J4LabYBnXIp1EnRIo3ifvyiQIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js" integrity="sha512-QAU7Ux8iEB53koLKFCtddfFp0D1+uQWoX3ROnRDLeiE98XHOkMciaup0Spc014jQAuJaqz8VjUZdBqriheI4Lg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js" integrity="sha512-U3fPDUX5bMrn1wnYqjaK44MFA9E6MKS+zPAg9WPAGF5XhReBeDj3FGaA831CjueG+YJxYA3WaO/m33kMIoOs/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<!-- CopyCode plugin for copy button on code samples -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-copycode@1.0.4/plugin/copycode/copycode.js"></script>
+		
+		<script>
+			// Slides powered by revealjs.com
+			
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, CopyCode ]
+			});
+		
+		</script>
+	</body>
+</html>
