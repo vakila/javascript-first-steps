@@ -453,17 +453,42 @@
 					Let's finish up the last TODOs, 4 & 5
 
 					They require you to practice skills you've learned so far
+
+					--
+
+					We're up & running with JS!!!
+
+					<img src="https://media3.giphy.com/media/GicdPSmxr5J1C/giphy.gif?cid=ecf05e473qqce70k7alrxq9k2ggus7k4wrwq4cs1ombjpx7h&rid=giphy.gif&ct=g" alt="Gif of dog riding a scooter" />
+
+					Amazing job! 
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+						## JS in the wild
+
+						<img src="https://media4.giphy.com/media/v9bipbbqgOmCSSpPgl/giphy.gif?cid=ecf05e47sa3nms325cej3243cl26ntt6wk6ntrn18zdjyqeb&rid=giphy.gif&ct=g" alt="Gif from The Matrix of Morpheus saying 'Welcome to the real world'" />
+
+						--
+
+						There is *lots* more we could say about JS
+
+						Let's talk about a few other concepts relevant to using JS in real life
+
+
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Modules
 
+					<img src="https://media0.giphy.com/media/l0JMrPWRQkTeg3jjO/giphy.gif?cid=ecf05e47pagiiw3sbae054ux0xw1q1i81rt4youv25pzuit2&rid=giphy.gif&ct=g" alt="Gif of Lego blocks building infinitely" />
+
 					--
 
 					### Top-level `await`
 
-					In TODO 5 we had to use `await` *outside* of a function
+					At the end of our doggo program we had to use `await` *outside* of a function
 
 					This isn't usually possible in JS... 
 
@@ -486,13 +511,47 @@
 					<script>
 						await fetch("https://dog.ceo/api/breed/hound/list");
 					</script>
+					```
 
+					-- 
+
+					### Module scope
+
+					Another difference is that modules create their own scope
+
+					Try loading the page and accessing the `BREEDS` variable we declare in the module
 
 					--
 
-					### Splitting code 
+					### `import` && `export`
 					
-					`import` && `export`
+					Modules exist to let us split big codebases across multiple files
+
+					`export` lets us expose variables from our module's scope to the outside world
+
+					```js
+					// myModule.js
+					const veryUsefulFunction = () => "I came from a module";
+
+					export { veryUsefulFunction };
+					```
+
+					--
+
+					`import` lets us use an exposed variable from another module
+
+					```js
+					// otherModule.js
+					import { veryUsefulFunction } from './myModule.js'
+
+					veryUsefulFunction();
+					```
+
+					--
+
+					There's lots more to learn about modules!
+
+					[MDN > JS Guide > JS Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 
 					</textarea>
 				</section>
@@ -502,11 +561,54 @@
 
 					<img src="http://static.brit.co.s3.amazonaws.com/wp-content/uploads/2012/07/tumblr_m7cbztPztz1qdf43eo1_500.gif" alt="Gif from Clueless of Cher standing in front of a chalkboard saying 'I was like totally buggin'" />
 
+					--
+
+					A certainty of coding (especially in JS): 
+
+					<img src="https://media1.giphy.com/media/SRqXb3mwF1HCUY1IyE/giphy.gif?cid=ecf05e475h8uzbbhx011p9bkv243j6665g081k1au2ue2mc3&rid=giphy.gif&ct=g" alt="Gif of Rachael Kay Albers saying 'Spectacular failure is part of the game'" />
+
+					Stuff. Will. Go. Wrong! 
+
+					--
+
+					`console.log()` (or `.warn()` or `.error()`) is one way to understand what's happening when your program runs 
+
+					```js
+					function whyIsntThisWorking(input) {
+						console.log("Well at least we got this far");
+						console.log(input);
+						return thingThatDoesntWork(input);
+					}
+					```
+
+					--
+
+					You can also use the browser's debugger to *pause* JS and inspect what's happening
+
+					```js 
+					function whyIsntThisWorking(input) {
+						debugger;
+						return thingThatDoesntWork(input);
+					} 
+					```
+
+					The `debugger` statement creates a *breakpoint* where JS will pause and let you look around
+
+					--
+
+					Different browsers' debuggers work differently
+
+					- [Firefox](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools#the_javascript_debugger)
+					- [Chrome](https://developer.chrome.com/docs/devtools/javascript/)
+					- [Safari](https://support.apple.com/guide/safari-developer/debugging-overview-devd24689f72/mac)
+
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## `try` & `catch`
+					## Error handling 
+					
+					`try` & `catch`
 
 					</textarea>
 				</section>
