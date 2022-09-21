@@ -77,59 +77,47 @@
     const BREEDS = ["affenpinscher", "african", "airedale", "akita", "appenzeller", "shepherd australian", "basenji", "beagle", "bluetick", "borzoi", "bouvier", "boxer", "brabancon", "briard", "norwegian buhund", "boston bulldog", "english bulldog", "french bulldog", "staffordshire bullterrier", "australian cattledog", "chihuahua", "chow", "clumber", "cockapoo", "border collie", "coonhound", "cardigan corgi", "cotondetulear", "dachshund", "dalmatian", "great dane", "scottish deerhound", "dhole", "dingo", "doberman", "norwegian elkhound", "entlebucher", "eskimo", "lapphund finnish", "bichon frise", "germanshepherd", "italian greyhound", "groenendael", "havanese", "afghan hound", "basset hound", "blood hound", "english hound", "ibizan hound", "plott hound", "walker hound", "husky", "keeshond", "kelpie", "komondor", "kuvasz", "labradoodle", "labrador", "leonberg", "lhasa", "malamute", "malinois", "maltese", "bull mastiff", "english mastiff", "tibetan mastiff", "mexicanhairless", "mix", "bernese mountain", "swiss mountain", "newfoundland", "otterhound", "caucasian ovcharka", "papillon", "pekinese", "pembroke", "miniature pinscher", "pitbull", "german pointer", "germanlonghair pointer", "pomeranian", "medium poodle", "miniature poodle", "standard poodle", "toy poodle", "pug", "puggle", "pyrenees", "redbone", "chesapeake retriever", "curly retriever", "flatcoated retriever", "golden retriever", "rhodesian ridgeback", "rottweiler", "saluki", "samoyed", "schipperke", "giant schnauzer", "miniature schnauzer", "english setter", "gordon setter", "irish setter", "sharpei", "english sheepdog", "shetland sheepdog", "shiba", "shihtzu", "blenheim spaniel", "brittany spaniel", "cocker spaniel", "irish spaniel", "japanese spaniel", "sussex spaniel", "welsh spaniel", "english springer", "stbernard", "american terrier", "australian terrier", "bedlington terrier", "border terrier", "cairn terrier", "dandie terrier", "fox terrier", "irish terrier", "kerryblue terrier", "lakeland terrier", "norfolk terrier", "norwich terrier", "patterdale terrier", "russell terrier", "scottish terrier", "sealyham terrier", "silky terrier", "tibetan terrier", "toy terrier", "welsh terrier", "westhighland terrier", "wheaten terrier", "yorkshire terrier", "tervuren", "vizsla", "spanish waterdog", "weimaraner", "whippet", "irish wolfhound"];
 
     
-    // TODO 1
-    // Given an array, return a randomly selected value from the array
-    // (this should NOT modify the original array)
+    // Utility function to get a randomly selected item from an array
     function getRandomElement(array) {
         const i = Math.floor(Math.random() * array.length);
         return array[i];
     }
 
-    // TODO 2
-    // Given an array, shuffle the order of its elements in-place
-    // (this SHOULD modify the original array)
+    // Utility function to shuffle the order of items in an array in-place
     function shuffleArray(array) {
         return array.sort((a,b) => Math.random() - 0.5);
     }
 
 
-    // TODO 3
-    // Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
-    // return the breed name string as formatted in the breed list, e.g. "standard poodle"
-    function getBreedFromURL(url) {
-        const path = url.replace("https://images.dog.ceo/breeds/", "");
-        const breedID = path.split("/")[0];
-        const [breed, subtype] = breedID.split("-");
-        return `${subtype ? subtype + " " : ""}${breed}`;
-    }
 
-
-    // TODO 4
+    // TODO 1
     // Given an array of possible answers, a correct answer value, and a number of choices to get,
     // return a list of that many choices, including the correct answer and others from the array
     function getMultipleChoices(n, correctAnswer, array) {
-        const choices = [correctAnswer];
-        while (choices.length < n) {
-            let candidate = getRandomElement(array);
-            if (choices.indexOf(candidate) < 0) { // check if this is already in the array
-                choices.push(candidate); // if not, add it
-            }
-        }
-        return shuffleArray(choices);
+        // Use a while loop and the getRandomElement() function
+        // Make sure there are no duplicates in the array
+
+    }
+
+    
+    // TODO 2
+    // Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
+    // return the breed name string as formatted in the breed list, e.g. "standard poodle"
+    function getBreedFromURL(url) {
+        // The string method .split(char) may come in handy
+        // Try to use destructuring as much as you can
+        
     }
 
 
-    // TODO 5
+
+    // TODO 3
     // Given a URL, fetch the resource at that URL, 
     // then parse the response as a JSON object,
     // finally return the "message" property of its body
     async function fetchMessage(url) {
-        const response = await fetch(url);  // Fetch the resource at the given URL
-        const json = await response.json(); // Parse the response as JSON
-        const {message} = json;  // Extract the value of the "message" property
-        return message; // Return the message
+        
     }
-
 
 
     // Function to add the multiple-choice buttons to the page
@@ -148,17 +136,12 @@
 
         const options = document.getElementById("options"); // Container for the multiple-choice buttons
 
-        // TODO 6
+        // TODO 4
         // For each of the choices in choicesArray,
         // Create a button element whose name, value, and textContent properties are the value of that choice,
         // attach a "click" event listener with the buttonHandler function,
         // and append the button as a child of the options element
-        choicesArray.map(choice => {
-            let button = document.createElement("button");
-            button.value = button.name = button.textContent = choice;
-            button.addEventListener("click", buttonHandler);
-            options.appendChild(button);
-        })
+        
     }
 
 
@@ -168,10 +151,6 @@
         image.setAttribute("src", imgUrl);
         const frame = document.getElementById("image-frame");
 
-        // TODO 7
-        // Attach an event listener to the "load" event on the image element, and in the handler function, 
-        // replace any existing children elements of the frame element with the image element,
-        // then call renderButtons() with the choices and correctAnswer
         image.addEventListener("load", () => {
             // Wait until the image has finished loading before trying to add elements to the page
             frame.replaceChildren(image);
@@ -191,10 +170,10 @@
         return [doggoImgUrl, correctBreed, breedChoices];
     }
 
-    // TODO 8
+    // TODO 5
     // Asynchronously call the loadQuizData() function,     
-    // Then call renderQuiz() the imageUrl, correctAnswer, and choices it returns
-    renderQuiz(...(await loadQuizData()));
+    // Then call renderQuiz() with the returned imageUrl, correctAnswer, and choices 
+    
     
 
 

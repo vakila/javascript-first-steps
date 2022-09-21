@@ -116,7 +116,6 @@
         const [,path] = url.split("/breeds/");
         const [breedID] = path.split("/");
         const [breed, subtype] = breedID.split("-");
-        // return `${subtype ? subtype + " " : ""}${breed}`;
         return [subtype, breed].join(" ");
     }
 
