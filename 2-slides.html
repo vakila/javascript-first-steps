@@ -1079,16 +1079,203 @@
 
 					### Exercise 
 
-					In the console, on our quiz add event listeners to: 
-					- Capitalize the text of the "true" button when it is clicked 
-					- Change the `h1` text to "hovering" when the mouse moves into the element
-					- Change the `h1` text to "Quiz.js" when the mouse moves out of the element
+					In the console, on our quiz add event listeners to the buttons so that:
+					- When the "true" button is clicked, the button's text becomes "clicked true"
+					- When the "false" button is clicked, the "explanation" div text becomes "clicked false"
 
 					--
 
 					<img src="https://media2.giphy.com/media/mEnING9BFDAzgHo5L4/giphy.gif?cid=ecf05e47vq2sb8v2m5ukm0a7o1ephsjgrxu7a7u0ti3i0zur&rid=giphy.gif&ct=g" alt="Gif from Scandal of Kerry Washington saying 'It's handled'" />
 
 
+
+					</textarea>
+				</section>
+				
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Loops
+
+					<img src="https://media0.giphy.com/media/URkVaXX4cubqCxLYma/giphy.gif?cid=ecf05e47mckio5pnqpbq2q8lkvxtqfmcqe62tu7ago8mvunb&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of Alexis saying 'I've done it before and I can do it again'" />
+
+					--
+
+					*Loops* let us run the same chunk of code multiple times 
+
+					```js
+					for (let rep = 0; rep < 10; rep += 1) {
+						console.log("now doing rep", rep);
+					}
+					console.log("do you even lift bro");
+					```
+
+					this is called *iteration*
+
+					--
+
+					`for` loops require us to:
+					- declare & initialize a loop counter
+					- give a condition for the loop to keep running
+					- describe how to change (usually increment) the counter each time
+					
+					```js
+					for (let count = 0; count <= 100; count += 10) {
+						console.log(count);
+					}
+					```
+
+					--
+
+					<img src="https://media1.giphy.com/media/C4wDXSJjt0ZKU/giphy.gif?cid=ecf05e47vg5plioh9ysxznuqqbqh0ub7kf7zqonf4jmxdgo6&rid=giphy.gif&ct=g" alt="Gif of Avril Lavigne singing 'Whyd you have to go and make things so complicated'" />
+
+					--
+
+					`for ... of` loops let us more easily iterate over items in a collection 
+
+					```js
+					const numbers = [1,2,3];
+
+					for (let i = 0; i < numbers.length; i++) {
+						console.log(numbers[i]);
+					}
+
+					for (let n of numbers) {
+						console.log(n);
+					}
+					```
+					--
+
+
+					We can use `for...of` to iterate over characters in a string
+
+					```js
+					for (let char of "ALOHA") {
+						console.log(char);
+					}
+					``` 
+
+					or items in an array 
+
+					```js
+					for (let item of ["pop", 6, "squish"]) {
+						console.log(typeof item);
+					}
+					```
+
+					because strings & arrays are "iterables"
+
+					--
+
+					### Exercise
+
+					In our quiz, follow TODOs 6 & 7 to
+					- Use a `for...of` loop to attach an event listener to each button
+					- Within the event handler, 
+					  - populate the `explanation` text in the given element
+					  - Use another `for...of` loop to disable all the buttons
+
+
+					--
+
+					### `map`  & `filter`
+
+					The `map`  & `filter` methods also let us process all the items in an array
+
+					--
+
+					`map` calls a function on each item in an array to create a new array
+
+					```js
+					const spices = [
+						{name: "Emma", nickname: "Baby"},
+						{name: "Geri", nickname: "Ginger"},
+						{name: "Mel B", nickname: "Scary"},
+						{name: "Mel C", nickname: "Sporty"},
+						{name: "Victoria", nickname: "Posh"}
+					];
+
+					const nicknames = spices.map(s => s.nickname + " Spice");
+					```
+
+					Arrow functions are useful for this!
+
+					--
+
+					String templates are useful too! Make them with backticks and `${}`, e.g.
+
+					<pre>`string to insert ${variable} into`</pre>
+
+					```js
+					s => `${s.nickname} Spice`;
+					```
+
+					is equivalent to
+
+					```js
+					s => s.nickname + " Spice"
+					```
+<!-- 
+					```js 
+					const bills = [ "telephone", "automo", "credit card" ];
+
+					bills.map(bill => console.log(`Can you pay my ${bill} bills?`));
+					``` -->
+
+					--
+
+					`filter` calls a true/false function on each item
+
+					and creates a new array with only the items where the function returns true
+
+					```js
+					const mels = spices.filter(s => s.name.includes("Mel"));
+					```
+
+
+					--
+
+					### Exercise
+
+					From the `spices` array, use `map` and `filter` to: 
+					- create a new array `names` with only the name of each girl
+					- create a new array `endInY` with just the girls whose nickname ends in "y"
+				
+
+					--
+
+					### Spread (`...`)
+
+					Is another neat trick for iterating over arrays
+
+					<img src="https://media0.giphy.com/media/xT9KVsiqNp3MBkJnZC/giphy.gif?cid=ecf05e474esc5ba5hgxi03xuxpqzi3xksb1inywustews7xi&rid=giphy.gif&ct=g" alt="Gif from Mean Girls of Regina George spreading copies of the Burn Book around school" />
+
+					It lets us take all the items in an array and spread 'em around 
+
+					--
+
+					We can use it to put all the items from one array inside another array
+
+					```js
+					const oldBurns = ["square", "wack"];
+					const newBurns = ["basic", "dusty", "sus"];
+					const burnBook = [...oldBurns, ...newBurns];
+					```
+
+					equivalent to
+					```js
+					const burnBook = oldBurns.concat(newBurns);
+					```
+
+					--
+
+					We can also use it to pass all the items from an array as arguments to a function or method 
+
+					```js
+					const skills = ["HTML", "CSS", "JS"];
+					const newSkills = ["React", "TypeScript", "Node"]
+					skills.push(...newSkills);
+					console.log(...skills);
+					```
 
 					</textarea>
 				</section>
@@ -1274,178 +1461,23 @@
 						mood = "sad";
 					}
 					```
-
 					--
 
 					### Exercise
-
-					In the console: 
-					- Assign two variables `iLikeDogs` and `iLikeCats` to describe your feelings about them
-					- Use a logical operator to assign a variable `iLikeBoth` based on the values of the first 2
-					- Use a ternary operator to assign a variable `bark` whose value is either `"woof"` if you like dogs, or `"shh"` if you don't
-
-					</textarea>
-				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
-					## Loops
-
-					<img src="https://media0.giphy.com/media/URkVaXX4cubqCxLYma/giphy.gif?cid=ecf05e47mckio5pnqpbq2q8lkvxtqfmcqe62tu7ago8mvunb&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of Alexis saying 'I've done it before and I can do it again'" />
-
-					--
-
-					*Loops* let us run the same chunk of code multiple times 
-
-					```js
-					for (let rep = 0; rep < 10; rep += 1) {
-						console.log("now doing rep", rep);
-					}
-					console.log("do you even lift bro");
-					```
-
-					this is called *iteration*
-
-					--
-
-					`for` loops require us to:
-					- declare & initialize a loop counter
-					- give a condition for the loop to keep running
-					- describe how to change (usually increment) the counter each time
 					
-					```js
-					for (let count = 0; count <= 100; count += 10) {
-						console.log(count);
-					}
-					```
+					In our Quiz, follow TODO 8 to complete the event handler function:
+					- Get the guessed value, i.e. value of whichever button was clicked
+					- Compare the guessed value to the real answer using your `isCorrect` function
+					- Use a conditional to add the "correct" or "incorrect" class to the clicked button
 
-					--
-
-					`for ... of` loops let us more easily iterate over items in a collection 
-
-					```js
-					const numbers = [1,2,3];
-
-					for (let i = 0; i < numbers.length; i++) {
-						console.log(numbers[i]);
-					}
-
-					for (let n of numbers) {
-						console.log(n);
-					}
-					```
-					--
-
-
-					We can use `for...of` to iterate over characters in a string
-
-					```js
-					for (let char of "ALOHA") {
-						console.log(char);
-					}
-					``` 
-
-					or items in an array 
-
-					```js
-					for (let item of ["pop", 6, "squish"]) {
-						console.log(typeof item);
-					}
-					```
-
-					--
-
-					This can be useful for performing the same action on multiple items 
-
-					```js
-					const paragraphs = document.getElementsByTagName("p");
-					for (let paragraph of paragraphs) {
-						paragraph.textContent += " [edited]";
-					}
-					```
-
-					--
-
-					Or for performing actions that depend on multiple values
-
-					```js
-					let biggest = 0;
-					for (let number of [6, 13, 0.2]) {
-						if (number > biggest) {
-							biggest = number;
-						}
-					} 
-					console.log(biggest);
-					```
-
-
-					--
-
-					### Exercise
-
-					Use `for` loops to: 
-					- create a function `total` which takes an array of numbers and returns their total sum
-					- add the word 'button' to every `button` element on a page 
-				
-
-					--
-
-					### `while` loops
-
-					let us run a chunk of code over & over if a `(condition)` is true
-
-					```js
-					let randomNumbers = [];
-					while (randomNumbers.length < 5) {
-						randomNumbers.push(Math.random());
-					}
-					```
-
-
-					--
-					Don't use `while (true)` unless you want to see your computer burn!
-
-					```js
-					while (true) {
-						console.log("I am wasting resources infinitely");
-					}
-					``` 
-
-					<img src="https://media2.giphy.com/media/yr7n0u3qzO9nG/giphy.gif?cid=ecf05e47n1a4v027fr8jlxwjoyhkxbrje74z19nphtvf63n2&rid=giphy.gif&ct=g" alt="Gif of Elmo with firey background" />
-
-					--
-
-					Keep getting in the loop on MDN! 
-
-					[JS Guide > Loops and Iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
-
+					`element.classList.add("classname")` lets you add a CSS class
+				  
 
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## Putting it all together 
-
-					Let's finish up the remaining TODOs in our quiz game!
-
-					--
-
-					TODO 6:
-					- Use a `for...of` loop to attach an event listener to each button
-					- Within the event handler, populate the `explanation` text in the given element
-
-					--
-
-					TODO 7:
-					- Use another `for...of` loop to disable all the buttons
-
-					--
-
-					TODO 8:
-					- Use a conditional to compare the guessed value to the real answer and add the appropriate class to the clicked button
-				  
-					--
-
-					### Great job!!
+					## Great job!!
 
 					<img src="https://media4.giphy.com/media/d20PG6M6SAFqtmce9r/giphy.gif?cid=ecf05e47yl9p8h13npheakz6i358m6dnmcyg39yxcmiqbyru&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of David saying 'Look at you go'" />
 					 

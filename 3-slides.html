@@ -33,87 +33,65 @@
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					# DAY 3
+					# PART 3
+
+					--
 
 
-					<!-- --
+					---
 
-					Today's project: Adapt yesterday's project for a new app 
+					Next project: Adapt our quiz for something cuter
 
-					<img src="https://media4.giphy.com/media/3o6wrdHsBoJKGaHjQk/giphy.gif?cid=790b76115baa58b80e31c3667efa5279bf10929f247d7752&rid=giphy.gif&ct=g" alt="Gif from Clueless of Cher saying excitedly 'Let's do a makeover!' with Dionne smiling excitedly in the background" /> -->
+					<img src="https://media4.giphy.com/media/3o6wrdHsBoJKGaHjQk/giphy.gif?cid=790b76115baa58b80e31c3667efa5279bf10929f247d7752&rid=giphy.gif&ct=g" alt="Gif from Clueless of Cher saying excitedly 'Let's do a makeover!' with Dionne smiling excitedly in the background" />
+
+					--
+
+					[Doggo Fetch](./3-doggofetch-finished.html)
+
+					- Go to [anjana.dev/javascript-first-steps](https://anjana.dev/javascript-first-steps)
+					- In Day 3, go to the [starter](./3-doggofetch-starter.html) file
+					- Save & open in your text editor
+
 
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## Loops over arrays
+						## Loops ...continued
 
-					The `map`  & `filter` methods let us process all the items in an array
+						<img src="https://media3.giphy.com/media/dmwNbzYfECjGNRmEAM/giphy.gif?cid=790b761163dd284750f507d2339930b6b6f67478beff5de6&rid=giphy.gif&ct=g" alt="Gif of Cardi B saying 'I have to keep replaying it, replaying it, replaying it'" />	
 
-					--
+						--
+						
+						### `while` loops
 
-					`map` calls a function on each item in an array to create a new array
+						let us run a chunk of code over & over if a `(condition)` is true
+	
+						```js
+						let fiveRandomNumbers = [];
+						while (fiveRandomNumbers.length < 5) {
+							fiveRandomNumbers.push(Math.random());
+						}
+						```
+	
+	
+						--
+						Don't use `while (true)` unless you want to see your computer burn!
+	
+						```js
+						while (true) {
+							console.log("I am wasting resources infinitely");
+						}
+						``` 
+	
+						<img src="https://media2.giphy.com/media/yr7n0u3qzO9nG/giphy.gif?cid=ecf05e47n1a4v027fr8jlxwjoyhkxbrje74z19nphtvf63n2&rid=giphy.gif&ct=g" alt="Gif of Elmo with firey background" />
+	
 
-					```js
-					const spices = [
-						{name: "Emma", nickname: "Baby"},
-						{name: "Geri", nickname: "Ginger"},
-						{name: "Mel B", nickname: "Scary"},
-						{name: "Mel C", nickname: "Sporty"},
-						{name: "Victoria", nickname: "Posh"}
-					];
+						--
 
-					const nicknames = spices.map(s => s.nickname + " Spice");
-					```
+						### Exercise 
 
-					Arrow functions are useful for this!
-
-					--
-
-					String templates are useful too! Make them with backticks and `${}`, e.g.
-
-					<pre>`string to insert ${variable} into`</pre>
-
-					```js
-					s => `${s.nickname} Spice`;
-					```
-
-					is equivalent to
-
-					```js
-					s => s.nickname + " Spice"
-					```
-<!-- 
-					```js 
-					const bills = [ "telephone", "automo", "credit card" ];
-
-					bills.map(bill => console.log(`Can you pay my ${bill} bills?`));
-					``` -->
-
-					--
-
-					`filter` calls a true/false function on each item
-
-					and creates a new array with only the items where the function returns true
-
-					```js
-					const mels = spices.filter(s => s.name.includes("Mel"));
-					```
-<!-- 
-					```js
-					const bodiesOfWater = ["rivers", "waterfalls", "lakes"];
-					const dontGoChasin = bodiesOfWater.filter(body => body === "waterfalls");
-					const stickTo = bodiesOfWater.filter(body => body !== "waterfalls");
-					``` -->
-
-					--
-
-					### Exercise
-
-					From the `spices` array, use `map` and `filter` to: 
-					- create a new array `names` with only the name of each girl
-					- create a new array `endInY` with just the girls whose nickname ends in "y"
-				
+						In the Doggo Fetch starter, follow TODO 1 to fill in the `getMultipleChoices` function using a `while` loop 
 
 					</textarea>
 				</section>
@@ -121,6 +99,8 @@
 					<textarea data-template>
 
 					## Synchronous & Asynchronous code
+
+					<img src="https://64.media.tumblr.com/tumblr_m5q73kYQBy1qhjikro1_500.gif" alt="Gif of Cyndi Lauper singing 'Time after time'" />
 					
 					Time & JS are ...frenemies
 
@@ -142,6 +122,14 @@
 					<img width=400 src="https://img.discogs.com/iY-SmCiof2l7QMiphjeU6Hn9Gj4=/fit-in/600x522/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-798521-1462656116-4395.jpeg.jpg" alt="Cover of Paula Cole's 'I dont wanna wait'" />
 
 					we still want the web browser to keep working
+					
+					--
+
+					Unline some languages, JS can only do one task at a time
+
+					aka is "single-threaded"
+
+					
 
 					--
 
@@ -160,9 +148,20 @@
 					--
 
 					Some things that take time: 
+					- Waiting for user events
 					- Asking a user to pick a file
 					- Getting permission to access the camera/mic
-					- *Loading data from the *interwebs*
+					- *Loading data from the interwebs*
+
+					--
+
+					Another thing that takes time:
+					- Learning about asynchronous JS
+
+
+					Add it to your TODO list!
+					- [MDN: Introducing Asynchronous JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
+					- [Philip Roberts: What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
 					</textarea>
 				</section>
@@ -243,34 +242,11 @@
 
 					JS adds the task to the TODO list and keeps running our program
 
-					<img src="https://media2.giphy.com/media/VIEy2m9UtWatviq1U6/giphy.gif?cid=ecf05e47b9mwi4ha9k3uli20dpkfod70c0ly17p4gtets8qa&rid=giphy.gif&ct=g" alt="Gif of Spice Girls singing 'Stop'" />
+					<img src="https://media2.giphy.com/media/Tia13RncGbb05SUPve/giphy.gif?cid=ecf05e47icfvq0cyyvuexqew1vcockzorxi3ackmg5zdayie&rid=giphy.gif&ct=g" alt="Gif from Friends of Joey saying 'I wanna gooooo'" />
 
 					But our program needs the data, we want JS to stop and wait for the Promise to resolve
 
 				
-					<!-- 
-						
-
-
-					We could use the `.then()` method on a promise to wait for the result
-
-					```js
-					const houndUrl = "https://dog.ceo/api/breed/hound/list"
-					fetch(houndUrl).then(response => response.json());
-					```
-					
-					We pass `.then()` a *callback* function to handle the value
-
-					-- 
-
-					This can get laborious when Promises return Promises and so on...
-
-					```js
-					fetch(houndUrl)
-						.then(response => response.json())
-						.then(jsonObj => jsonObj.message);
-					``` -->
-
 
 					</textarea>
 				</section>
@@ -278,13 +254,13 @@
 
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## `async` & `await`
+					## `await`
 
 					--
 
 					`await` lets us tell JS to stop and wait for an asynchronous operation to finish
 
-
+					<img src="https://media2.giphy.com/media/VIEy2m9UtWatviq1U6/giphy.gif?cid=ecf05e47b9mwi4ha9k3uli20dpkfod70c0ly17p4gtets8qa&rid=giphy.gif&ct=g" alt="Gif of Spice Girls singing 'Stop'" />
 
 					In the case of a Promise, it waits for it to resolve before continuing with our code
 
@@ -317,18 +293,27 @@
 
 					--
 
+					This is getting frustrating... 
+
+					<img src="https://media0.giphy.com/media/5G98t8QjqBLK8/giphy.gif?cid=ecf05e47oqia9tg2xoks8h28ycs2r79sxrri4nw7qvec3lvz&rid=giphy.gif&ct=g" alt="Gif from Mean Girls of Regina George saying 'Stop trying to make fetch happen'" />
+
+					But don't give up!
+
+					--
+
 					Let's try again, this time `await`ing the JSON Promise too
 
 					```js
 					let response = await fetch("https://dog.ceo/api/breed/hound/list");
-					await response.json();
+					let body = await response.json();
 					```
 
 					--
 
 					`success`!!! 
 
-					<img src="https://media3.giphy.com/media/Yq5ns8rzatwPe/giphy.gif?cid=ecf05e4793oqka45n46x6n56g0hmb2kve7ctlcueilz8skab&rid=giphy.gif&ct=g" alt="Gif of Spice Girls accepting an award and cheering" />
+					<img src="https://media3.giphy.com/media/3oKIPkMhoaMlhtarF6/giphy.gif?cid=ecf05e47oe7xk2v5w5dyybq39zzysptnonm2uz4qfqipp3nv&rid=giphy.gif&ct=g" alt="Gif from Mean Girls of Gretchen Wieners saying 'That is so fetch'" />
+					<!-- <img src="https://media3.giphy.com/media/Yq5ns8rzatwPe/giphy.gif?cid=ecf05e4793oqka45n46x6n56g0hmb2kve7ctlcueilz8skab&rid=giphy.gif&ct=g" alt="Gif of Spice Girls accepting an award and cheering" /> -->
 
 					...but now we have to use the data!
 
@@ -343,27 +328,171 @@
 
 					Destructuring is a fancy way of declaring multiple variables at once
 
-					By "extracting" values from an Array or Object
+					By "extracting" values from an object with their property names
 
 					```js
-					const {name, nickname} = spices[0];
+					let {name, nickname} = spices[0];
 					```
 
-					</textarea>
-				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
-					## Spread (`...`)
+					--
 
-					array1.push(...array2);
+					If we only care about some of the properties, we can omit the others
 
-					</textarea>
-				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
-					## `ERROR`s
+					```
+					let {nickname} = spices[2];
+					```
+
+					--
+
+					We can also destructure Arrays, assigning variables for their items
+
+					```js
+					const [baby, ginger, scary, sporty, posh] = spices;
+					```
+
+					--
+
+					We can ignore the values in the array we don't need
+
+					```js
+					const [emma, geri] = spices; 
+					```
+
+					We can use commas to "skip" values
+
+					```js
+					const [,,melB] = spices;
+					```
+
+					--
+
+					We can use `...` to collect remaining values
+
+					```js
+					const [babySpice, ...adultSpices] = spices;
+					```
+					
+					--
+
+					### Exercise
+
+					In your Doggo Fetch file, follow TODO 2 to complete the `getBreedFromURL` function with destructuring
+
+					The string method `.split()` will be useful - it returns an array of substrings by splitting a string at a certain character: 
+
+					```js
+					let [first, middle, last] = "Anjana Sofia Vakil".split(" ");
+					```
+
+
+					--
+
+					*Back to our fetched data...*
+
+					Let's destructure the data we fetched so that we can use it!
 
 					
+					```js
+					let { message } = body;
+					```
+
+					We only really care about the `message`
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## `async` functions
+
+					Let's wrap all our async fetching & parsing code up into a function!
+
+					<img src="https://media4.giphy.com/media/3ornkdvPFqHxkC5QE8/giphy.gif?cid=ecf05e47ie2j2c7n436m52eykppvxmoydo7vuhjr7fqqdfm1&rid=giphy.gif&ct=g" alt="Gif of Buster saying 'Wrap it up'" />
+
+					--
+
+					If we try to `await` something in a regular `function`...
+
+					```js
+					function fetchResponse(url) {
+						const response = await fetch(url);
+						return response;
+					}
+					```
+
+					JS doesn't allow it
+
+					--
+
+					We need to make it an `async function` 
+
+					```js
+					async function fetchResponse(url) {
+						const response = await fetch(url);
+						return response;
+					}
+					```
+
+					This tells JS to expect to `await` async operations inside the function
+
+					--
+
+					### Exercise
+
+					In your Doggo Fetch file, follow TODO 3 to fill in the `async function` body 
+
+					Use what we've learned about how to fetch, parse, and extract the data we need!
+					
+					
+
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Putting our doggos to bed
+
+					Let's finish up the last TODOs, 4 & 5
+
+					They require you to practice skills you've learned so far
+					</textarea>
+				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+					## Modules
+
+					--
+
+					### Top-level `await`
+
+					In TODO 5 we had to use `await` *outside* of a function
+
+					This isn't usually possible in JS... 
+
+					--
+
+					Take a closer look at our `script` tag: 
+
+					```html
+					<script type="module">
+						...
+					</script>
+					```
+
+					JS *modules* work differently from JS *scripts* 
+					--
+
+					One difference is that we can't use `await` outside of a function in a script
+
+					```html
+					<script>
+						await fetch("https://dog.ceo/api/breed/hound/list");
+					</script>
+
+
+					--
+
+					### Splitting code 
+					
+					`import` && `export`
 
 					</textarea>
 				</section>
@@ -381,20 +510,7 @@
 
 					</textarea>
 				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
-					## Modules
-
-					`import` && `export`
-
-					</textarea>
-				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
-					## `import` && `export`
-
-					</textarea>
-				</section>
+				
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					# RECAP
