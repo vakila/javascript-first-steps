@@ -52,6 +52,9 @@
 					- In Day 3, go to the [starter](./3-doggofetch-starter.html) file
 					- Save & open in your text editor
 
+					--
+
+					<img src="https://media1.giphy.com/media/l0ErMA0xAS1Urd4e4/giphy.gif?cid=790b761117c3fdff6e37afdfc7134cf3f023217faf11ba6e&rid=giphy.gif&ct=g" alt="Gif from Clueless of Cher excitedly saying 'Project!'" />
 
 					</textarea>
 				</section>
@@ -169,6 +172,8 @@
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Fetching data
+
+					<img src="https://media3.giphy.com/media/O1xeZ4AgSaNBS/giphy.gif?cid=ecf05e479mwf2ythgo0l5xraq88ps0gk4gx1zk4jsuef7kyt&rid=giphy.gif&ct=g" alt="Gif of dog playing fetch with a robotic ball throwing machine" />
 
 					--
 					URLs point to resources on the web
@@ -498,7 +503,7 @@
 
 					```html
 					<script type="module">
-						...
+						//...
 					</script>
 					```
 
@@ -607,8 +612,50 @@
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Error handling 
+
+					Once we've discovered where in our program an error is likely, we can do something about it!
+
+					<img width="400" src="https://media2.giphy.com/media/TgmmI7eMFNJiOlC3gI/giphy.gif?cid=ecf05e47385ccmzt92sm6lcxk1hjnwnzpr6rnmy708aey0dc&rid=giphy.gif&ct=g" alt="Gif from Schitt's Creek of Alexis saying 'I will handle it'" />
+
 					
-					`try` & `catch`
+
+					--
+
+					Usually errors will cause JS to stop running our code
+
+					```js
+					thisThrowsAnError();
+					console.log("I'll never get here");
+					```
+
+					--
+
+					Sometimes we want that, other times we can just move on with our (program's) lives
+
+					<img src="https://media0.giphy.com/media/xT9KVeEPWqBlmDLgME/giphy.gif?cid=790b76116463fd70b16cb492bedd196cac5283bbffc344c1&rid=giphy.gif&ct=g" alt="Gif from Clueless of Amber saying 'Whatever'" />
+
+					--
+
+					
+					`try` lets us "watch out" for potential errors
+
+					its friend `catch` lets us manage errors when they occur
+
+					```js
+					try {
+						thisMightThrowAnError();
+					} catch (error) {
+						console.error("Oops, got an Error:", error); 
+						console.log("Whatever, let's press on anyway");
+					}
+					console.log("la dee da, still running the program");
+					```
+
+					--
+
+					Read all about it! 
+
+					[MDN: JS > Statements > try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
 
 					</textarea>
 				</section>
@@ -617,6 +664,51 @@
 					<textarea data-template>
 					# RECAP
 
+					--
+
+					Look at all your badass new JS magic powers! 
+
+					<img src="https://media1.giphy.com/media/KXGltmsUaqkVi/giphy.gif?cid=790b7611c63c92a1a12aff6c0b16dc918e318ab8dc4224d7&rid=giphy.gif&ct=g" alt="Gif from American Horror Story of Jessica Lange saying 'Who's the baddest witch in town'" />
+
+					--
+
+					### Values
+
+					### Arrays 
+					
+					### Objects
+
+					--
+
+					### Variables 
+
+					### Functions
+
+					### Scope
+					
+
+					--
+
+					### Events
+
+					### Conditionals
+
+					### Loops 
+
+					--
+
+					### Asynchronous code
+
+					### Fancy syntax
+
+					### Real-world skills
+
+					--
+
+					Amazing job!! 
+
+					<img src="https://media0.giphy.com/media/8xgqLTTgWqHWU/giphy.gif?cid=ecf05e47j4a84p60lj492d131mmsgf4y5inqgmpxa2ds7ld5&rid=giphy.gif&ct=g" alt="Gif of kid at retro computer giving thumbs up and looking satisfied" />
+
 					</textarea>
 				</section>
 				<section data-markdown >
@@ -624,8 +716,8 @@
 					## Next steps
 
 					- Dig deeper with more FrontendMasters courses
-					- Refine your mental model with [Just JavaScript]() by Dan Abramov and Maggie Appleton
-					- Explore & investigate on [MDN](developer.mozilla.org)
+					- Refine your mental model with [Just JavaScript](https://justjavascript.com/) by Dan Abramov and Maggie Appleton
+					- Explore & investigate on [MDN](developer.mozilla.org) & elsewhere
 					- Keep tinkering!
 					</textarea>
 				</section>
