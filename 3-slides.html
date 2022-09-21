@@ -23,6 +23,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				
 				<section data-markdown>
 					<textarea data-template>
 						## JavaScript First Steps
@@ -32,36 +33,183 @@
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## Loops over arrays
+					# DAY 3
 
-					`.map()` & `.filter()`
+
+					<!-- --
+
+					Today's project: Adapt yesterday's project for a new app 
+
+					<img src="https://media4.giphy.com/media/3o6wrdHsBoJKGaHjQk/giphy.gif?cid=790b76115baa58b80e31c3667efa5279bf10929f247d7752&rid=giphy.gif&ct=g" alt="Gif from Clueless of Cher saying excitedly 'Let's do a makeover!' with Dionne smiling excitedly in the background" /> -->
 
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					# DAY 3
+					## Loops over arrays
 
+					The `map`  & `filter` methods let us process all the items in an array
 
 					--
 
-					Today's project: Adapt yesterday's project for a new app 
+					`map` calls a function on each item in an array to create a new array
 
-					<img src="https://media4.giphy.com/media/3o6wrdHsBoJKGaHjQk/giphy.gif?cid=790b76115baa58b80e31c3667efa5279bf10929f247d7752&rid=giphy.gif&ct=g" alt="Gif from Clueless of Cher saying excitedly 'Let's do a makeover!' with Dionne smiling excitedly in the background" />
+					```js
+					const spices = [
+						{name: "Emma", nickname: "Baby"},
+						{name: "Geri", nickname: "Ginger"},
+						{name: "Mel B", nickname: "Scary"},
+						{name: "Mel C", nickname: "Sporty"},
+						{name: "Victoria", nickname: "Posh"}
+					];
+
+					const nicknames = spices.map(s => s.nickname + " Spice");
+					```
+
+					Arrow functions are useful for this!
+
+					--
+
+					String templates are useful too! Make them with backticks and `${}`, e.g.
+
+					<pre>`string to insert ${variable} into`</pre>
+
+					```js
+					s => `${s.nickname} Spice`;
+					```
+
+					is equivalent to
+
+					```js
+					s => s.nickname + " Spice"
+					```
+<!-- 
+					```js 
+					const bills = [ "telephone", "automo", "credit card" ];
+
+					bills.map(bill => console.log(`Can you pay my ${bill} bills?`));
+					``` -->
+
+					--
+
+					`filter` calls a true/false function on each item
+
+					and creates a new array with only the items where the function returns true
+
+					```js
+					const mels = spices.filter(s => s.name.includes("Mel"));
+					```
+<!-- 
+					```js
+					const bodiesOfWater = ["rivers", "waterfalls", "lakes"];
+					const dontGoChasin = bodiesOfWater.filter(body => body === "waterfalls");
+					const stickTo = bodiesOfWater.filter(body => body !== "waterfalls");
+					``` -->
+
+					--
+
+					### Exercise
+
+					From the `spices` array, use `map` and `filter` to: 
+					- create a new array `names` with only the name of each girl
+					- create a new array `endInY` with just the girls whose nickname ends in "y"
+				
 
 					</textarea>
 				</section>
+				<section data-markdown data-separator-vertical="\n--\n">
+					<textarea data-template>
+
+					## Synchronous & Asynchronous code
+					
+					Time & JS are ...frenemies
+
+					--
+
+					Usually, our JS code does things that are very quick
+
+					```js
+					console.log("This will print in a New York minute");
+					console.log("This will print one New York minute later");
+					```
+
+					So JS can usually run straight through our program "synchronously"
+
+					--
+
+					But when we need to do something that takes a long time
+
+					<img width=400 src="https://img.discogs.com/iY-SmCiof2l7QMiphjeU6Hn9Gj4=/fit-in/600x522/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-798521-1462656116-4395.jpeg.jpg" alt="Cover of Paula Cole's 'I dont wanna wait'" />
+
+					we still want the web browser to keep working
+
+					--
+
+					So when we give JS a task that takes a while, it doesn't stop and wait
+
+					```js
+					console.log("This will print first");
+					setTimeout(() => console.log("This will print third"), 1000);
+					console.log("This will print second");
+					```
+
+					it adds the slow task to a "TODO list" and keeps on running our program
+
+					The task runs some time later, "asynchronously"
+
+					--
+
+					Some things that take time: 
+					- Asking a user to pick a file
+					- Getting permission to access the camera/mic
+					- *Loading data from the *interwebs*
+
+					</textarea>
+				</section>
+				
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Fetching data
 
-					</textarea>
-				</section>
-				<section data-markdown data-separator-vertical="\n--\n">
-					<textarea data-template>
-					### Synchronous vs. Asynchronous
+					--
+					URLs point to resources on the web
 
-					[a] [syn] [chronous]
+					`https://images.dog.ceo/breeds/bluetick/n02088632_924.jpg`
+
+					<img src="https://images.dog.ceo/breeds/bluetick/n02088632_924.jpg" alt="Photo of a Bluetick dog" />
+
+					--
+
+					APIs provide URLs that point at data we care about 
+
+					`https://dog.ceo/api/breed/hound/list`
+
+					```json
+					  {
+						"message": [
+						  "afghan",
+						  "basset",
+						  "blood",
+						  "english",
+						  "ibizan",
+						  "plott",
+						  "walker"
+						],
+						"status": "success"
+					  }
+					```
+
+
+					--
+
+					`fetch()` lets us use JS to load data from APIs 
+
+					```js
+					fetch("https://dog.ceo/api/breed/hound/list")
+					```
+
+					But if we run it in the console, we see something weird...
+
 
 					</textarea>
 				</section>
@@ -69,11 +217,121 @@
 					<textarea data-template>
 					## Promises
 
+					--
+
+					It takes time to fetch data from the network
+					
+					```js
+					>> fetch("https://dog.ceo/api/breed/hound/list")
+					Promise { <state>: "pending" }
+					```
+					
+					So JS writes us an "IOU" for the data value it doesn't have yet
+
+					aka a `Promise` of a value
+
+					--
+
+					Promises can be in 3 possible states: 
+					- `pending`: still waiting for the value, hang tight
+					- `fulfilled` (aka "resolved"): finally got the value, all done
+					- `rejected`: sorry couldn't get the value, all done
+
+					It takes time for Promises to resolve, so they are "asynchronous"
+
+					--
+
+					JS adds the task to the TODO list and keeps running our program
+
+					<img src="https://media2.giphy.com/media/VIEy2m9UtWatviq1U6/giphy.gif?cid=ecf05e47b9mwi4ha9k3uli20dpkfod70c0ly17p4gtets8qa&rid=giphy.gif&ct=g" alt="Gif of Spice Girls singing 'Stop'" />
+
+					But our program needs the data, we want JS to stop and wait for the Promise to resolve
+
+				
+					<!-- 
+						
+
+
+					We could use the `.then()` method on a promise to wait for the result
+
+					```js
+					const houndUrl = "https://dog.ceo/api/breed/hound/list"
+					fetch(houndUrl).then(response => response.json());
+					```
+					
+					We pass `.then()` a *callback* function to handle the value
+
+					-- 
+
+					This can get laborious when Promises return Promises and so on...
+
+					```js
+					fetch(houndUrl)
+						.then(response => response.json())
+						.then(jsonObj => jsonObj.message);
+					``` -->
+
+
 					</textarea>
 				</section>
+
+
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## `async` & `await`
+
+					--
+
+					`await` lets us tell JS to stop and wait for an asynchronous operation to finish
+
+
+
+					In the case of a Promise, it waits for it to resolve before continuing with our code
+
+					--
+
+					The Promise we get from `fetch()` resolves to a `Response` object 
+
+					```js
+					let response = await fetch("https://dog.ceo/api/breed/hound/list");
+					console.log(response);
+					```
+
+					--
+
+					It's `body` contains the data we care about
+
+					<img src="https://media3.giphy.com/media/ON5IJj2BmotiM/giphy.gif?cid=ecf05e47wmzome5hh8tc9k2vewizfznw6ne77jacd56c8tr5&rid=giphy.gif&ct=g" alt="Gif of the Spice Girls singing 'Slam your body down'" />
+
+					But we have to read the body somehow
+
+					--
+
+					Calling the `.json()` method on the response parses its body as a JSON object
+
+					```js
+					response.json()
+					```
+
+					But that gives us another Promise!
+
+					--
+
+					Let's try again, this time `await`ing the JSON Promise too
+
+					```js
+					let response = await fetch("https://dog.ceo/api/breed/hound/list");
+					await response.json();
+					```
+
+					--
+
+					`success`!!! 
+
+					<img src="https://media3.giphy.com/media/Yq5ns8rzatwPe/giphy.gif?cid=ecf05e4793oqka45n46x6n56g0hmb2kve7ctlcueilz8skab&rid=giphy.gif&ct=g" alt="Gif of Spice Girls accepting an award and cheering" />
+
+					...but now we have to use the data!
+
 
 					</textarea>
 				</section>
@@ -81,17 +339,31 @@
 					<textarea data-template>
 					## Destructuring
 
+					--
+
+					Destructuring is a fancy way of declaring multiple variables at once
+
+					By "extracting" values from an Array or Object
+
+					```js
+					const {name, nickname} = spices[0];
+					```
+
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Spread (`...`)
 
+					array1.push(...array2);
+
 					</textarea>
 				</section>
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
-					## `ERROR` !!
+					## `ERROR`s
+
+					
 
 					</textarea>
 				</section>
