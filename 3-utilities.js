@@ -8,7 +8,7 @@ function shuffleArray(array) {
     return array.sort((a,b) => Math.random() - 0.5);
 }
 
-function getChoices(n, correctAnswer, array) {
+function getMultipleChoices(n, correctAnswer, array) {
     // Generate a list of n choices including the correct answer and others from the array
     const choices = [correctAnswer];
     while (choices.length < n) {
@@ -23,5 +23,5 @@ function getChoices(n, correctAnswer, array) {
 export {
     getRandomElement,
     shuffleArray,
-    getChoices
+    getMultipleChoices
 };
