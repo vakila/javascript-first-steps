@@ -56,10 +56,9 @@
 					<textarea data-template>
 					### Grand plan
 
-					<span style="color:var(--r-background-color);">time</span> | Day 1 | Day 2 | Day 3
+					<span style="color:var(--r-background-color);">time</span> | Part 1 | Part 2 | Part 3
 					--- | --- | --- | ---
-					morning | DOM & datatypes | functions & events | fetching data 
-					afternoon | arrays & objects | branches & loops | real world JS
+					topics | DOM <br> datatypes <br>  arrays & objects  | functions <br> events <br> branches & loops | fetching data <br> sync vs. async <br> real world JS
 					project | tic tac toe | quiz game | doggos
 
 					</textarea>
@@ -76,14 +75,14 @@
 				</section>
 				<section data-markdown >
 					<textarea data-template>
-					# DAY 1
+					# Part 1
 
 
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-					### Today's goals
+					### Goals
 
 					- Get hands-on with JS
 					- Explore & modify a web page 
@@ -1196,11 +1195,12 @@
 
 					</textarea>
 				</section>
+				
 				<section data-markdown data-separator-vertical="\n--\n">
 					<textarea data-template>
 					## Objects
 
-					We saw an object earlier today:
+					We saw an object earlier:
 
 					```js
 					const js = {
@@ -1282,6 +1282,50 @@
 
 					--
 
+					### Methods
+
+					Properties can point to functions too 
+
+					We call function-properties "methods" on objects
+
+					```js
+					const dog = {
+						name: "Ein",
+						breed: "Corgi",
+						speak: function () {
+							console.log("woof woof");
+						}
+					}
+
+					dog.speak();
+					```
+
+					
+					--
+
+					`this` in a method lets us reference other properties on the object
+
+					```js
+					anjana.speak = function () {
+						console.log("Hi my name is", this.name);
+					}
+
+					anjana.speak();
+					```
+
+					--
+
+					But be careful with `this`! 
+
+					<img src="https://c.tenor.com/7tgvcDTOfMQAAAAC/tenor.gif" alt="Gif from Friends of Rachel & Phoebe jumping out and yelling 'Danger!' to scare Ross" />
+
+					Its behavior is complicated & can be tricky
+
+					MDN: [JS > Operators > `this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+
+
+					--
+
 					### Nested objects
 
 					```js
@@ -1335,7 +1379,10 @@
 
 					### Built in objects
 
-					Have we worked with any complex objects already today?
+					Have we worked with any complex objects already?
+
+					What properties & methods have we used already?
+
 
 					--
 
@@ -1415,7 +1462,7 @@
 
 					1. Set up the players
 						- Create a `players` array containing 2 objects, one representing each player
-						- Each object should store the player's `name`, `symbol` (X or O), and `score` (0 initially)
+						- Each object should store the player's `name` and `symbol` (X or O)
 						- Display each player's name in the appropriate element in the page
 
 					--
@@ -1425,7 +1472,6 @@
 						- On each turn: 
 							- Retrieve the square you want to play in
 							- Set the square's text to your player's symbol
-						- When a player has won, add 1 to their score
 
 					
 
