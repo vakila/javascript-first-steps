@@ -2,13 +2,13 @@
 Companion site &amp; code exercises for the [Frontend Masters course "JavaScript First Steps"](https://frontendmasters.com/workshops/javascript-first-steps/)
 
 Contents:
-- Day 1: 
+- Part 1: 
   - [Slides](./1-slides.html)
   - [Tic Tac Toe](./1-tictactoe.html)
-- Day 2:
+- Part 2:
   - [Slides](./2-slides.html)
   - JS Quiz ([starter](./2-jsquiz-starter.html), [finished](./2-jsquiz-finished.html), [fancy](./2-jsquiz-fancy))
-- Day 3:
+- Part 3:
   - [Slides](./3-slides.html)
   - Doggo Fetch ([starter](./3-doggofetch-starter.html), [finished](./3-doggofetch-finished.html); [modular](./3-doggofetch-modular.html), [utilities](./3-utilities.js))
 
@@ -19,7 +19,7 @@ Contents:
 *Launch your JavaScript journey with this friendly, practical introduction from [Anjana Vakil](https://twitter.com/AnjanaVakil)*
 
 
-This three day workshop will lead you through your first steps with the JavaScript programming language, equip you with the key concepts & skills you need to become a productive JS programmer, and give you a solid foundation for your onward journey into advanced JS, functional programming, frontend frameworks, and beyond.
+This course will lead you through your first steps with the JavaScript programming language, equip you with the key concepts & skills you need to become a productive JS programmer, and give you a solid foundation for your onward journey into advanced JS, functional programming, frontend frameworks, and beyond.
 
 ### Benefits:
   - Learn the fundamentals of programming in JavaScript, starting from scratch
@@ -48,35 +48,29 @@ Prerequisites:
 - Participants will only need a laptop with a web browser (Firefox or Chrome recommended)
 
 ### Course outline
-- Day 1
-  - 0930: Day 1 Intro & course overview
-  - 1000: JavaScript: What? Why? How?
-  - 1015: Working with the DOM (HTML)
-  - 1115: Data Types
-  - 1200: Lunch
-  - 1300: Working with Strings
-  - 1330: Operators & Expressions
-  - 1500: Variables 
-  - 1600: End of Day 1
-- Day 2
-  - 0930: Working with Objects & Arrays
-  - 1100: Day 1 project review
-  - 1130: Day 2 project overview
-  - 1145: Working with a code editor
-  - 1200: Lunch
-  - 1300: Functions & Scope
-  - 1415: Event Handlers
-  - 1500: Conditionals
-  - 1530: Loops
-  - 1600: End of Day 2
-- Day 3
-  - 0930: Day 3 Intro & project overview
-  - 1000: Fetch, Promises, Async/Await
-  - 1100: Map & Filter
-  - 1130: Destructuring & spread syntax
-  - 1200: Lunch
-  - 1300: Debugging & error handling
-  - 1430: Modules, import & export
-  - 1500: Day 3 project review
-  - 1530: Course review & next steps
-  - 1600: End of Day 3
+- Part 1
+  - Intro & course overview
+  - JavaScript: What? Why? How?
+  - Working with the DOM (HTML)
+  - Data Types
+  - Working with Strings
+  - Operators & Expressions
+  - Variables 
+  - Objects & Arrays
+- Part 2
+  - Part 2 project overview
+  - Working with a code editor
+  - Functions & Scope
+  - Event Handlers
+  - Conditionals
+  - Loops
+- Part 3
+  - Part 3 project overview
+  - Fetch
+  - Promises
+  - Async/Await
+  - Map & Filter
+  - Destructuring & spread syntax
+  - Debugging & error handling
+  - Modules, import & export
+  - Course recap & next steps
