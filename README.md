@@ -7,7 +7,7 @@ Contents:
   - [Tic Tac Toe](./1-tictactoe.html)
 - Part 2:
   - [Slides](./2-slides.html)
-  - JS Quiz ([starter](./2-jsquiz-starter.html), [finished](./2-jsquiz-finished.html), [fancy](./2-jsquiz-fancy))
+  - JS Quiz ([starter](./2-jsquiz-starter.html), [finished](./2-jsquiz-finished.html), [fancy](./2-jsquiz-fancy.html))
 - Part 3:
   - [Slides](./3-slides.html)
   - Doggo Fetch ([starter](./3-doggofetch-starter.html), [finished](./3-doggofetch-finished.html); [modular](./3-doggofetch-modular.html), [utilities](./3-utilities.js))
